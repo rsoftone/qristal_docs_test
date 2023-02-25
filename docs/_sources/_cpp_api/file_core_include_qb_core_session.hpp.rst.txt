@@ -1,0 +1,63 @@
+
+.. _file_core_include_qb_core_session.hpp:
+
+File session.hpp
+================
+
+|exhale_lsh| :ref:`Parent directory <dir_core_include_qb_core>` (``core/include/qb/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``core/include/qb/core/session.hpp``)
+-------------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``qb/core/QuantumBrillianceAccelerator.hpp``
+
+- ``qb/core/QuantumBrillianceRemoteAccelerator.hpp``
+
+- ``qb/core/async_executor.hpp``
+
+- ``qb/core/cmake_variables.hpp``
+
+- ``qb/core/pretranspiler.hpp``
+
+- ``qb/core/profiler.hpp``
+
+- ``qb/core/remote_async_accelerator.hpp``
+
+- ``qb/core/utils.hpp``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_qb`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structqb_1_1session_1_1run__i__j__config`
+
+- :ref:`exhale_class_classqb_1_1session`
+

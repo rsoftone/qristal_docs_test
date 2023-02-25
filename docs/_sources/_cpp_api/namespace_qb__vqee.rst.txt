@@ -1,0 +1,40 @@
+
+.. _namespace_qb__vqee:
+
+Namespace qb::vqee
+==================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structqb_1_1vqee_1_1Params`
+
+- :ref:`exhale_class_classqb_1_1vqee_1_1VQEE`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_case__generator_8hpp_1aaee3be947eeea73bf6b736d8b7eb9821`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_case__generator_8hpp_1a95f04cc570fcab5cf4f1f2245f1509e7`
+
+- :ref:`exhale_function_case__generator_8hpp_1af6e4d554405a672a83c459cf21f9561a`
+
+- :ref:`exhale_function_vqee_8hpp_1a6698d1bb45226c33390ecc9fba58ff65`

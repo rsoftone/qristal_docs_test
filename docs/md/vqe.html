@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variational Quantum Eigensolver (VQE) in QB SDK &mdash; Quantum SDK  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Quantum SDK
+              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Basic Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rst/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/cli.html">Command-line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/quantum_computing.html">Quantum Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in QB SDK</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_cpp_api/library_root.html">C++ API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/python_autodoc.html">Python API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Quantum SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Variational Quantum Eigensolver (VQE) in QB SDK</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/md/vqe.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="variational-quantum-eigensolver-vqe-in-qb-sdk">
+<h1>Variational Quantum Eigensolver (VQE) in QB SDK<a class="headerlink" href="#variational-quantum-eigensolver-vqe-in-qb-sdk" title="Permalink to this headline"></a></h1>
+<section id="general-information">
+<h2>General information<a class="headerlink" href="#general-information" title="Permalink to this headline"></a></h2>
+<p>VQE is classified as a <strong>quantum-classical (hybrid) algorithm</strong>. It uses a <strong>classical optimizer</strong> to minimize a <strong>quantum kernel</strong> based objective function. The objective function is usually determined by multiple measurements at each iteration.</p>
+<p>VQE finds the <strong>ground state energy</strong> of a physical system characterized by its <strong>Hamiltonian</strong> <span class="math notranslate nohighlight">\(H\)</span> which is Hermitian. See [<a class="reference external" href="https://arxiv.org/abs/1304.3061">Peruzzo et al. 2013</a>, <a class="reference external" href="https://arxiv.org/abs/1512.06860">O’Malley et al. 2015</a>] for details.</p>
+<section id="quantum-kernels-in-qb-sdk">
+<h3>Quantum kernels in QB SDK<a class="headerlink" href="#quantum-kernels-in-qb-sdk" title="Permalink to this headline"></a></h3>
+<p>The quantum kernel has 3 inputs:</p>
+<ul class="simple">
+<li><p><strong>theta</strong>: Input parameters, usually rotation angles in radians.</p></li>
+<li><p><strong>ansatz</strong>: A quantum circuit that prepares a quantum state and is conditioned by the values of theta (i.e. the input parameters mentioned above).</p></li>
+<li><p><strong>observable/measurement</strong>: Pauli decomposition of the system Hamiltonian. Defines the measurement operations respectively applied after the <strong>ansatz</strong>. May have groups of <strong>commutative</strong> terms which can be measured together after one <strong>ansatz</strong> execution.</p></li>
+</ul>
+<p>The output from measurement is reduced to a scalar quantity: the <strong>energy</strong>. The output is called <strong>stochastic</strong> when this energy is calculated from the shot-count statistics (samples) produced by a quantum device. A quantum computer is inherently <strong>stochastic</strong> but a simulator can operate in <strong>non-stochastic</strong>, i.e. <strong>deterministic</strong> mode.</p>
+</section>
+<section id="hamiltonians-in-qb-sdk">
+<h3>Hamiltonians in QB SDK<a class="headerlink" href="#hamiltonians-in-qb-sdk" title="Permalink to this headline"></a></h3>
+<p>While the user provides a Hamiltonian that has been transformed from their problem/system of interest, special attention is needed on the resulting format of the Hamiltonian so that it is valid as an input to QB SDK.  In particular:</p>
+<ul class="simple">
+<li><p>the Hamiltonian must be formatted as a <strong>string</strong>. This string is an expression of a weighted sum of <strong>Pauli terms</strong>.</p></li>
+<li><p><strong>Spaces</strong> must be used to separate <strong>all</strong> of the following: the Pauli terms, their respective weights, and the arithmetic +/- symbols.</p></li>
+<li><p>In all Pauli terms, any <strong>Identity (I) operators are implicit - do not show I operator explicitly.</strong></p></li>
+</ul>
+<p>Examples of valid Hamiltonians (but with no physical meaning):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;-1.2 + 1.1 Z0Z1 + 4.1 Z1 - 11.8 Z0&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;12.3 + 0.002 Z0X1X2 - 1.2 X0Z2 - 3.3 Z1 - 5.0 Y2&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + (0.3,0.21829) Z0 + 0.34 Z0Z1Z2Z3&quot;</span>
+
+<span class="nl">Note</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.21829</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.21829</span><span class="n">j</span>
+</pre></div>
+</div>
+<p>Example of a physically valid Hamiltonian (for deuteron):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + .21829 Z0 - 6.125 Z1&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="ansatze-in-qb-sdk">
+<h3>Ansätze in QB SDK<a class="headerlink" href="#ansatze-in-qb-sdk" title="Permalink to this headline"></a></h3>
+<p>As in all parameterized models, choice of model architecture, or <em>ansatz</em>, is an important parameter in the success of the optimization.</p>
+<p><strong>User-defined ansatz:</strong></p>
+<p>This functionality requires using the XASM format.  An example of this is shown below:</p>
+<p>❗ <strong>Important:</strong>
+Do <strong>not</strong> change the first two lines:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">.</span><span class="n">compiler</span><span class="w"> </span><span class="n">xasm</span>
+<span class="w"> </span><span class="p">.</span><span class="n">circuit</span><span class="w"> </span><span class="n">ansatz</span>
+</pre></div>
+</div>
+<p>You can use the parameter (declared here as <code class="docutils literal notranslate"><span class="pre">theta</span></code>) as a 0-indexed array, ie <code class="docutils literal notranslate"><span class="pre">theta[0],</span> <span class="pre">theta[1],</span> <span class="pre">theta[2]</span></code>, …, etc.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.compiler<span class="w"> </span>xasm
+.circuit<span class="w"> </span>ansatz
+.parameters<span class="w"> </span>theta
+.qbit<span class="w"> </span>q
+<span class="w">  </span>X<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>X<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">0</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">2</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">3</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">4</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">5</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">6</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">7</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">8</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">3</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">9</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">10</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">11</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">2</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">3</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">12</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">13</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">14</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">15</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">16</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">17</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">18</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">19</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">20</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">3</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">21</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">22</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">23</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">2</span><span class="o">])</span><span class="p">;</span>
+<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">3</span><span class="o">])</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="python-api">
+<h2>Python API<a class="headerlink" href="#python-api" title="Permalink to this headline"></a></h2>
+<section id="importing-the-module">
+<h3>Importing the module<a class="headerlink" href="#importing-the-module" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qb.core.optimization</span> <span class="k">as</span> <span class="nn">cop</span>
+</pre></div>
+</div>
+</section>
+<section id="setting-up-the-parameters-for-vqe">
+<h3>Setting up the parameters for VQE<a class="headerlink" href="#setting-up-the-parameters-for-vqe" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tvqep</span> <span class="o">=</span> <span class="n">cop</span><span class="o">.</span><span class="n">vqee_Params</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The following VQE attributes are accepted:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">circuitString</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tvqep.circuitString</span> <span class="pre">=</span> <span class="pre">'</span> <span class="pre">.compiler</span> <span class="pre">xasm\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">.circuit</span> <span class="pre">ansatz\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">.parameters</span> <span class="pre">theta\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">.qbit</span> <span class="pre">q\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Ry(q[0],</span> <span class="pre">theta);\n'</span></code></p></td>
+<td><p>Sets the ansatz circuit with parameter <code class="docutils literal notranslate"><span class="pre">theta</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pauliString</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tvqep.pauliString</span> <span class="pre">=</span> <span class="pre">'-1.04235464570829</span> <span class="pre">+</span> <span class="pre">0.18125791479311</span> <span class="pre">X0</span> <span class="pre">+</span> <span class="pre">-0.78864539363997</span> <span class="pre">Z0'</span></code></p></td>
+<td><p>Sets the Hamiltonian.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nQubits</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tvqep.nQubits</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
+<td><p>Sets the number of qubits.  This must be consistent with both the <code class="docutils literal notranslate"><span class="pre">circuitString</span></code> and the <code class="docutils literal notranslate"><span class="pre">pauliString</span></code> attributes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nShots</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tvqep.nShots</span> <span class="pre">=</span> <span class="pre">128</span></code></p></td>
+<td><p>Set the number of shots in a single VQE iteration.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">maxIters</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tvqep.maxIters</span> <span class="pre">=</span> <span class="pre">256</span></code></p></td>
+<td><p>Sets the upper limit on the number of VQE iterations to run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">isDeterministic</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tvqep.isDeterministic</span> <span class="pre">=</span> <span class="pre">True</span></code></p></td>
+<td><p>When set to <code class="docutils literal notranslate"><span class="pre">True</span></code> the expectation values are calculated using linear algebra operations.  When set to <code class="docutils literal notranslate"><span class="pre">False</span></code> the expectation values are calculated from stochastic samples of size <code class="docutils literal notranslate"><span class="pre">nShots</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tolerance</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tvqep.tolerance</span> <span class="pre">=</span> <span class="pre">1e-6</span></code></p></td>
+<td><p>Sets the function tolerance that is used by the optimizer.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="triggering-the-vqe-execution">
+<h3>Triggering the VQE execution<a class="headerlink" href="#triggering-the-vqe-execution" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tvqep</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="accessing-the-results">
+<h3>Accessing the results<a class="headerlink" href="#accessing-the-results" title="Permalink to this headline"></a></h3>
+<p>The results from a completed VQE execution are available be reading the following attributes:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">optimalValue</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tvqep.optimalValue</span></code></p></td>
+<td><p>The <strong>minimum energy</strong> corresponding to parameters set at the <code class="docutils literal notranslate"><span class="pre">optimalParameters</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">optimalParameters</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tvqep.optimalParameters</span></code></p></td>
+<td><p>The values for the ansatz parameters corresponding to the minimum energy that VQE has found within <code class="docutils literal notranslate"><span class="pre">maxIters</span></code> iterations.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="c-api">
+<h2>C++ API<a class="headerlink" href="#c-api" title="Permalink to this headline"></a></h2>
+<p><a href="../_cpp_api/classqb_1_1vqee_1_1VQEE.html">See the class documentation.</a></p>
+<hr class="docutils" />
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Deprecation Notice</p></th>
+<th class="head"><p>All sections below this Notice will be deprecated after December 2022</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p>The functionality described below is undergoing extensive rework.  You may still use it for background understanding, but it will <strong>not</strong> be compatible with future releases of QB SDK.</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<section id="classical-optimizer">
+<h3>Classical optimizer<a class="headerlink" href="#classical-optimizer" title="Permalink to this headline"></a></h3>
+<p>VQE is open to use with any type of optimizer. In particular, the optimizer can be gradient-based or gradient-free.  Stochastic optimization algorithms can also be used. See below for examples.</p>
+</section>
+<section id="molecular-geometries-in-qb-sdk">
+<h3>Molecular geometries in QB SDK<a class="headerlink" href="#molecular-geometries-in-qb-sdk" title="Permalink to this headline"></a></h3>
+<p>Instead of directly specifying a Hamiltonian, users can instead input a molecular geometry in terms of the elements and coordinates of all atoms in the system.  QB SDK will then generate the corresponding Hamiltonian automatically.</p>
+<p>For this functionality, QB SDK requires PySCF-style XYZ syntax, i.e.,
+ <code class="docutils literal notranslate"><span class="pre">{element</span> <span class="pre">symbol}</span> <span class="pre">{x_coord}</span> <span class="pre">{y_coord}</span> <span class="pre">{z_coord};...</span></code></p>
+<p>For example, an <span class="math notranslate nohighlight">\(H_2\)</span> molecule with an atomic distance of 0.735 angstroms (Å) can be described by the following geometry string:</p>
+<p><code class="docutils literal notranslate"><span class="pre">H</span> <span class="pre">0.0</span> <span class="pre">0.0</span> <span class="pre">0.0;</span> <span class="pre">H</span> <span class="pre">0.0</span> <span class="pre">0.0</span> <span class="pre">0.735</span></code></p>
+<p>❗ <strong>Important:</strong> the default unit for coordinates is <strong>angstroms</strong>.</p>
+<p>By default, QB SDK uses the <a class="reference external" href="https://en.wikipedia.org/wiki/STO-nG_basis_sets">sto-3g</a> basis set and the Jordan-Wigner fermion-to-qubit mapping.</p>
+<p><strong>Built in ansätze:</strong></p>
+<ul>
+<li><p>Default ansatz:  the <a class="reference external" href="https://www.nature.com/articles/nature23879">Hardware Efficient Ansatz</a> (HEA)</p>
+<p>HEA provides a framework for general Hamiltonians where the problem substructure is less well defined.   HEA is often parameterized by <strong>depth</strong>: the number of base circuit repetitions.</p>
+<p>A larger depth allows for modelling more complexity at the cost of increasing training difficulty.</p>
+<p>One instance of HEA ansatz is demonstrated in <a class="reference external" href="https://pennylane.ai/qml/demos/tutorial_vqe.html">Pennylane’s VQE tutorial</a>.</p>
+</li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1904.10910">ASWAP</a> ansatz that is useful for quantum chemistry</p>
+<p>ASWAP is well-suited to the types of Hamiltonians generated by quantum chemistry problems and is parameterized by the <strong>number of particles</strong> to use.</p>
+</li>
+<li><p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/full/10.1002/qua.21198">UCCSD</a> ansatz that is useful for quantum chemistry</p>
+<p><em>Unitary coupled-cluster singles and doubles</em> (UCCSD) ansatz is based on the unitary coupled cluster (UCC) theory.</p>
+<p>UCCSD ansatz is parameterized by the number of particles (e.g., electrons) and the number of spin orbitals.</p>
+<p>(the number of spin orbitals is equal to the number of qubits required)</p>
+</li>
+<li><p>❗ <strong>Important:</strong> Convention of mapping spin orbitals onto qubits</p>
+<ul class="simple">
+<li><p>The built-in ASWAP and UCCSD ansätze in QB SDK map all alpha (up) spins <strong>then</strong> all beta (down) spins. Thus, care must be taken to make sure that the input Pauli Hamiltonian follows the same mapping convention.</p></li>
+<li><p>If the Hamiltonian input is provided as a molecular geometry string (see the previous section above), then the mapping is guaranteed to be compatible with the above convention.</p></li>
+<li><p>Tips: Among some other open-source platforms, Qiskit is using the same qubit mapping as stated above. Pennylane, on the other hand, alternates alpha and beta (up and down) spins.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="usage-options-and-examples">
+<h2>Usage Options and Examples<a class="headerlink" href="#usage-options-and-examples" title="Permalink to this headline"></a></h2>
+<section id="general-usage-operations">
+<h3><strong>General usage operations</strong><a class="headerlink" href="#general-usage-operations" title="Permalink to this headline"></a></h3>
+<ul>
+<li><p>Importing the Python package</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qbos_op.vqe()</span></code> creates an instance to access the functionality in QB SDK VQE</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="n">qv</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="options-related-to-the-quantum-kernel">
+<h3><strong>Options related to the quantum kernel</strong><a class="headerlink" href="#options-related-to-the-quantum-kernel" title="Permalink to this headline"></a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">theta</span></code> sets the <strong>initial value</strong> of the parameters used by the ansatz, default: 1.0</p>
+<p>⚙ The <strong>length</strong> of <code class="docutils literal notranslate"><span class="pre">theta</span></code> (the number of elements) must match the <strong>required number of parameters</strong> in the ansatz.</p>
+<p>For the default ansatz in QB SDK, it is required that:
+<code class="docutils literal notranslate"><span class="pre">len(theta)</span> <span class="pre">==</span> <span class="pre">3*qn*ansatz_depth</span></code></p>
+<p>Example:  initial value of theta set by a <strong>scalar</strong>.  Broadcast is performed of this value to all elements required by the ansatz.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">qv</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span> <span class="c1"># this type holds a list of maps from integer-&gt;double</span>
+
+<span class="n">example_scalar</span> <span class="o">=</span> <span class="mf">0.12</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">example_scalar</span>
+</pre></div>
+</div>
+<p>Example: initial value of theta set to a list of length equal to the number of parameters used by the ansatz.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">qv</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span> <span class="c1"># this type holds a list of maps from integer-&gt;double</span>
+
+<span class="n">example_rx</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">example_ry</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">example_rz</span> <span class="o">=</span>  <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">example_rx</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">example_ry</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">example_rz</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qn</span></code> sets the number of physical qubits, default: 1</p>
+<p>❗ The number of qubits must be consistent with the Hamiltonian</p>
+<p>⚙ For the default ansatz in QB SDK, it is required to that:
+<code class="docutils literal notranslate"><span class="pre">len(theta)</span> <span class="pre">==</span> <span class="pre">3*qn*ansatz_depth</span></code></p>
+<p>Example: set up 2 qubits</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="n">qv</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span> <span class="c1"># this type holds a list of maps from integer-&gt;double</span>
+
+<span class="n">qv</span><span class="o">.</span><span class="n">qn</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ansatz</span></code> sets the ansätz, default: “default”</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code> is the built-in Hardware Efficient Ansatz</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ansatz_depth</span></code> sets the number of repeated layers in the default ansatz, default: 1</p>
+<p>Example: using a 1-qubit, 3-layer ansatz</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">qv</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span> <span class="c1"># this type holds a list of maps from integer-&gt;double</span>
+
+<span class="n">qv</span><span class="o">.</span><span class="n">ansatz</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">qn</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">ansatz_depth</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># 3*qn*ansatz_depth = 9 parameters - set the length of initial values to 9</span>
+<span class="k">for</span> <span class="n">ite</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">qv</span><span class="o">.</span><span class="n">qn</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">qv</span><span class="o">.</span><span class="n">ansatz_depth</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="p">:</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">ite</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.125</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>   
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;aswap&quot;</span></code> is the built-in ASWAP ansatz</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">aswapn</span></code> sets the number of particles in the ASWAP ansatz, default: 1</p>
+<p>Example: deuteron</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="n">qv</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span> <span class="c1"># this type holds a list of maps from integer-&gt;double</span>
+
+<span class="c1"># Deuteron Hamiltonian with aswap 1-particle ansatz</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">qn</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Number of qubits</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">ham</span> <span class="o">=</span> <span class="s2">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + .21829 Z0 - 6.125 Z1&quot;</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">ansatz</span> <span class="o">=</span> <span class="s2">&quot;aswap&quot;</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">aswapn</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.11</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>User-defined XASM format ansatz</p>
+<p>Example: reusing the user-defined 4-qubit ansatz described previously</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="n">qv</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span> <span class="c1"># this type holds a list of maps from integer-&gt;double</span>
+
+<span class="n">qv</span><span class="o">.</span><span class="n">qn</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">ham</span> <span class="o">=</span> <span class="s2">&quot;1.2 - 1.45 Z0 + 2.1 Z1 + 3.2 Z2 - 0.2 Z3 - 3.1 Z1Z3&quot;</span>
+<span class="n">self_anz</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">.compiler xasm</span>
+<span class="s1">.circuit qbos_ansatz</span>
+<span class="s1">.parameters theta</span>
+<span class="s1">.qbit q</span>
+<span class="s1">  X(q[0]);</span>
+<span class="s1">  X(q[1]);</span>
+<span class="s1">  U(q[0], theta[0], theta[1], theta[2]);</span>
+<span class="s1">  U(q[1], theta[3], theta[4], theta[5]);</span>
+<span class="s1">  U(q[2], theta[6], theta[7], theta[8]);</span>
+<span class="s1">  U(q[3], theta[9], theta[10], theta[11]);</span>
+<span class="s1">  CNOT(q[0], q[1]);</span>
+<span class="s1">  CNOT(q[1], q[2]);</span>
+<span class="s1">  CNOT(q[2], q[3]);</span>
+<span class="s1">  U(q[0], theta[12], theta[13], theta[14]);</span>
+<span class="s1">  U(q[1], theta[15], theta[16], theta[17]);</span>
+<span class="s1">  U(q[2], theta[18], theta[19], theta[20]);</span>
+<span class="s1">  U(q[3], theta[21], theta[22], theta[23]);</span>
+<span class="s1">  CNOT(q[0], q[1]);</span>
+<span class="s1">  CNOT(q[1], q[2]);</span>
+<span class="s1">  CNOT(q[2], q[3]);</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">qv</span><span class="o">.</span><span class="n">ansatz</span> <span class="o">=</span> <span class="n">self_anz</span>
+
+<span class="c1"># 24 parameters in the user-defined ansatz =&gt; provide 24 initial values</span>
+<span class="k">for</span> <span class="n">ite</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">ite</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.125</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ham</span></code> sets the Hamiltonian, default: “1.0 Z0”</p>
+<p>Example: deuteron</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="n">qv</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span> <span class="c1"># this type holds a list of maps from integer-&gt;double</span>
+
+<span class="c1"># Deuteron Hamiltonian with aswap 1-particle ansatz</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">qn</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Number of qubits</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">ham</span> <span class="o">=</span> <span class="s2">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + .21829 Z0 - 6.125 Z1&quot;</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">ansatz</span> <span class="o">=</span> <span class="s2">&quot;aswap&quot;</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">aswapn</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.11</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sn</span></code> sets the number of shots, default: 256</p>
+<p>✅ Non-stochastic VQE is performed when <code class="docutils literal notranslate"><span class="pre">sn</span></code> = 0</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">noise</span></code> enables a noise-model of Quantum Brilliance’s hardware, default: <code class="docutils literal notranslate"><span class="pre">False</span></code> (ie. noiseless)</p>
+<p>ℹ️ This option automatically forces the use of the <code class="docutils literal notranslate"><span class="pre">&quot;aer&quot;</span></code> back-end.  An important effect of this is that bit-strings will print out in <strong>reverse order</strong> compared to the default (<code class="docutils literal notranslate"><span class="pre">&quot;qpp&quot;</span></code>) back-end.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acc</span></code> selects the back-end accelerator, default: <code class="docutils literal notranslate"><span class="pre">&quot;qpp&quot;</span></code></p>
+<p>❗ The <code class="docutils literal notranslate"><span class="pre">acc</span></code> option has no effect when <code class="docutils literal notranslate"><span class="pre">noise</span></code> = <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<p>The following values are accepted:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;qpp&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;tnqvm&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;aer&quot;</span></code></p></li>
+</ul>
+<p>⚠️ <strong>WARNING</strong>
+The <code class="docutils literal notranslate"><span class="pre">&quot;aer&quot;</span></code> accelerator has some known incompatibilities and issues with the VQE for some specific Hamiltonian inputs. If you are facing such problems, please choose the default, ie. <code class="docutils literal notranslate"><span class="pre">&quot;qpp&quot;</span></code>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">direct_expectation</span></code> enables direct expectation calculation if the selected <code class="docutils literal notranslate"><span class="pre">acc</span></code> backend is a state-vector-based simulator. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code> (disabled, ie., running observed circuits to compute the expectation value)</p>
+<p><strong>Important:</strong> If direct expectation evaluation is not feasible (e.g., the back-end accelerator selected doesn’t support retrieval of the state vector), this option will be ignored, i.e., fall back to the conventional method of observing the Hamiltonian expectation value.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="n">vqe</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+<span class="n">vqe</span><span class="o">.</span><span class="n">sn</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="c1"># Direct energy evaluation</span>
+<span class="n">vqe</span><span class="o">.</span><span class="n">direct_expectation</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="how-to-make-function-calls-for-a-python-level-optimizer">
+<h3>How to make function calls for a Python-level optimizer?<a class="headerlink" href="#how-to-make-function-calls-for-a-python-level-optimizer" title="Permalink to this headline"></a></h3>
+<p>In order to use the optimization algorithms in <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> or <code class="docutils literal notranslate"><span class="pre">skquant.opt</span></code>  for VQE, it is necessary to provide a function that accepts the parameter values at the current iteration and returns the energy.  The function below provides this.  Note: it accepts an input (<code class="docutils literal notranslate"><span class="pre">theta</span></code>) that is a NumPy array:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Wrapper that accepts a parameter, theta (type is NumPy ndarray)</span>
+<span class="c1"># and calls qbOS VQE for 1 iteration.  The energy is returned.</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">qbvqe</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="n">qv</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">sn</span> <span class="o">=</span> <span class="mi">64</span>   <span class="c1"># Number of shots.  Set to 0 for non-stochastic VQE</span>
+
+    <span class="c1"># Deuteron Hamiltonian with aswap ansatz</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">qn</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Number of qubits</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">ham</span> <span class="o">=</span> <span class="s2">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + .21829 Z0 - 6.125 Z1&quot;</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">ansatz</span> <span class="o">=</span> <span class="s2">&quot;aswap&quot;</span>
+
+    <span class="n">qv</span><span class="o">.</span><span class="n">maxeval</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># initial energy only - no internal optimisation steps</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">el</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="n">el</span><span class="p">]</span>
+            
+    <span class="n">qv</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">qv</span><span class="o">.</span><span class="n">out_energy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>With small modifications, the function shown above can be adapted to return other quantities (eg. Jacobian) needed by the optimization algorithm.</p>
+</section>
+<section id="python-minimize-from-scipy-optimize">
+<h3>Python <code class="docutils literal notranslate"><span class="pre">minimize()</span></code> from <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code><a class="headerlink" href="#python-minimize-from-scipy-optimize" title="Permalink to this headline"></a></h3>
+<p>These classical methods have been tested with QB SDK:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;SLSQP&quot;</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">Bounds</span><span class="p">,</span><span class="n">minimize</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">theta0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.01</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">])</span>
+<span class="n">qvbound</span> <span class="o">=</span> <span class="n">Bounds</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">qbvqe</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="n">qv</span><span class="o">=</span><span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">sn</span> <span class="o">=</span> <span class="mi">1024</span>   <span class="c1"># Number of shots.  Set to 0 for non-stochastic VQE</span>
+
+    <span class="c1"># Deuteron Hamiltonian with aswap ansatz</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">qn</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Number of qubits</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">ham</span> <span class="o">=</span> <span class="s2">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + .21829 Z0 - 6.125 Z1&quot;</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">ansatz</span> <span class="o">=</span> <span class="s2">&quot;aswap&quot;</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">aswapn</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">maxeval</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># initial energy only - no internal optimisation steps</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">el</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="n">el</span><span class="p">]</span>
+            
+    <span class="n">qv</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">qv</span><span class="o">.</span><span class="n">out_energy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">qbvqe</span><span class="p">,</span> <span class="n">theta0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;SLSQP&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;maxiter&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;ftol&#39;</span><span class="p">:</span> <span class="mf">1e-9</span><span class="p">},</span> <span class="n">bounds</span><span class="o">=</span><span class="n">qvbound</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">nit</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NFT</span> <span class="pre">(Nakanishi-Fujii-Todo)</span></code></p>
+<p><a class="reference external" href="https://github.com/ken-nakanishi/nftopt">GitHub - ken-nakanishi/nftopt: Nakanishi-Fujii-Todo method for scipy.optimize</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">minimize</span>
+<span class="kn">from</span> <span class="nn">nftopt</span> <span class="kn">import</span> <span class="n">nakanishi_fujii_todo</span>
+<span class="kn">import</span> <span class="nn">qbos_op</span>
+
+<span class="k">def</span> <span class="nf">qbvqe</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="n">qv</span><span class="o">=</span><span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">sn</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># No shots - deterministic VQE</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">ham</span> <span class="o">=</span> <span class="s2">&quot;0.04207897647782276 + 0.17771287465139946 Z0 + 0.1777128746513994 Z1 + -0.24274280513140462 Z2 - 0.17059738328801052 Z0Z1 + 0.6622334 Z0Z1Z2Z3&quot;</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">qn</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># Number of qubits</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">ansatz</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">ansatz_depth</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">maxeval</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span>
+    
+    <span class="c1"># Adjust all elements of theta to be within [-pi,pi]</span>
+    <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">theta</span><span class="p">)):</span>
+        <span class="n">pz0</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="n">el</span><span class="p">]</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">pz0</span> <span class="o">&gt;</span> <span class="mf">3.14159</span><span class="p">)</span> <span class="p">:</span>
+            <span class="n">pz0</span> <span class="o">-=</span> <span class="mi">2</span><span class="o">*</span><span class="mf">3.14159</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">pz0</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">3.14159</span><span class="p">)</span> <span class="p">:</span>
+            <span class="n">pz0</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="mf">3.14159</span>
+        <span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">el</span><span class="p">]</span> <span class="o">=</span> <span class="n">pz0</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">qv</span><span class="o">.</span><span class="n">out_energy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">qbvqe</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.51</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">]</span><span class="o">*</span><span class="mi">24</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">method</span><span class="o">=</span><span class="n">nakanishi_fujii_todo</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;maxfev&#39;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">nit</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</li>
+<li><p>Other methods</p>
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html">Optimization and root finding (scipy.optimize) - SciPy v1.7.1 Manual</a></p>
+</li>
+</ul>
+</section>
+<section id="python-minimize-from-skquant-opt">
+<h3>Python <code class="docutils literal notranslate"><span class="pre">minimize()</span></code> from <code class="docutils literal notranslate"><span class="pre">skquant.opt</span></code><a class="headerlink" href="#python-minimize-from-skquant-opt" title="Permalink to this headline"></a></h3>
+<p>These methods have been tested with QB SDK:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;imfil&quot;</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">skquant.opt</span>
+
+<span class="n">theta0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.01</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">])</span>
+<span class="n">qvboundskq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">3.14159</span><span class="p">,</span><span class="mf">3.14159</span><span class="p">]],</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">qbvqe</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="n">qv</span><span class="o">=</span><span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">ND</span><span class="p">()</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">sn</span> <span class="o">=</span> <span class="mi">1024</span>   <span class="c1"># Number of shots.  Set to 0 for non-stochastic VQE</span>
+
+    <span class="c1"># Deuteron Hamiltonian with aswap ansatz</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">qn</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Number of qubits</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">ham</span> <span class="o">=</span> <span class="s2">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + .21829 Z0 - 6.125 Z1&quot;</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">ansatz</span> <span class="o">=</span> <span class="s2">&quot;aswap&quot;</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">aswapn</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">qv</span><span class="o">.</span><span class="n">maxeval</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># initial energy only - no internal optimisation steps</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="n">qv</span><span class="o">.</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">el</span><span class="p">]</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="n">el</span><span class="p">]</span>
+            
+    <span class="n">qv</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">qv</span><span class="o">.</span><span class="n">out_energy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">reskq</span><span class="p">,</span><span class="n">history</span> <span class="o">=</span> <span class="n">skquant</span><span class="o">.</span><span class="n">opt</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">qbvqe</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.01</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">]),</span> <span class="n">qvboundskq</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;imfil&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reskq</span><span class="o">.</span><span class="n">optval</span><span class="p">,</span> <span class="n">reskq</span><span class="o">.</span><span class="n">optpar</span><span class="p">,</span> <span class="n">history</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Other methods</p>
+<p><a class="reference external" href="https://scikit-quant.readthedocs.io/en/latest/snobfit.html">SnobFit - sckit-quant 0.8.1 documentation</a></p>
+</li>
+</ul>
+</section>
+<section id="built-in-qb-sdk-classical-optimizers">
+<h3>Built-in QB SDK classical optimizers<a class="headerlink" href="#built-in-qb-sdk-classical-optimizers" title="Permalink to this headline"></a></h3>
+<p>These internal options can be enabled by setting <code class="docutils literal notranslate"><span class="pre">maxeval</span></code> to a value &gt; 1.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">maxeval</span></code> sets the number of evaluations of the quantum kernel by the internal optimizer, default: 1 (no internal optimization loop)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code> sets the algorithm used by the internal optimizer, default: <code class="docutils literal notranslate"><span class="pre">&quot;nelder-mead&quot;</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;nelder-mead&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;l-bfgs&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;cobyla&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;adam&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;sgd&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;momentum-sgd&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;momentum-nestorov&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;rms-prop&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;gd&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">functol</span></code> sets the function tolerance, default: 1.0e-6</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gradient_strategy</span></code> sets the method for calculating gradients, default: <code class="docutils literal notranslate"><span class="pre">&quot;parameter-shift&quot;</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;parameter-shift&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;central&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;forward&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;backward&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;autodiff&quot;</span></code></p>
+<p>❗ <strong>Important:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;autodiff&quot;</span></code> is not compatible with <code class="docutils literal notranslate"><span class="pre">u</span></code> (the universal single-qubit rotation gate).</p>
+<p>In your ansatz, convert any <code class="docutils literal notranslate"><span class="pre">u</span></code> gates into the equivalent <code class="docutils literal notranslate"><span class="pre">Rx</span></code> and <code class="docutils literal notranslate"><span class="pre">Rz</span></code> gate sequence using this expression:</p>
+<p><span class="math notranslate nohighlight">\(U(\theta, \phi, \lambda) = R_z(\phi)*R_x(-0.5\pi)*R_z(\theta)*R_x(0.5\pi)*R_z(\lambda)\)</span></p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="obtaining-convergence-information-from-the-internal-qb-sdk-optimizers">
+<h3>Obtaining convergence information from the internal QB SDK optimizers<a class="headerlink" href="#obtaining-convergence-information-from-the-internal-qb-sdk-optimizers" title="Permalink to this headline"></a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">out_energy</span></code>: Energy trace</p>
+<p><code class="docutils literal notranslate"><span class="pre">out_energy[0][0][0]</span></code> is the optimum energy</p>
+<p><code class="docutils literal notranslate"><span class="pre">out_energy[0][0][1]</span></code> is the energy at the first iteration</p>
+<p><code class="docutils literal notranslate"><span class="pre">out_energy[0][0][m]</span></code> is the energy at iteration <code class="docutils literal notranslate"><span class="pre">m</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">out_energy[0][0][maxeval]</span></code> is the energy at the last iteration</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">out_theta</span></code>: Ansatz parameter trace</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">stride</span> <span class="pre">=</span> <span class="pre">len(theta)</span></code>, then element <code class="docutils literal notranslate"><span class="pre">k</span></code> of <code class="docutils literal notranslate"><span class="pre">theta</span></code> can be traced using these expressions:</p>
+<p><code class="docutils literal notranslate"><span class="pre">out_theta[0][0][k]</span></code> is the optimum value of the parameter</p>
+<p><code class="docutils literal notranslate"><span class="pre">out_theta[0][0][k+1*stride]</span></code> is the value of the parameter at the first iteration</p>
+<p><code class="docutils literal notranslate"><span class="pre">out_theta[0][0][k+m*stride]</span></code> is the value of the parameter at iteration <code class="docutils literal notranslate"><span class="pre">m</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">out_theta[0][0][k+maxeval*stride]</span></code> is the value of the parameter at the last iteration</p>
+</li>
+</ul>
+</section>
+<section id="example-1-two-qubit-deuteron-hamiltonian">
+<h3>Example 1: two-qubit deuteron Hamiltonian<a class="headerlink" href="#example-1-two-qubit-deuteron-hamiltonian" title="Permalink to this headline"></a></h3>
+<p>Let us now focus on a physical Hamiltonian matrix, where the ground state energy is known. The following represents the <span class="math notranslate nohighlight">\(N\)</span> = 2 (two-qubit) deuteron Hamiltonian: <code class="docutils literal notranslate"><span class="pre">5.907</span> <span class="pre">-</span> <span class="pre">2.1433</span> <span class="pre">X0X1</span> <span class="pre">-</span> <span class="pre">2.1433</span> <span class="pre">Y0Y1</span> <span class="pre">+</span> <span class="pre">.21829</span> <span class="pre">Z0</span> <span class="pre">-</span> <span class="pre">6.125</span> <span class="pre">Z1</span></code>. The energy is known to be -1.74886 in sector <span class="math notranslate nohighlight">\(q\)</span> = 1 and in the same energy unit as the Hamiltonian elements.</p>
+<p>Now, imagine you intend to run VQE for the above with initial angle <span class="math notranslate nohighlight">\(\theta_1\)</span> = 0.11, choosing the particle sector 1, setting the classical optimizer to the non-linear <a class="reference external" href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead</a> method with 100 maximum function evaluations and 1.0e-5 function tolerance.  The notebook attached below shows how this is done in QB SDK:</p>
+<p><a class="reference download internal" download="" href="../_downloads/2cfc329150b8fff2c2ba425ca8e82038/SDK_Deuteron2aswap.ipynb"><span class="xref download myst">SDK_Deuteron2aswap.ipynb</span></a></p>
+</section>
+<section id="example-2-a-four-qubit-classical-hamiltonian">
+<h3>Example 2: a four-qubit classical Hamiltonian<a class="headerlink" href="#example-2-a-four-qubit-classical-hamiltonian" title="Permalink to this headline"></a></h3>
+<p>Many graph optimization problems can be written in terms of a classical Hamiltonian, where it only depends on the spin in the <span class="math notranslate nohighlight">\(Z\)</span>-direction. For this, we recommend using either a QAOA ansatz if there is an exploitable substructure (e.g. a fixed Hamming distance of solution), or HEA (the default ansatz in QB SDK VQE) for generic problems.</p>
+<p>As an example, for the VQE Hamiltonian string given by <code class="docutils literal notranslate"><span class="pre">0.04207897647782276</span> <span class="pre">+</span> <span class="pre">0.17771287465139946</span> <span class="pre">Z0</span> <span class="pre">+</span> <span class="pre">0.1777128746513994</span> <span class="pre">Z1</span> <span class="pre">+</span> <span class="pre">-0.24274280513140462</span> <span class="pre">Z2</span> <span class="pre">-</span> <span class="pre">0.17059738328801052</span> <span class="pre">Z0Z1</span> <span class="pre">+</span> <span class="pre">0.6622334</span> <span class="pre">Z0Z1Z2Z3</span></code> with minimum eigenvalue -1.38892036:</p>
+<p><a class="reference download internal" download="" href="../_downloads/ea4ba99bdd0f9392ba8324ae53c9539e/SDK_VQEClassical4default.ipynb"><span class="xref download myst">SDK_VQEClassical4default.ipynb</span></a></p>
+</section>
+<section id="example-3-same-setup-as-for-example-2-except-specifying-a-file-that-contains-a-user-defined-ansatz">
+<h3>Example 3: same setup as for Example 2, except specifying a file that contains a user-defined ansatz<a class="headerlink" href="#example-3-same-setup-as-for-example-2-except-specifying-a-file-that-contains-a-user-defined-ansatz" title="Permalink to this headline"></a></h3>
+<p><a class="reference download internal" download="" href="../_downloads/d460b2f6807307cd48ce99e1423184f3/SDK_VQECustom3.ipynb"><span class="xref download myst">SDK_VQECustom3.ipynb</span></a></p>
+</section>
+<section id="example-4-finding-the-ground-state-energy-of-h-2-using-uccsd-ansatz">
+<h3>Example 4:  finding the ground state energy of <span class="math notranslate nohighlight">\(H_2\)</span> using UCCSD ansatz<a class="headerlink" href="#example-4-finding-the-ground-state-energy-of-h-2-using-uccsd-ansatz" title="Permalink to this headline"></a></h3>
+<p><a class="reference download internal" download="" href="../_downloads/bea714bf935be3b365f92bcf2e2c5d79/SDK_H2_UCCSD.ipynb"><span class="xref download myst">SDK_H2_UCCSD.ipynb</span></a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Quantum Brilliance Pty Ltd.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

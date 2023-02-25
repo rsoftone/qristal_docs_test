@@ -1,0 +1,13 @@
+
+.. _namespace_xacc:
+
+Namespace xacc
+==============
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+

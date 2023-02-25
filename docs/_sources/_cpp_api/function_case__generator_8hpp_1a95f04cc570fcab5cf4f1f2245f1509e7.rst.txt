@@ -1,0 +1,14 @@
+.. _exhale_function_case__generator_8hpp_1a95f04cc570fcab5cf4f1f2245f1509e7:
+
+Function qb::vqee::hardwareEfficientCircuit
+===========================================
+
+- Defined in :ref:`file_core_include_qb_core_optimization_vqee_case_generator.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: qb::vqee::hardwareEfficientCircuit(const int&, const int&)
+   :project: My Project
