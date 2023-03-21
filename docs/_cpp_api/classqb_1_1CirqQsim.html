@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Class CirqQsim &mdash; Quantum SDK  documentation</title>
@@ -30,16 +30,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Quantum SDK
-              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+            <a href="../index.html" class="icon icon-home"> Quantum SDK
+            <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -53,7 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/quantum_computing.html">Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in QB SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul class="current">
@@ -100,7 +96,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
           <li class="breadcrumb-item"><a href="library_root.html">C++ API</a></li>
       <li class="breadcrumb-item active">Class CirqQsim</li>
       <li class="wy-breadcrumbs-aside">
@@ -141,7 +137,7 @@
 <span id="_CPPv3NK2qb8CirqQsim4nameEv"></span><span id="_CPPv2NK2qb8CirqQsim4nameEv"></span><span id="qb::CirqQsim::nameC"></span><span class="target" id="classqb_1_1CirqQsim_1a3e683f291edb07c3e0bc26b5de8bf1df"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK2qb8CirqQsim4nameEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get the name of the backend accelerator. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Name string </p>
 </dd>
 </dl>
@@ -152,7 +148,7 @@
 <span id="_CPPv3NK2qb8CirqQsim11descriptionEv"></span><span id="_CPPv2NK2qb8CirqQsim11descriptionEv"></span><span id="qb::CirqQsim::descriptionC"></span><span class="target" id="classqb_1_1CirqQsim_1af060f35b8c38594d3dfb9fd065bc1de4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK2qb8CirqQsim11descriptionEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get the service description. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Description string </p>
 </dd>
 </dl>
@@ -163,7 +159,7 @@
 <span id="_CPPv3N2qb8CirqQsim10initializeERKN4xacc16HeterogeneousMapE"></span><span id="_CPPv2N2qb8CirqQsim10initializeERKN4xacc16HeterogeneousMapE"></span><span id="qb::CirqQsim::initialize__xacc::HeterogeneousMapCR"></span><span class="target" id="classqb_1_1CirqQsim_1a8e84b2354995d953b62f0b59eb371dd7"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initialize</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">HeterogeneousMap</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">params</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2qb8CirqQsim10initializeERKN4xacc16HeterogeneousMapE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Initialize the backend accelerator. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>params</strong> – Initialization parameters </p>
 </dd>
 </dl>
@@ -174,7 +170,7 @@
 <span id="_CPPv3N2qb8CirqQsim19updateConfigurationERKN4xacc16HeterogeneousMapE"></span><span id="_CPPv2N2qb8CirqQsim19updateConfigurationERKN4xacc16HeterogeneousMapE"></span><span id="qb::CirqQsim::updateConfiguration__xacc::HeterogeneousMapCR"></span><span class="target" id="classqb_1_1CirqQsim_1aa0f12938f1e0817e5ab250b76bffe0b3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">updateConfiguration</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">HeterogeneousMap</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">config</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2qb8CirqQsim19updateConfigurationERKN4xacc16HeterogeneousMapE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Update the accelerator configurations. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>config</strong> – Update parameters </p>
 </dd>
 </dl>
@@ -182,10 +178,10 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2qb8CirqQsim17configurationKeysEv">
-<span id="_CPPv3N2qb8CirqQsim17configurationKeysEv"></span><span id="_CPPv2N2qb8CirqQsim17configurationKeysEv"></span><span id="qb::CirqQsim::configurationKeys"></span><span class="target" id="classqb_1_1CirqQsim_1abe2118b1dd614245d5d0e8d5a3022a79"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">configurationKeys</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2qb8CirqQsim17configurationKeysEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N2qb8CirqQsim17configurationKeysEv"></span><span id="_CPPv2N2qb8CirqQsim17configurationKeysEv"></span><span id="qb::CirqQsim::configurationKeys"></span><span class="target" id="classqb_1_1CirqQsim_1a06c3d53e99933a9e88b337d4672d7da8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">configurationKeys</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2qb8CirqQsim17configurationKeysEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get the list of available configurations. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>List of available configurations </p>
 </dd>
 </dl>
@@ -196,7 +192,7 @@
 <span id="_CPPv3N2qb8CirqQsim11getBitOrderEv"></span><span id="_CPPv2N2qb8CirqQsim11getBitOrderEv"></span><span id="qb::CirqQsim::getBitOrder"></span><span class="target" id="classqb_1_1CirqQsim_1a8512b8a46d3e4197f49bf08f16be3f45"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">BitOrder</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getBitOrder</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2qb8CirqQsim11getBitOrderEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get the Bit Order configuration. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Bit order </p>
 </dd>
 </dl>
@@ -207,7 +203,7 @@
 <span id="_CPPv3N2qb8CirqQsim13getPropertiesEv"></span><span id="_CPPv2N2qb8CirqQsim13getPropertiesEv"></span><span id="qb::CirqQsim::getProperties"></span><span class="target" id="classqb_1_1CirqQsim_1a58e3bea9346039b1e5d33b7412e822b0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">HeterogeneousMap</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getProperties</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2qb8CirqQsim13getPropertiesEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get any backend-specific properties. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Backend properties </p>
 </dd>
 </dl>
@@ -218,7 +214,7 @@
 <span id="_CPPv3N2qb8CirqQsim7executeENSt10shared_ptrIN4xacc17AcceleratorBufferEEEKNSt10shared_ptrIN4xacc20CompositeInstructionEEE"></span><span id="_CPPv2N2qb8CirqQsim7executeENSt10shared_ptrIN4xacc17AcceleratorBufferEEEKNSt10shared_ptrIN4xacc20CompositeInstructionEEE"></span><span id="qb::CirqQsim::execute__std::shared_ptr:xacc::AcceleratorBuffer:.std::shared_ptr:xacc::CompositeInstruction:C"></span><span class="target" id="classqb_1_1CirqQsim_1a184e1f76d5fdf84c15a8985ad47c09b6"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">execute</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">AcceleratorBuffer</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">buffer</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CompositeInstruction</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">compositeInstruction</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2qb8CirqQsim7executeENSt10shared_ptrIN4xacc17AcceleratorBufferEEEKNSt10shared_ptrIN4xacc20CompositeInstructionEEE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Execute/emulate a single circuit. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>buffer</strong> – Buffer to store the execution results </p></li>
 <li><p><strong>compositeInstruction</strong> – Input circuit </p></li>
@@ -229,10 +225,10 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2qb8CirqQsim7executeENSt10shared_ptrIN4xacc17AcceleratorBufferEEEKNSt6vectorINSt10shared_ptrIN4xacc20CompositeInstructionEEEEE">
-<span id="_CPPv3N2qb8CirqQsim7executeENSt10shared_ptrIN4xacc17AcceleratorBufferEEEKNSt6vectorINSt10shared_ptrIN4xacc20CompositeInstructionEEEEE"></span><span id="_CPPv2N2qb8CirqQsim7executeENSt10shared_ptrIN4xacc17AcceleratorBufferEEEKNSt6vectorINSt10shared_ptrIN4xacc20CompositeInstructionEEEEE"></span><span id="qb::CirqQsim::execute__std::shared_ptr:xacc::AcceleratorBuffer:.std::vector:std::shared_ptr:xacc::CompositeInstruction::C"></span><span class="target" id="classqb_1_1CirqQsim_1af1171e57493366a39ef02b3a4048fb68"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">execute</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">AcceleratorBuffer</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">buffer</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CompositeInstruction</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">compositeInstructions</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2qb8CirqQsim7executeENSt10shared_ptrIN4xacc17AcceleratorBufferEEEKNSt6vectorINSt10shared_ptrIN4xacc20CompositeInstructionEEEEE" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N2qb8CirqQsim7executeENSt10shared_ptrIN4xacc17AcceleratorBufferEEEKNSt6vectorINSt10shared_ptrIN4xacc20CompositeInstructionEEEEE"></span><span id="_CPPv2N2qb8CirqQsim7executeENSt10shared_ptrIN4xacc17AcceleratorBufferEEEKNSt6vectorINSt10shared_ptrIN4xacc20CompositeInstructionEEEEE"></span><span id="qb::CirqQsim::execute__std::shared_ptr:xacc::AcceleratorBuffer:.std::vector:std::shared_ptr:xacc::CompositeInstruction::C"></span><span class="target" id="classqb_1_1CirqQsim_1a3648e7b59858c03d910dd21133c884ac"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">execute</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">AcceleratorBuffer</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">buffer</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CompositeInstruction</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">compositeInstructions</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N2qb8CirqQsim7executeENSt10shared_ptrIN4xacc17AcceleratorBufferEEEKNSt6vectorINSt10shared_ptrIN4xacc20CompositeInstructionEEEEE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Execute/emulate an array of circuits. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>buffer</strong> – Buffer to store the execution results </p></li>
 <li><p><strong>compositeInstructions</strong> – Input circuits </p></li>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Class CircuitBuilder &mdash; Quantum SDK  documentation</title>
@@ -18,8 +18,8 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -32,16 +32,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Quantum SDK
-              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+            <a href="../index.html" class="icon icon-home"> Quantum SDK
+            <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,7 +51,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/quantum_computing.html">Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in QB SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul class="current">
@@ -102,7 +98,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
           <li class="breadcrumb-item"><a href="library_root.html">C++ API</a></li>
       <li class="breadcrumb-item active">Class CircuitBuilder</li>
       <li class="wy-breadcrumbs-aside">
@@ -142,7 +138,7 @@
 <dd><p>Constructor. </p>
 <p>A constructor for the <a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a> class. Creates a circuit from a specified list of instructions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>composite</strong> – A pointer to a xacc::CompositeInstruction object [shared ptr] </p>
 </dd>
 </dl>
@@ -150,10 +146,10 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2qb14CircuitBuilder3getEv">
-<span id="_CPPv3N2qb14CircuitBuilder3getEv"></span><span id="_CPPv2N2qb14CircuitBuilder3getEv"></span><span id="qb::CircuitBuilder::get"></span><span class="target" id="classqb_1_1CircuitBuilder_1a6f02c3aef4b7df6df6da3b3ad61c972f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CompositeInstruction</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder3getEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N2qb14CircuitBuilder3getEv"></span><span id="_CPPv2N2qb14CircuitBuilder3getEv"></span><span id="qb::CircuitBuilder::get"></span><span class="target" id="classqb_1_1CircuitBuilder_1a7e7cc94afa40c3782dddf59bc4ba855c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CompositeInstruction</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder3getEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>return the list of instructions comprising the circuit </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A pointer to the xacc::CompositeInstruction (list of instructions) that defines the circuit. </p>
 </dd>
 </dl>
@@ -170,7 +166,7 @@
 <span id="_CPPv3N2qb14CircuitBuilder6appendER14CircuitBuilder"></span><span id="_CPPv2N2qb14CircuitBuilder6appendER14CircuitBuilder"></span><span id="qb::CircuitBuilder::append__CircuitBuilderR"></span><span class="target" id="classqb_1_1CircuitBuilder_1a7e93a8469e808705586b215be90d3bd6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">append</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2qb14CircuitBuilderE" title="qb::CircuitBuilder"><span class="n"><span class="pre">CircuitBuilder</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder6appendER14CircuitBuilder" title="Permalink to this definition"></a><br /></dt>
 <dd><p>append another <a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a> object to this one </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>other</strong> – the circuit to be appended [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p>
 </dd>
 </dl>
@@ -183,12 +179,10 @@
 <p>This method adds a Hadamard (H) gate to the circuit.</p>
 <p>The H gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-H\ket{0} \rightarrow \ket{+}\\H\ket{1} \rightarrow \ket{-}
-\end{aligned}\end{align} \]</div>
+\[ H\ket{0} \rightarrow \ket{+} H\ket{1} \rightarrow \ket{-} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -201,12 +195,10 @@ H\ket{0} \rightarrow \ket{+}\\H\ket{1} \rightarrow \ket{-}
 <p>This method adds a Pauli-X (X) gate to the circuit.</p>
 <p>The X gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-X\ket{0} \rightarrow \ket{1}\\X\ket{1} \rightarrow \ket{0}
-\end{aligned}\end{align} \]</div>
+\[ X\ket{0} \rightarrow \ket{1} X\ket{1} \rightarrow \ket{0} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -219,12 +211,10 @@ X\ket{0} \rightarrow \ket{1}\\X\ket{1} \rightarrow \ket{0}
 <p>This method adds a Pauli-Y (Y) gate to the circuit.</p>
 <p>The Y gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-Y\ket{0} \rightarrow -i\ket{1}\\Y\ket{1} \rightarrow i\ket{0}
-\end{aligned}\end{align} \]</div>
+\[ Y\ket{0} \rightarrow -i\ket{1} Y\ket{1} \rightarrow i\ket{0} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -237,12 +227,10 @@ Y\ket{0} \rightarrow -i\ket{1}\\Y\ket{1} \rightarrow i\ket{0}
 <p>This method adds a Pauli-Z (Z) gate to the circuit.</p>
 <p>The Z gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-Z\ket{0} \rightarrow \ket{0}\\Z\ket{1} \rightarrow -\ket{1}
-\end{aligned}\end{align} \]</div>
+\[ Z\ket{0} \rightarrow \ket{0} Z\ket{1} \rightarrow -\ket{1} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -255,12 +243,10 @@ Z\ket{0} \rightarrow \ket{0}\\Z\ket{1} \rightarrow -\ket{1}
 <p>This method adds a T gate to the circuit.</p>
 <p>The T gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-T\ket{0} \rightarrow \ket{0}\\T\ket{1} \rightarrow e^{i\pi/4}\ket{1}
-\end{aligned}\end{align} \]</div>
+\[ T\ket{0} \rightarrow \ket{0} T\ket{1} \rightarrow e^{i\pi/4}\ket{1} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -273,12 +259,10 @@ T\ket{0} \rightarrow \ket{0}\\T\ket{1} \rightarrow e^{i\pi/4}\ket{1}
 <p>This method adds an S gate to the circuit.</p>
 <p>The S gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-S\ket{0} \rightarrow \ket{0}\\S\ket{1} \rightarrow i\ket{1}
-\end{aligned}\end{align} \]</div>
+\[ S\ket{0} \rightarrow \ket{0} S\ket{1} \rightarrow i\ket{1} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -291,12 +275,10 @@ S\ket{0} \rightarrow \ket{0}\\S\ket{1} \rightarrow i\ket{1}
 <p>This method adds an inverse of the T gate (Tdg) to the circuit.</p>
 <p>The Tdg gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-Tdg\ket{0} \rightarrow \ket{0}\\Tdg\ket{1} \rightarrow e^{-i\pi/4}\ket{1}
-\end{aligned}\end{align} \]</div>
+\[ Tdg\ket{0} \rightarrow \ket{0} Tdg\ket{1} \rightarrow e^{-i\pi/4}\ket{1} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -309,12 +291,10 @@ Tdg\ket{0} \rightarrow \ket{0}\\Tdg\ket{1} \rightarrow e^{-i\pi/4}\ket{1}
 <p>This method adds an inverse of the S gate (Sdg) to the circuit.</p>
 <p>The Sdg gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-Sdg\ket{0} \rightarrow \ket{1}\\Sdg\ket{1} \rightarrow i\ket{1}
-\end{aligned}\end{align} \]</div>
+\[ Sdg\ket{0} \rightarrow \ket{1} Sdg\ket{1} \rightarrow i\ket{1} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -327,12 +307,10 @@ Sdg\ket{0} \rightarrow \ket{1}\\Sdg\ket{1} \rightarrow i\ket{1}
 <p>This method adds an x-axis rotation (RX) gate to the circuit.</p>
 <p>The RX gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-RX(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} - i\sin(\theta/2)\ket{1}\\RX(\theta)\ket{1} \rightarrow -i\sin(\theta/2)\ket{0} + \cos(\theta/2)\ket{1}
-\end{aligned}\end{align} \]</div>
+\[ RX(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} - i\sin(\theta/2)\ket{1} RX(\theta)\ket{1} \rightarrow -i\sin(\theta/2)\ket{0} + \cos(\theta/2)\ket{1} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p></li>
 <li><p><strong>theta</strong> – the angle of rotation about the x-axis [double] </p></li>
@@ -348,12 +326,10 @@ RX(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} - i\sin(\theta/2)\ket{1}\\RX
 <p>This method adds a y-axis rotation (RY) gate to the circuit.</p>
 <p>The RY gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-RY(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + \sin(\theta/2)\ket{1}\\RY(\theta)\ket{1} \rightarrow -\sin(\theta/2)\ket{0} + \cos(\theta/2)\ket{1}
-\end{aligned}\end{align} \]</div>
+\[ RY(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + \sin(\theta/2)\ket{1} RY(\theta)\ket{1} \rightarrow -\sin(\theta/2)\ket{0} + \cos(\theta/2)\ket{1} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p></li>
 <li><p><strong>theta</strong> – the angle of rotation about the y-axis [double] </p></li>
@@ -369,12 +345,10 @@ RY(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + \sin(\theta/2)\ket{1}\\RY(
 <p>This method adds a z-axis rotation (RZ) gate to the circuit.</p>
 <p>The RZ gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-RZ(\theta)\ket{0} \rightarrow e^{-i\theta/2}\ket{0}\\RZ(\theta)\ket{1} \rightarrow e^{i\theta/2}\ket{1}
-\end{aligned}\end{align} \]</div>
+\[ RZ(\theta)\ket{0} \rightarrow e^{-i\theta/2}\ket{0} RZ(\theta)\ket{1} \rightarrow e^{i\theta/2}\ket{1} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p></li>
 <li><p><strong>theta</strong> – the angle of rotation about the z-axis [double] </p></li>
@@ -390,12 +364,10 @@ RZ(\theta)\ket{0} \rightarrow e^{-i\theta/2}\ket{0}\\RZ(\theta)\ket{1} \rightarr
 <p>This method adds a phase (U1) gate to the circuit.</p>
 <p>The U1 gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-U1(\theta)\ket{0} \rightarrow \ket{0}\\U1(\theta)\ket{1} \rightarrow e^{i\theta}\ket{1}
-\end{aligned}\end{align} \]</div>
+\[ U1(\theta)\ket{0} \rightarrow \ket{0} U1(\theta)\ket{1} \rightarrow e^{i\theta}\ket{1} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p></li>
 <li><p><strong>theta</strong> – the value of the phase [double] </p></li>
@@ -411,12 +383,10 @@ U1(\theta)\ket{0} \rightarrow \ket{0}\\U1(\theta)\ket{1} \rightarrow e^{i\theta}
 <p>This method adds an arbitrary single qubit gate to the circuit.</p>
 <p>The U3 gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
-U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin(\theta/2)\ket{1}\\U3(\theta,\phi,\lambda)\ket{1} \rightarrow -e^{i\lambda}\sin(\theta/2)\ket{0} + e^{i(\phi+\lambda)}\cos(\theta/2)\ket{1}
-\end{aligned}\end{align} \]</div>
+\[ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin(\theta/2)\ket{1} U3(\theta,\phi,\lambda)\ket{1} \rightarrow -e^{i\lambda}\sin(\theta/2)\ket{0} + e^{i(\phi+\lambda)}\cos(\theta/2)\ket{1} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p></li>
 <li><p><strong>theta</strong> – the angle of rotation about the z-axis [double] </p></li>
@@ -432,10 +402,10 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a controlled-X (CNOT) gate to the circuit.</p>
 <p>The CNOT gate performs an X gate on the target qubit conditional on the control qubit being in the <span class="math notranslate nohighlight">\(\ket{1}\)</span> state. That is:</p>
 <p><div class="math notranslate nohighlight">
-\[CNOT\ket{ab} \rightarrow \ket{a}X^a \ket{b}\]</div>
+\[ CNOT\ket{ab} \rightarrow \ket{a}X^a \ket{b} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctrl_idx</strong> – the index of the control qubit [size_t] </p></li>
 <li><p><strong>target_idx</strong> – the index of the target qubit [size_t] </p></li>
@@ -451,10 +421,10 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a multi-controlled X (MCX) gate to the circuit.</p>
 <p>The MCX gate performs an X gate on the target qubit conditional on all control qubits being in the <span class="math notranslate nohighlight">\(\ket{1}\)</span> state. That is:</p>
 <p><div class="math notranslate nohighlight">
-\[MCX\ket{c_1...c_Nt} \rightarrow \ket{c_1...c_N} X^{c_1...c_N} \ket{t}\]</div>
+\[ MCX\ket{c_1...c_Nt} \rightarrow \ket{c_1...c_N} X^{c_1...c_N} \ket{t} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctrl_inds</strong> – the indices of the control qubits [vector of int] </p></li>
 <li><p><strong>target_idx</strong> – the index of the target qubit [size_t] </p></li>
@@ -470,10 +440,10 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a controlled version of an arbitrary unitary (CU) to the circuit.</p>
 <p>The CU gate implements the U gate on the target qubits conditional on all control qubits being in the <span class="math notranslate nohighlight">\(\ket{1}\)</span> state.</p>
 <p><div class="math notranslate nohighlight">
-\[CU\ket{c_1...c_Nt_1...t_M} \rightarrow \ket{c_1...c_N} U^{c_1...c_N} \ket{t_1...t_M}\]</div>
+\[ CU\ket{c_1...c_Nt_1...t_M} \rightarrow \ket{c_1...c_N} U^{c_1...c_N} \ket{t_1...t_M} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>circ</strong> – the circuit for the unitary operation U [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>ctrl_inds</strong> – the indices of the control qubits [vector of int] </p></li>
@@ -489,10 +459,10 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a controlled-Z (CZ) gate to the circuit.</p>
 <p>The CZ gate performs a Z gate on the target qubit conditional on the control qubit being in the <span class="math notranslate nohighlight">\(\ket{1}\)</span> state. That is</p>
 <p><div class="math notranslate nohighlight">
-\[CZ\ket{ab} \rightarrow \ket{a}Z^a \ket{b}\]</div>
+\[ CZ\ket{ab} \rightarrow \ket{a}Z^a \ket{b} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctrl_idx</strong> – the index of the control qubit [size_t] </p></li>
 <li><p><strong>target_idx</strong> – the index of the target qubit [size_t] </p></li>
@@ -508,10 +478,10 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a controlled-H (CH) gate to the circuit.</p>
 <p>The CH gate performs an H gate on the target qubit conditional on the control qubit being in the <span class="math notranslate nohighlight">\(\ket{1}\)</span> state. That is:</p>
 <p><div class="math notranslate nohighlight">
-\[CH\ket{ab} \rightarrow \ket{a}H^a \ket{b}\]</div>
+\[ CH\ket{ab} \rightarrow \ket{a}H^a \ket{b} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctrl_idx</strong> – the index of the control qubit [size_t] </p></li>
 <li><p><strong>target_idx</strong> – the index of the target qubit [size_t] </p></li>
@@ -527,10 +497,10 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a controlled-U1 (CPhase) gate to the circuit.</p>
 <p>The CPHase gate performs a U1 gate on the target qubit conditional on the control qubit being in the <span class="math notranslate nohighlight">\(\ket{1}\)</span> state. That is:</p>
 <p><div class="math notranslate nohighlight">
-\[CPhase(\theta)\ket{ab} \rightarrow \ket{a}U1(\theta)^a \ket{b}\]</div>
+\[ CPhase(\theta)\ket{ab} \rightarrow \ket{a}U1(\theta)^a \ket{b} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctrl_idx</strong> – the index of the control qubit [size_t] </p></li>
 <li><p><strong>target_idx</strong> – the index of the target qubit [size_t] </p></li>
@@ -547,10 +517,10 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a SWAP gate to the circuit.</p>
 <p>The SWAP gate is used to swap the quantum state of two qubits. That is, it acts as:</p>
 <p><div class="math notranslate nohighlight">
-\[SWAP\ket{\psi}\ket{\phi} \rightarrow \ket{\phi}\ket{\psi}\]</div>
+\[ SWAP\ket{\psi}\ket{\phi} \rightarrow \ket{\phi}\ket{\psi} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>q1</strong> – the index of the first qubit [size_t] </p></li>
 <li><p><strong>q2</strong> – the index of the second qubit [size_t] </p></li>
@@ -565,7 +535,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <dd><p>Measurement. </p>
 <p>This method is used to indicate a qubit in the circuit should be measured.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit to be measured [size_t] </p>
 </dd>
 </dl>
@@ -577,7 +547,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <dd><p>Measure all qubits. </p>
 <p>This method adds a measurement for all qubits involved in the circuit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>NUM_QUBITS</strong> – the number of qubits in the circuit [int] [optional] </p>
 </dd>
 </dl>
@@ -589,10 +559,10 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <dd><p>Quantum Fourier Transform. </p>
 <p>This method adds the Quantum Fourier Transform (QFT) to the circuit. This is a quantum analogue of the discrete Fourier Transform. It can be described by its action on basis states:</p>
 <p><div class="math notranslate nohighlight">
-\[QFT\ket{x} \rightarrow \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} \omega_N^{xk} \ket{k}\]</div>
+\[ QFT\ket{x} \rightarrow \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} \omega_N^{xk} \ket{k} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>qubit_idxs</strong> – the indices of the target qubits [vector of int] </p>
 </dd>
 </dl>
@@ -604,7 +574,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <dd><p>Inverse Quantum Fourier Transform. </p>
 <p>This method adds the inverse of the Quantum Fourier Transform (IQFT) to the circuit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>qubit_idxs</strong> – the indices of the target qubits [vector of int] </p>
 </dd>
 </dl>
@@ -617,11 +587,11 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds the Quantum Phase Estimation (QPE) sub-routine to the circuit.</p>
 <p>Given some unitary operator U and and eigenvector <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> of U we can write</p>
 <p><div class="math notranslate nohighlight">
-\[U\ket{\psi} = e^{2\pi i \theta}\ket{\psi}\]</div>
+\[ U\ket{\psi} = e^{2\pi i \theta}\ket{\psi} \]</div>
 </p>
 <p>for some value of <span class="math notranslate nohighlight">\( \theta \)</span>. QPE is used to provide a k-bit approximation to <span class="math notranslate nohighlight">\( \theta \)</span> storing the result in an evaluation register whilst leaving <span class="math notranslate nohighlight">\( \ket{\psi} \)</span> unchanged.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>oracle</strong> – The unitary operator U involved in the QPE routine [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>num_evaluation_qubits</strong> – The number of bits k used to approximate the phase [int] </p></li>
@@ -639,12 +609,12 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds the canonical version of Quantum Amplitude Estimation (QAE) to the circuit.</p>
 <p>Given a quantum state split into a good subspace and a bad subspace</p>
 <p><div class="math notranslate nohighlight">
-\[\ket{\psi} = a\ket{good} + b\ket{bad} = A\ket{0}\]</div>
+\[ \ket{\psi} = a\ket{good} + b\ket{bad} = A\ket{0} \]</div>
 </p>
 <p>the QAE sub-routine provides a k-bit approximation to the amplitude of the good subspace, a.</p>
 <p>QAE works by using the Grovers operator Q, which amplifies the amplitude of the good subspace, as the unitary input to a Quantum Phase Estimation routine.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>state_prep</strong> – The circuit A used to prepare the input state [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>grover_op</strong> – The circuit for the Grovers operator Q for the good subspace [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
@@ -665,7 +635,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <dd><p>Multi Controlled Unitary With Ancilla. </p>
 <p>This method decomposes a multi-controlled unitary into Toffoli gates and the unitary itself, with the use of ancilla qubits. With N control qubits there should be N-1 ancilla. The resulting instructions are added to the circuit (AMCU gate).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>U</strong> – The unitary operation [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>qubits_control</strong> – The indices of the control qubits [vector of int] </p></li>
@@ -681,7 +651,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <dd><p>Run Canonical Amplitude Estimation. </p>
 <p>This method sets up and executes an instance of the canonical amplitude estimation circuit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>state_prep</strong> – The circuit A used to prepare the input state [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>grover_op</strong> – The circuit for the Grovers operator Q for the good subspace [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
@@ -693,7 +663,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <li><p><strong>acc_name</strong> – The name of the accelerator used to execute the circuit [string]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The output buffer of the execution </p>
 </dd>
 </dl>
@@ -705,15 +675,15 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <dd><p>Run Canonical Amplitude Estimation with Oracle. </p>
 <p>This method sets up and executes an instance of the canonical amplitude estimation circuit, but instead of providing the grovers_op Q, we provide the oracle circuit O which acts as</p>
 <p><div class="math notranslate nohighlight">
-\[O\ket{\psi} = O(a\ket{good} + b\ket{bad}) = -a\ket{good} + b\ket{bad}\]</div>
+\[ O\ket{\psi} = O(a\ket{good} + b\ket{bad}) = -a\ket{good} + b\ket{bad} \]</div>
 </p>
 <p>The Grovvers operator Q is then constructed within the method from O and the state_prep circuit A as</p>
 <p><div class="math notranslate nohighlight">
-\[Q = A^\dagger S_0 A O\]</div>
+\[ Q = A^\dagger S_0 A O \]</div>
 </p>
 <p>where <span class="math notranslate nohighlight">\( S_0 \)</span> is an easily implementable rotation about the all 0 state <span class="math notranslate nohighlight">\( \ket{000....0} \)</span>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>state_prep</strong> – The circuit A used to prepare the input state [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>oracle</strong> – The oracle circuit O that marks the good subspace [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
@@ -725,7 +695,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <li><p><strong>acc_name</strong> – The name of the accelerator used to execute the circuit [string]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The output buffer of the execution </p>
 </dd>
 </dl>
@@ -738,11 +708,11 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method sets up and executes an instance of the maximum-likelihood amplitude estimation circuit.</p>
 <p>Given the state</p>
 <p><div class="math notranslate nohighlight">
-\[\ket{\psi} = a\ket{good} + b\ket{bad}\]</div>
+\[ \ket{\psi} = a\ket{good} + b\ket{bad} \]</div>
 </p>
 <p>MLQAE is an alternative to canonical QAE to find an estimate for the amplitude of the good subspace, a. It works by performing several runs of amplitude amplification with various iterations and recording the number of <span class="math notranslate nohighlight">\( \ket{good} \)</span> shots measured. Given this data, it finds the value of a that maximises the likelihood function.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>state_prep</strong> – The circuit A used to prepare the input state [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>oracle</strong> – The oracle circuit O that marks the good subspace [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
@@ -754,7 +724,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <li><p><strong>acc_name</strong> – The name of the accelerator used to execute the circuit [string]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The output buffer of the execution </p>
 </dd>
 </dl>
@@ -767,19 +737,19 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a number of Grovers operators to the circuit.</p>
 <p>Grovers operators are used to amplify the amplitude of some desired subspace of your quantum state. Given a state</p>
 <p><div class="math notranslate nohighlight">
-\[\ket{\psi} = a\ket{good} + b\ket{bad} = A\ket{0}\]</div>
+\[ \ket{\psi} = a\ket{good} + b\ket{bad} = A\ket{0} \]</div>
 </p>
 <p>and an oracle unitary O that acts as</p>
 <p><div class="math notranslate nohighlight">
-\[O\ket{\psi} = -a\ket{good} + b\ket{bad}\]</div>
+\[ O\ket{\psi} = -a\ket{good} + b\ket{bad} \]</div>
 </p>
 <p>the Grovers operator that can be used to amplify the amplitude of the good state is</p>
 <p><div class="math notranslate nohighlight">
-\[Q = A^\dagger S_0 A O\]</div>
+\[ Q = A^\dagger S_0 A O \]</div>
 </p>
 <p>where <span class="math notranslate nohighlight">\( S_0 \)</span> is an easily implemented reflection about the all zero state.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>oracle</strong> – The oracle circuit O that marks the good subspace [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>state_prep</strong> – The circuit A used to prepare the input state [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
@@ -807,7 +777,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2qb14CircuitBuilder6WPrimeEiNSt6vectorIiEENSt6vectorIiEENSt6vectorINSt6vectorIfEEEENSt6vectorIiEEibNSt6vectorIiEE">
-<span id="_CPPv3N2qb14CircuitBuilder6WPrimeEiNSt6vectorIiEENSt6vectorIiEENSt6vectorINSt6vectorIfEEEENSt6vectorIiEEibNSt6vectorIiEE"></span><span id="_CPPv2N2qb14CircuitBuilder6WPrimeEiNSt6vectorIiEENSt6vectorIiEENSt6vectorINSt6vectorIfEEEENSt6vectorIiEEibNSt6vectorIiEE"></span><span id="qb::CircuitBuilder::WPrime__i.std::vector:i:.std::vector:i:.std::vector:std::vector:float::.std::vector:i:.i.b.std::vector:i:"></span><span class="target" id="classqb_1_1CircuitBuilder_1a36baf6066eb8aa2a4f75236fe3f29edb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WPrime</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">iteration</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qubits_next_metric</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qubits_next_letter</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">probability_table</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qubits_init_null</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">null_integer</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">use_ancilla</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qubits_ancilla</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder6WPrimeEiNSt6vectorIiEENSt6vectorIiEENSt6vectorINSt6vectorIfEEEENSt6vectorIiEEibNSt6vectorIiEE" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N2qb14CircuitBuilder6WPrimeEiNSt6vectorIiEENSt6vectorIiEENSt6vectorINSt6vectorIfEEEENSt6vectorIiEEibNSt6vectorIiEE"></span><span id="_CPPv2N2qb14CircuitBuilder6WPrimeEiNSt6vectorIiEENSt6vectorIiEENSt6vectorINSt6vectorIfEEEENSt6vectorIiEEibNSt6vectorIiEE"></span><span id="qb::CircuitBuilder::WPrime__i.std::vector:i:.std::vector:i:.std::vector:std::vector:float::.std::vector:i:.i.b.std::vector:i:"></span><span class="target" id="classqb_1_1CircuitBuilder_1a2844a713fec3db60319e66e6829e99c0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WPrime</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">iteration</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qubits_next_metric</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qubits_next_letter</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">float</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">probability_table</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qubits_init_null</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">null_integer</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">use_ancilla</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qubits_ancilla</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder6WPrimeEiNSt6vectorIiEENSt6vectorIiEENSt6vectorINSt6vectorIfEEEENSt6vectorIiEEibNSt6vectorIiEE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>W’ Unitary. </p>
 <p>This method adds a W’ unitary to the circuit.</p>
 <p>W’ is a unitary required for the quantum decoder algorithm. </p>
@@ -828,10 +798,10 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a ripple carry adder to the circuit.</p>
 <p>The ripple carry adder is an efficient in-line addition operation with a carry-in bit:</p>
 <p><div class="math notranslate nohighlight">
-\[RippleAdd\ket{c_{in}}\ket{a}\ket{b} \rightarrow \ket{a} \ket{a+b+c_in}\]</div>
+\[ RippleAdd\ket{c_{in}}\ket{a}\ket{b} \rightarrow \ket{a} \ket{a+b+c_in} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> – The qubit indices of the first register in the addition [vector of int] </p></li>
 <li><p><strong>b</strong> – The qubit indices of the second register in the addition [vector of int] </p></li>
@@ -848,7 +818,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a quantum bit string comparator oracle to the circuit.</p>
 <p>The quantum bit string comparator is used to add a negative phase to any trial state whose bit string value is greater than the state being compared to. In this way it can be used as an oracle in a Grovers operator that amplifies higher scoring strings. This may be useful in many search problems.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>BestScore</strong> – The score we are comparing strings to [int] </p></li>
 <li><p><strong>num_scoring_qubits</strong> – The number of qubits used to encode the scores [int] </p></li>
@@ -871,7 +841,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a quantum bit string comparator to the circuit.</p>
 <p>The quantum bit string comparator is used to compare the values of two bit string. If the trial score is greater than the best score, the flag qubit is flipped from 0 to 1.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>BestScore</strong> – The score we are comparing strings to [int] </p></li>
 <li><p><strong>num_scoring_qubits</strong> – The number of qubits used to encode the scores [int] </p></li>
@@ -894,12 +864,12 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds an efficient encoding routine to the circuit.</p>
 <p>Given a lookup function f that assigns a score to each binary string, we encode the state</p>
 <p><div class="math notranslate nohighlight">
-\[\ket{\psi} = \ket{x} \ket{f(x)} + \ket{y} \ket{f(y)} + ...\]</div>
+\[ \ket{\psi} = \ket{x} \ket{f(x)} + \ket{y} \ket{f(y)} + ... \]</div>
 </p>
 <p>where the superposition is over all possible bitstrings. Rather than encoding states in order <span class="math notranslate nohighlight">\( \ket{000}, \ket{001}, \ket{010} \)</span>…etc. we cut down on the amount of X gates required by instead following the Gray code ordering of states.</p>
 <p>This module can optionally also flag strings of a certain value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>scoring_function</strong> – A function that inputs the integer value of a binary string and outputs its score [func(int) -&gt; int] </p></li>
 <li><p><strong>num_state_qubits</strong> – The number of qubits encoding the strings [int] </p></li>
@@ -922,7 +892,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds an equality checker to the circuit.</p>
 <p>Given two input bitstrings <span class="math notranslate nohighlight">\( \ket{a} \)</span> and <span class="math notranslate nohighlight">\( \ket{b} \)</span> the equality checker is used to flip a flag qubit <span class="math notranslate nohighlight">\( \ket{0} \)</span> \to <span class="math notranslate nohighlight">\( \ket{1} \)</span> whenever a=b.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_a</strong> – the indices of the qubits encoding a [vector of int] </p></li>
 <li><p><strong>qubits_b</strong> – the indices of the qubits encoding b [vector of int] </p></li>
@@ -943,7 +913,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a controlled SWAP to the circuit.</p>
 <p>Performs a SWAP operation on <span class="math notranslate nohighlight">\( \ket{a} \)</span> and <span class="math notranslate nohighlight">\( \ket{b} \)</span> if an only if the controls are satisfied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_a</strong> – the indices of the qubits encoding a [vector of int] </p></li>
 <li><p><strong>qubits_b</strong> – the indices of the qubits encoding b [vector of int] </p></li>
@@ -961,7 +931,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a controlled ripple carry adder to the circuit.</p>
 <p>Performs a RippleAdd operation on adder_bits and sum_bits if an only if the controls are satisfied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_adder</strong> – the indices of the qubits encoding adder_bits [vector of int] </p></li>
 <li><p><strong>qubits_sum</strong> – the indices of the qubits encoding sum_bits [vector of int] </p></li>
@@ -981,7 +951,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a generalised MCX gate to the circuit.</p>
 <p>By generalised MCX we mean that we allow the control qubits to be conditional on being off or conditional on being on.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> – The index of the target qubit [int] </p></li>
 <li><p><strong>controls_on</strong> – The indices of any qubits that should be “on” controls (i.e. circuit executed if qubit = <span class="math notranslate nohighlight">\( \ket{1} \)</span>) [vector of int] </p></li>
@@ -1006,14 +976,14 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a superposition adder to the current circuit.</p>
 <p>Given a superposition state</p>
 <p><div class="math notranslate nohighlight">
-\[\ket{\psi} = \sum a_1\ket{\phi_1} + a_2\ket{\phi_2} + ... + a_n\ket{\phi_n},\]</div>
+\[ \ket{\psi} = \sum a_1\ket{\phi_1} + a_2\ket{\phi_2} + ... + a_n\ket{\phi_n}, \]</div>
 </p>
 <p>this function finds the mean of the of the amplitudes, i.e.</p>
 <p><div class="math notranslate nohighlight">
-\[(|a_1|^2 + |a_2|^2 + |a_n|^2) / N.\]</div>
+\[ (|a_1|^2 + |a_2|^2 + |a_n|^2) / N. \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>q0</strong> – the index of the single required ancilla [int] </p></li>
 <li><p><strong>q1</strong> – the index of the single required ancilla [int] </p></li>
@@ -1036,15 +1006,15 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds the inverse of a circuit to the current circuit.</p>
 <p>Given some collection of unitary operations,</p>
 <p><div class="math notranslate nohighlight">
-\[U = U_N*U_{N-1}...U_2*U_1\]</div>
+\[ U = U_N*U_{N-1}...U_2*U_1 \]</div>
 </p>
 <p>this method appends the inverse to the circuit:</p>
 <p><div class="math notranslate nohighlight">
-\[U^{-1} = U_1^\dagger U_2^\dagger...U_{N-1}^\dagger U_N^\dagger\]</div>
+\[ U^{-1} = U_1^\dagger U_2^\dagger...U_{N-1}^\dagger U_N^\dagger \]</div>
 </p>
 <p>This may be useful for un-computing ancilla or for constructing Grovers operators.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>circ</strong> – The circuit whose inverse we want to add to the current circuit [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p>
 </dd>
 </dl>
@@ -1057,11 +1027,11 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a subtraction to the circuit.</p>
 <p>Performs the mapping:</p>
 <p><div class="math notranslate nohighlight">
-\[\ket{a}\ket{b} \rightarrow \ket{a-b}\ket{b}\]</div>
+\[ \ket{a}\ket{b} \rightarrow \ket{a-b}\ket{b} \]</div>
 </p>
 <p>assuming a&gt;b.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_larger</strong> – the indices of the qubits encoding the larger value [vector of int] </p></li>
 <li><p><strong>qubits_smaller</strong> – the indices of the qubits encoding the smaller value [vector of int] </p></li>
@@ -1079,7 +1049,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a controlled subtraction to the circuit.</p>
 <p>Performs a subtraction operation on a and b if an only if the controls are satisfied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_larger</strong> – the indices of the qubits encoding the larger value [vector of int] </p></li>
 <li><p><strong>qubits_smaller</strong> – the indices of the qubits encoding the smaller value [vector of int] </p></li>
@@ -1099,11 +1069,11 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a proper fraction division to the circuit.</p>
 <p>Performs the mapping:</p>
 <p><div class="math notranslate nohighlight">
-\[\ket{num}\ket{denom}\ket{0} \rightarrow \ket{num}\ket{denom}\ket{num/denom}\]</div>
+\[ \ket{num}\ket{denom}\ket{0} \rightarrow \ket{num}\ket{denom}\ket{num/denom} \]</div>
 </p>
 <p>assuming denom &gt; num</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_numerator</strong> – the indices of the qubits encoding the numerator [vector of int] </p></li>
 <li><p><strong>qubits_denominator</strong> – the indices of the qubits encoding the denominator [vector of int] </p></li>
@@ -1122,7 +1092,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a controlled proper fraction division to the circuit.</p>
 <p>Performs a PFD operation on a and b if an only if the controls are satisfied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_numerator</strong> – the indices of the qubits encoding the numerator [vector of int] </p></li>
 <li><p><strong>qubits_denominator</strong> – the indices of the qubits encoding the denominator [vector of int] </p></li>
@@ -1143,7 +1113,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a &gt; comparator to the circuit.</p>
 <p>Given two binary strings <span class="math notranslate nohighlight">\( \ket{a} \)</span> and <span class="math notranslate nohighlight">\( \ket{b} \)</span>, this comparator flips a flag qubit whenever a&gt;b. This method uses far less ancilla than the more general comparator method provided.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_a</strong> – The indices of the qubits encoding a [vector of int] </p></li>
 <li><p><strong>qubits_b</strong> – The indices of the qubits encoding b [vector of int] </p></li>
@@ -1162,10 +1132,10 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a Multiplication to the circuit.</p>
 <p>Performs the mapping:</p>
 <p><div class="math notranslate nohighlight">
-\[\ket{a}\ket{b}\ket{0} \rightarrow \ket{a}\ket{b}\ket{ab}\]</div>
+\[ \ket{a}\ket{b}\ket{0} \rightarrow \ket{a}\ket{b}\ket{ab} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_a</strong> – the indices of the qubits encoding a [vector of int] </p></li>
 <li><p><strong>qubits_b</strong> – the indices of the qubits encoding b [vector of int] </p></li>
@@ -1184,7 +1154,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <p>This method adds a controlled Multiplication to the circuit.</p>
 <p>Performs a Multiplication operation on a and b if an only if the controls are satisfied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_a</strong> – the indices of the qubits encoding a [vector of int] </p></li>
 <li><p><strong>qubits_b</strong> – the indices of the qubits encoding b [vector of int] </p></li>
@@ -1212,7 +1182,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 </p>
 <p>Exponential search here has been designed for use in the quantum decoder algorithm, so many inputs may not be required for general use.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>method</strong> – indicates which method to use. Options are “canonical”, “MLQAE”, “CQAE” [string] </p></li>
 <li><p><strong>state_prep_circ</strong> – a function which produces the state prep circuit [StatePrepFuncCType] </p></li>
@@ -1225,7 +1195,7 @@ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin
 <li><p><strong>acc_name</strong> – the name of the accelerator used to execute the algorithm [string]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a better score if found, otherwise returns the current best score </p>
 </dd>
 </dl>

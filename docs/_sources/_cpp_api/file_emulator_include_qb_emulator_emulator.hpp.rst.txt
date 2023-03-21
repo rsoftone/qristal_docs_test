@@ -37,5 +37,5 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_emulator_8hpp_1ac026c44df5ae9229f864838d2fa22d7f`
+- :ref:`exhale_function_emulator_8hpp_1a64f37e82ce3a379dddd441276659ff24`
 

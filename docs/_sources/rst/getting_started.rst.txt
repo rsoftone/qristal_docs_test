@@ -2,7 +2,7 @@
 Getting started
 ===============
 
-Using the SDK
+Using Qristal
 -------------
 
 .. include:: ../md/getting_started_bell_state.md
@@ -11,12 +11,14 @@ Using the SDK
 Development guide
 -----------------
 
+Qristal can either be run `directly from the provided Docker image <https://gitlab.com/qbau/software-and-apps/public/QBSDK/-/blob/main/README.md#docker>`_, or `installed from source <https://gitlab.com/qbau/software-and-apps/public/QBSDK>`_.  This section provides instructions for working with the source.
+
 Dependencies
 ^^^^^^^^^^^^
 
 .. _required_deps:
 
-The QB SDK **requires** the following libraries/packages to be installed:
+Installing Qristal from source **requires** the following libraries/packages to be installed:
 
 * `GNU C++ Compiler <https://gcc.gnu.org/>`_ >= 7.x
 * `CMake <https://cmake.org/>`_ >= 3.20
@@ -24,6 +26,8 @@ The QB SDK **requires** the following libraries/packages to be installed:
 * `OpenBLAS (Basic Linear Algebra Subprograms) <https://www.openblas.net/>`_
 * `Boost <https://www.boost.org/>`_ >= 1.71
 * `libcurl <https://curl.se/>`_
+
+Also, note that Qristal will be built with support for CUDA Quantum if and only if cmake detects that your system has a compatible CUDA Quantum installation. A shortcut is to run Qristal directly from `the Docker image that we provide with a compatible version of CUDA Quantum already installed <https://gitlab.com/qbau/software-and-apps/public/QBSDK/-/blob/main/README.md#docker>`_.
 
 .. _auto_install_deps:
 
@@ -43,18 +47,17 @@ Additional dependencies that can be installed automatically at build time:
 
 .. note:: **Automatic dependency installation**
 
-      It is highly recommended that users let the SDK build system install the `additional dependencies mentioned above <_auto_install_deps>`, by setting the ``-DINSTALL_MISSING=ON`` CMake option.
+      It is highly recommended that users let the Qristal build system install the :ref:`additional dependencies mentioned above <auto_install_deps>`, by setting the ``-DINSTALL_MISSING=ON`` CMake option.
 
 Installation
 ^^^^^^^^^^^^
 
-1. For development purposes, it is **recommended** to install the SDK ``core`` library
-using *automatic dependency installation* mode:
+1. For development purposes, it is **recommended** to install Qristal using *automatic dependency installation* mode.
 
 .. code-block:: bash
 
-    git clone https://gitlab.com/qbau/software-and-apps/public/core.git
-    cd core
+    git clone https://gitlab.com/qbau/software-and-apps/public/qbsdk.git qristal
+    cd qristal
     mkdir build && cd build
     cmake .. -DINSTALL_MISSING=ON
     make install
@@ -82,22 +85,10 @@ The ``-DINSTALL_MISSING=ON`` flag ensures that all missing dependencies (if any)
       Please follow the error message to install the correct version (specified as a git commit hash key).
 
 
-Software Tests
-^^^^^^^^^^^^^^
-
-To ensure that the SDK ``core`` component is working correctly after building and installation, the test suite
-can be run by navigating to the ``build`` folder and running
-
-.. code-block:: bash
-
-    ctest
-
-
-
 Contributing
 ^^^^^^^^^^^^
 
-There are many ways in which you can contribute to the QB SDK, whether by contributing some code or by engaging in discussions;
+There are many ways in which you can contribute to Qristal, whether by contributing some code or by engaging in discussions;
 we value contributions in all shapes and sizes!
 
 Here are some ideas for how you can get involved.
@@ -106,13 +97,13 @@ Here are some ideas for how you can get involved.
 
 Have a question? Some concepts are hard-to-understand?
 
-Please feel free to file an issue to ask your questions `here <https://gitlab.com/qbau/software-and-apps/public/core/-/issues/new>`_.
+Please feel free to file an issue to ask your questions `here <https://gitlab.com/qbau/software-and-apps/public/qbsdk/-/issues/new>`_.
 
 Your question will serve as resource to others searching for help.
 
 2. **Reporting and/or Commenting on Issues**
 
-If you have feedback about the QB SDK, please let us know by filing a `new issue <https://gitlab.com/qbau/software-and-apps/public/core/-/issues/new>`_!
+If you have feedback about Qristal, please let us know by filing a `new issue <https://gitlab.com/qbau/software-and-apps/public/qbsdk/-/issues/new>`_!
 
 When filing a bug report, please follow the below template:
 
@@ -141,11 +132,11 @@ When filing a bug report, please follow the below template:
    - Operating system:
 
 
-We also encourage you to look at the list of currently `open issues <https://gitlab.com/qbau/software-and-apps/public/core/-/issues>`_ to share your ideas and expertise.
+We also encourage you to look at the list of currently `open issues <https://gitlab.com/qbau/software-and-apps/public/qbsdk/-/issues>`_ to share your ideas and expertise.
 
 3. **Contributing Code**
 
-Before submitting a `new merge request <https://gitlab.com/qbau/software-and-apps/public/core/-/merge_requests/new>`_, please make sure the following is done:
+Before submitting a `new merge request <https://gitlab.com/qbau/software-and-apps/public/qbsdk/-/merge_requests/new>`_, please make sure the following is done:
 
 * **New features should include a unit test.** If you've fixed a bug or added
   code that should be tested, add a test to the ``tests`` directory.

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Python API &mdash; Quantum SDK  documentation</title>
@@ -29,16 +29,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Quantum SDK
-              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+            <a href="../index.html" class="icon icon-home"> Quantum SDK
+            <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -52,7 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="quantum_computing.html">Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="noise_models.html#user-defined-noise-models">User defined noise models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vqe.html">Variational Quantum Eigensolver (VQE) in QB SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul class="current">
@@ -77,7 +73,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Python API</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/rst/python_autodoc.rst.txt" rel="nofollow"> View page source</a>
@@ -265,7 +261,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This property is currently unused.</p>
-</div>
+</aside>
 </dd></dl>
 
 <dl class="py property">
@@ -274,7 +270,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This property is currently unused.</p>
-</div>
+</aside>
 </dd></dl>
 
 <dl class="py property">
@@ -336,16 +332,16 @@ Must begin with the prefix: “amazon-braket-”</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">instring</span></span><a class="headerlink" href="#core.session.instring" title="Permalink to this definition"></a></dt>
 <dd><p>instring:</p>
 <p>A string that defines a circuit in OpenQASM format.  Simple example:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">__qpu__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">QBCIRCUIT</span><span class="p">(</span><span class="n">qreg</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">OPENQASM</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
-<span class="w">        </span><span class="n">include</span><span class="w"> </span><span class="s">&quot;qelib1.inc;&quot;</span>
-<span class="w">        </span><span class="n">creg</span><span class="w"> </span><span class="n">c0</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<span class="w">        </span><span class="n">creg</span><span class="w"> </span><span class="n">c1</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<span class="w">        </span><span class="n">h</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="w">        </span><span class="n">cx</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<span class="w">        </span><span class="n">measure</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c0</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="w">        </span><span class="n">measure</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c1</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="p">}</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">__qpu__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">QBCIRCUIT</span><span class="p">(</span><span class="n">qreg</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">OPENQASM</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">include</span><span class="w"> </span><span class="s">&quot;qelib1.inc;&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="n">creg</span><span class="w"> </span><span class="n">c0</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">creg</span><span class="w"> </span><span class="n">c1</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">h</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">cx</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">measure</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c0</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">measure</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c1</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>instrings:</p>
@@ -358,16 +354,16 @@ Must begin with the prefix: “amazon-braket-”</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">instrings</span></span><a class="headerlink" href="#core.session.instrings" title="Permalink to this definition"></a></dt>
 <dd><p>instring:</p>
 <p>A string that defines a circuit in OpenQASM format.  Simple example:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">__qpu__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">QBCIRCUIT</span><span class="p">(</span><span class="n">qreg</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">OPENQASM</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
-<span class="w">        </span><span class="n">include</span><span class="w"> </span><span class="s">&quot;qelib1.inc;&quot;</span>
-<span class="w">        </span><span class="n">creg</span><span class="w"> </span><span class="n">c0</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<span class="w">        </span><span class="n">creg</span><span class="w"> </span><span class="n">c1</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<span class="w">        </span><span class="n">h</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="w">        </span><span class="n">cx</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-<span class="w">        </span><span class="n">measure</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c0</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="w">        </span><span class="n">measure</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c1</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="p">}</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">__qpu__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">QBCIRCUIT</span><span class="p">(</span><span class="n">qreg</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">OPENQASM</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">include</span><span class="w"> </span><span class="s">&quot;qelib1.inc;&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="n">creg</span><span class="w"> </span><span class="n">c0</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">creg</span><span class="w"> </span><span class="n">c1</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">h</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">cx</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">measure</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c0</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">measure</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c1</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>instrings:</p>
@@ -399,7 +395,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This property is currently unused.</p>
-</div>
+</aside>
 <p>log_enabled:</p>
 <p>Setting this to True to enable logging to file. The single setting applies globally.</p>
 <p>Valid settings: True | False</p>
@@ -414,7 +410,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This property is currently unused.</p>
-</div>
+</aside>
 <p>log_enabled:</p>
 <p>Setting this to True to enable logging to file. The single setting applies globally.</p>
 <p>Valid settings: True | False</p>
@@ -433,7 +429,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is only needed if using the “tnqvm” backend accelerator.</p>
-</div>
+</aside>
 </dd></dl>
 
 <dl class="py property">
@@ -446,7 +442,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is only needed if using the “tnqvm” backend accelerator.</p>
-</div>
+</aside>
 </dd></dl>
 
 <dl class="py property">
@@ -486,7 +482,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Requires setting: noise = True (to have effect)</p>
-</div>
+</aside>
 <p>Default: “default”</p>
 <p>“default”: Simple depolarizing noise model on all qubits (builtin)</p>
 <p>These two options require the QB emulator module (addons):</p>
@@ -505,7 +501,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Requires setting: noise = True (to have effect)</p>
-</div>
+</aside>
 <p>Default: “default”</p>
 <p>“default”: Simple depolarizing noise model on all qubits (builtin)</p>
 <p>These two options require the QB emulator module (addons):</p>
@@ -599,7 +595,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This property is currently unused.</p>
-</div>
+</aside>
 <p>notiming:</p>
 <p>Valid settings: True | False</p>
 <p>Setting this to True to disable timing estimation. The single setting applies globally.</p>
@@ -614,7 +610,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <dd><div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This property is currently unused.</p>
-</div>
+</aside>
 <p>notiming:</p>
 <p>Valid settings: True | False</p>
 <p>Setting this to True to disable timing estimation. The single setting applies globally.</p>
@@ -628,7 +624,7 @@ Must begin with the prefix: “amazon-braket-”</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_threads</span></span><a class="headerlink" href="#core.session.num_threads" title="Permalink to this definition"></a></dt>
 <dd><p>The number of threads in the QB SDK thread pool</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>num_threads</p>
 </dd>
 </dl>
@@ -1086,7 +1082,7 @@ Default: “swap-shortest-path”</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is only needed if using the “tnqvm” backend accelerator.</p>
-</div>
+</aside>
 </dd></dl>
 
 <dl class="py property">
@@ -1099,7 +1095,7 @@ Default: “swap-shortest-path”</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is only needed if using the “tnqvm” backend accelerator.</p>
-</div>
+</aside>
 </dd></dl>
 
 <dl class="py property">
@@ -1147,7 +1143,7 @@ Default: “swap-shortest-path”</p>
 </section>
 <section id="the-circuit-class">
 <h2>The Circuit class<a class="headerlink" href="#the-circuit-class" title="Permalink to this headline"></a></h2>
-<p>The <cite>Circuit</cite> class represents a quantum circuit, i.e., an ordered sequence of quantum gates and measurements.</p>
+<p>The <cite>Circuit</cite> class represents a quantum circuit, i.e., an ordered sequence of [quantum gates and measurements](<a class="reference external" href="https://qristal.readthedocs.io/en/latest/rst/quantum_computing.html">https://qristal.readthedocs.io/en/latest/rst/quantum_computing.html</a>).</p>
 <p>In addition to elementary gates, it also supports pre-built circuit templates for commonly-used algorithms, such as Quantum Fourier Transform (QFT), algebraic circuits, etc.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="core.Circuit">
@@ -2068,7 +2064,7 @@ the state_prep circuit A.</p>
 <p>The X gate is defined by its action on the basis states</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>[</strong><strong>int</strong><strong>]</strong> (<em>- idx the index of the qubit being acted on</em>) – </p>
 </dd>
 </dl>

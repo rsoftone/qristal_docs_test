@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Class NoiseModel &mdash; Quantum SDK  documentation</title>
@@ -30,16 +30,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Quantum SDK
-              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+            <a href="../index.html" class="icon icon-home"> Quantum SDK
+            <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -53,7 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/quantum_computing.html">Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in QB SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul class="current">
@@ -100,7 +96,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
           <li class="breadcrumb-item"><a href="library_root.html">C++ API</a></li>
       <li class="breadcrumb-item active">Class NoiseModel</li>
       <li class="wy-breadcrumbs-aside">
@@ -165,7 +161,7 @@
 <span id="_CPPv3N2qb10NoiseModel10NoiseModelERKN8nlohmann4jsonE"></span><span id="_CPPv2N2qb10NoiseModel10NoiseModelERKN8nlohmann4jsonE"></span><span id="qb::NoiseModel::NoiseModel__nlohmann::jsonCR"></span><span class="target" id="classqb_1_1NoiseModel_1aae07d7e3e3be8eb7de51803c9e0fc3cb"></span><span class="sig-name descname"><span class="n"><span class="pre">NoiseModel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">nlohmann</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">json</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">js</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb10NoiseModel10NoiseModelERKN8nlohmann4jsonE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Construct a new Noise Model object from JSON. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>js</strong> – JSON object contains noise model parameters </p>
 </dd>
 </dl>
@@ -176,7 +172,7 @@
 <span id="_CPPv3N2qb10NoiseModel10NoiseModelERK15NoiseProperties"></span><span id="_CPPv2N2qb10NoiseModel10NoiseModelERK15NoiseProperties"></span><span id="qb::NoiseModel::NoiseModel__NoisePropertiesCR"></span><span class="target" id="classqb_1_1NoiseModel_1a2dc463c4182ed4b5e01383fa4a7129d1"></span><span class="sig-name descname"><span class="n"><span class="pre">NoiseModel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structqb_1_1NoiseProperties.html#_CPPv4N2qb15NoisePropertiesE" title="qb::NoiseProperties"><span class="n"><span class="pre">NoiseProperties</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">noise_props</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb10NoiseModel10NoiseModelERK15NoiseProperties" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Construct a new Noise Model object from noise properties. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>noise_props</strong> – Device noise properties </p>
 </dd>
 </dl>
@@ -187,7 +183,7 @@
 <span id="_CPPv3NK2qb10NoiseModel7to_jsonEv"></span><span id="_CPPv2NK2qb10NoiseModel7to_jsonEv"></span><span id="qb::NoiseModel::to_jsonC"></span><span class="target" id="classqb_1_1NoiseModel_1a650e173a46664af30a614f79ee74b2b7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">to_json</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2qb10NoiseModel7to_jsonEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Convert noise model to json string. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>JSON string </p>
 </dd>
 </dl>
@@ -195,10 +191,10 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK2qb10NoiseModel16get_connectivityEv">
-<span id="_CPPv3NK2qb10NoiseModel16get_connectivityEv"></span><span id="_CPPv2NK2qb10NoiseModel16get_connectivityEv"></span><span id="qb::NoiseModel::get_connectivityC"></span><span class="target" id="classqb_1_1NoiseModel_1aa729468ce298ad4b61b276029d8523a0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_connectivity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2qb10NoiseModel16get_connectivityEv" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3NK2qb10NoiseModel16get_connectivityEv"></span><span id="_CPPv2NK2qb10NoiseModel16get_connectivityEv"></span><span id="qb::NoiseModel::get_connectivityC"></span><span class="target" id="classqb_1_1NoiseModel_1a50e4548065b1b531255206af869d7c76"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_connectivity</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2qb10NoiseModel16get_connectivityEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get the connectivity (pairs of connected qubits) </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Connectivity as list of qubit index pairs </p>
 </dd>
 </dl>
@@ -209,7 +205,7 @@
 <span id="_CPPv3N2qb10NoiseModel14add_gate_errorERK12NoiseChannelRKNSt6stringERKNSt6vectorI6size_tEE"></span><span id="_CPPv2N2qb10NoiseModel14add_gate_errorERK12NoiseChannelRKNSt6stringERKNSt6vectorI6size_tEE"></span><span id="qb::NoiseModel::add_gate_error__NoiseChannelCR.ssCR.std::vector:s:CR"></span><span class="target" id="classqb_1_1NoiseModel_1a15d189c01530fd75cb18f6e1f0ca1e5c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">add_gate_error</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">NoiseChannel</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">noise_channel</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">gate_name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">qubits</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb10NoiseModel14add_gate_errorERK12NoiseChannelRKNSt6stringERKNSt6vectorI6size_tEE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Add a gate error channel for a gate operation. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>noise_channel</strong> – Noise channel to be associated with the gate </p></li>
 <li><p><strong>gate_name</strong> – Name of the gates </p></li>
@@ -224,7 +220,7 @@
 <span id="_CPPv3N2qb10NoiseModel22add_qubit_connectivityEii"></span><span id="_CPPv2N2qb10NoiseModel22add_qubit_connectivityEii"></span><span id="qb::NoiseModel::add_qubit_connectivity__i.i"></span><span class="target" id="classqb_1_1NoiseModel_1ae38723630f42389748e702d41d0a136d"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">add_qubit_connectivity</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">q1</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">q2</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb10NoiseModel22add_qubit_connectivityEii" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Added connected qubit pair to the topology model. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>q1</strong> – First qubit index </p></li>
 <li><p><strong>q2</strong> – Second qubit index </p></li>
@@ -238,7 +234,7 @@
 <span id="_CPPv3N2qb10NoiseModel23set_qubit_readout_errorE6size_tRKN15NoiseProperties12ReadoutErrorE"></span><span id="_CPPv2N2qb10NoiseModel23set_qubit_readout_errorE6size_tRKN15NoiseProperties12ReadoutErrorE"></span><span id="qb::NoiseModel::set_qubit_readout_error__s.NoiseProperties::ReadoutErrorCR"></span><span class="target" id="classqb_1_1NoiseModel_1afc2b0dae1cbbb172e616c95c068d0077"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_qubit_readout_error</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">qubitIdx</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structqb_1_1NoiseProperties.html#_CPPv4N2qb15NoisePropertiesE" title="qb::NoiseProperties"><span class="n"><span class="pre">NoiseProperties</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="structqb_1_1NoiseProperties_1_1ReadoutError.html#_CPPv4N2qb15NoiseProperties12ReadoutErrorE" title="qb::NoiseProperties::ReadoutError"><span class="n"><span class="pre">ReadoutError</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ro_error</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb10NoiseModel23set_qubit_readout_errorE6size_tRKN15NoiseProperties12ReadoutErrorE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Set the qubit readout error. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubitIdx</strong> – Qubit to set </p></li>
 <li><p><strong>ro_error</strong> – Readout error </p></li>
@@ -255,14 +251,14 @@
 <span id="_CPPv3N2qb10NoiseModel23decoherence_pauli_errorEddd"></span><span id="_CPPv2N2qb10NoiseModel23decoherence_pauli_errorEddd"></span><span id="qb::NoiseModel::decoherence_pauli_error__double.double.double"></span><span class="target" id="classqb_1_1NoiseModel_1aec6c8660d0d4b3892d3a91ba4642370d"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">decoherence_pauli_error</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">t1</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">tphi</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">gate_time</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb10NoiseModel23decoherence_pauli_errorEddd" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Calculate component of Pauli error caused by decoherence on a single qubit. </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>t1</strong> – T1 time </p></li>
 <li><p><strong>tphi</strong> – Tphi time </p></li>
 <li><p><strong>gate_time</strong> – Duration of the gate affected by this error. </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Calculated Pauli error resulting from decoherence. </p>
 </dd>
 </dl>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Function get_emulator_noise_model &mdash; Quantum SDK  documentation</title>
+  <title>Function qb::uniqueBitsQD &mdash; Quantum SDK  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Function qb::uniqueBitsQD" href="function_circuit__builder_8hpp_1ac4474aa344183b310290d76980efd1d8.html" />
-    <link rel="prev" title="Enum JobID" href="enum_case__generator_8hpp_1aaee3be947eeea73bf6b736d8b7eb9821.html" /> 
+    <link rel="next" title="Function qb::vqee::hardwareEfficientCircuit" href="function_case__generator_8hpp_1a95f04cc570fcab5cf4f1f2245f1509e7.html" />
+    <link rel="prev" title="Function get_emulator_noise_model" href="function_emulator_8hpp_1a64f37e82ce3a379dddd441276659ff24.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -30,16 +30,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Quantum SDK
-              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+            <a href="../index.html" class="icon icon-home"> Quantum SDK
+            <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -53,7 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/quantum_computing.html">Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in QB SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul class="current">
@@ -65,11 +61,11 @@
 <li class="toctree-l3"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="library_root.html#functions">Functions</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Function get_emulator_noise_model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="function_circuit__builder_8hpp_1ac4474aa344183b310290d76980efd1d8.html">Function qb::uniqueBitsQD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_emulator_8hpp_1a64f37e82ce3a379dddd441276659ff24.html">Function get_emulator_noise_model</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Function qb::uniqueBitsQD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1a95f04cc570fcab5cf4f1f2245f1509e7.html">Function qb::vqee::hardwareEfficientCircuit</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1af6e4d554405a672a83c459cf21f9561a.html">Function qb::vqee::makeJob</a></li>
-<li class="toctree-l4"><a class="reference internal" href="function_vqee_8hpp_1a6698d1bb45226c33390ecc9fba58ff65.html">Template Function qb::vqee::operator&lt;&lt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_vqee_8hpp_1a81b4b76a197b6eac3799adb0e74c4bc4.html">Template Function qb::vqee::operator&lt;&lt;</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="library_root.html#typedefs">Typedefs</a></li>
@@ -93,11 +89,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
           <li class="breadcrumb-item"><a href="library_root.html">C++ API</a></li>
-      <li class="breadcrumb-item active">Function get_emulator_noise_model</li>
+      <li class="breadcrumb-item active">Function qb::uniqueBitsQD</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/_cpp_api/function_emulator_8hpp_1ac026c44df5ae9229f864838d2fa22d7f.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/_cpp_api/function_circuit__builder_8hpp_1a7a90a73049f9676b6c3308498506b8de.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -105,31 +101,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="function-get-emulator-noise-model">
-<span id="exhale-function-emulator-8hpp-1ac026c44df5ae9229f864838d2fa22d7f"></span><h1>Function get_emulator_noise_model<a class="headerlink" href="#function-get-emulator-noise-model" title="Permalink to this headline"></a></h1>
+  <section id="function-qb-uniquebitsqd">
+<span id="exhale-function-circuit-builder-8hpp-1a7a90a73049f9676b6c3308498506b8de"></span><h1>Function qb::uniqueBitsQD<a class="headerlink" href="#function-qb-uniquebitsqd" title="Permalink to this headline"></a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_emulator_include_qb_emulator_emulator.hpp.html#file-emulator-include-qb-emulator-emulator-hpp"><span class="std std-ref">File emulator.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_core_include_qb_core_circuit_builder.hpp.html#file-core-include-qb-core-circuit-builder-hpp"><span class="std std-ref">File circuit_builder.hpp</span></a></p></li>
 </ul>
 <section id="function-documentation">
 <h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline"></a></h2>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv424get_emulator_noise_modelPKc">
-<span id="_CPPv324get_emulator_noise_modelPKc"></span><span id="_CPPv224get_emulator_noise_modelPKc"></span><span id="get_emulator_noise_model__cCP"></span><span class="target" id="emulator_8hpp_1ac026c44df5ae9229f864838d2fa22d7f"></span><span class="n"><span class="pre">qb</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classqb_1_1NoiseModel.html#_CPPv4N2qb10NoiseModelE" title="qb::NoiseModel"><span class="n"><span class="pre">NoiseModel</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">get_emulator_noise_model</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424get_emulator_noise_modelPKc" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Retrieve the emulator noise model object corresponding to to name. </p>
-<p><dl class="simple">
-<dt><strong>Attention</strong></dt><dd><p>The emulator library retains the ownership of the underlying object, i.e., never delete the pointer, but rather making a copy if needed. </p>
-</dd>
-</dl>
-</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>name</strong> – Name of the noise model, e.g., ‘qb-nm1’ or ‘qb-nm2’, etc. </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Pointer to the corresponding noise model object. NULL if the name is invalid.</p>
-</dd>
-</dl>
-</dd></dl>
+<dt class="sig sig-object cpp" id="_CPPv4N2qb12uniqueBitsQDERNSt10shared_ptrIN4xacc20CompositeInstructionEEE">
+<span id="_CPPv3N2qb12uniqueBitsQDERNSt10shared_ptrIN4xacc20CompositeInstructionEEE"></span><span id="_CPPv2N2qb12uniqueBitsQDERNSt10shared_ptrIN4xacc20CompositeInstructionEEE"></span><span id="qb::uniqueBitsQD__std::shared_ptr:xacc::CompositeInstruction:R"></span><span class="target" id="circuit__builder_8hpp_1a7a90a73049f9676b6c3308498506b8de"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">qb</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">uniqueBitsQD</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CompositeInstruction</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">circ</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb12uniqueBitsQDERNSt10shared_ptrIN4xacc20CompositeInstructionEEE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
 
 </section>
 </section>
@@ -138,8 +120,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="enum_case__generator_8hpp_1aaee3be947eeea73bf6b736d8b7eb9821.html" class="btn btn-neutral float-left" title="Enum JobID" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="function_circuit__builder_8hpp_1ac4474aa344183b310290d76980efd1d8.html" class="btn btn-neutral float-right" title="Function qb::uniqueBitsQD" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="function_emulator_8hpp_1a64f37e82ce3a379dddd441276659ff24.html" class="btn btn-neutral float-left" title="Function get_emulator_noise_model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="function_case__generator_8hpp_1a95f04cc570fcab5cf4f1f2245f1509e7.html" class="btn btn-neutral float-right" title="Function qb::vqee::hardwareEfficientCircuit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

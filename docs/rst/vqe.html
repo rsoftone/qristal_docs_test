@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Variational Quantum Eigensolver (VQE) in QB SDK &mdash; Quantum SDK  documentation</title>
+  <title>Variational Quantum Eigensolver (VQE) in Qristal &mdash; Quantum SDK  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
@@ -18,8 +18,8 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -32,16 +32,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Quantum SDK
-              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+            <a href="../index.html" class="icon icon-home"> Quantum SDK
+            <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,11 +51,11 @@
 <li class="toctree-l1"><a class="reference internal" href="quantum_computing.html">Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="noise_models.html#user-defined-noise-models">User defined noise models</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Variational Quantum Eigensolver (VQE) in QB SDK</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Variational Quantum Eigensolver (VQE) in Qristal</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#general-information">General information</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#quantum-kernels-in-qb-sdk">Quantum kernels in QB SDK</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hamiltonians-in-qb-sdk">Hamiltonians in QB SDK</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ansatze-in-qb-sdk">Ansätze in QB SDK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quantum-kernels-in-qristal">Quantum kernels in Qristal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hamiltonians-in-qristal">Hamiltonians in Qristal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ansatze-in-qristal">Ansätze in Qristal</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#python-api">Python API</a><ul>
@@ -71,7 +67,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#c-api">C++ API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#classical-optimizer">Classical optimizer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#molecular-geometries-in-qb-sdk">Molecular geometries in QB SDK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#molecular-geometries-in-qristal">Molecular geometries in Qristal</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#usage-options-and-examples">Usage Options and Examples</a><ul>
@@ -80,8 +76,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#how-to-make-function-calls-for-a-python-level-optimizer">How to make function calls for a Python-level optimizer?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#python-minimize-from-scipy-optimize">Python <code class="docutils literal notranslate"><span class="pre">minimize()</span></code> from <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#python-minimize-from-skquant-opt">Python <code class="docutils literal notranslate"><span class="pre">minimize()</span></code> from <code class="docutils literal notranslate"><span class="pre">skquant.opt</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#built-in-qb-sdk-classical-optimizers">Built-in QB SDK classical optimizers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#obtaining-convergence-information-from-the-internal-qb-sdk-optimizers">Obtaining convergence information from the internal QB SDK optimizers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#built-in-qristal-classical-optimizers">Built-in Qristal classical optimizers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obtaining-convergence-information-from-the-internal-qristal-optimizers">Obtaining convergence information from the internal Qristal optimizers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-1-two-qubit-deuteron-hamiltonian">Example 1: two-qubit deuteron Hamiltonian</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-2-a-four-qubit-classical-hamiltonian">Example 2: a four-qubit classical Hamiltonian</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-3-same-setup-as-for-example-2-except-specifying-a-file-that-contains-a-user-defined-ansatz">Example 3: same setup as for Example 2, except specifying a file that contains a user-defined ansatz</a></li>
@@ -110,8 +106,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Variational Quantum Eigensolver (VQE) in QB SDK</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Variational Quantum Eigensolver (VQE) in Qristal</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/rst/vqe.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -121,14 +117,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="variational-quantum-eigensolver-vqe-in-qb-sdk">
-<h1>Variational Quantum Eigensolver (VQE) in QB SDK<a class="headerlink" href="#variational-quantum-eigensolver-vqe-in-qb-sdk" title="Permalink to this headline"></a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="variational-quantum-eigensolver-vqe-in-qristal">
+<h1>Variational Quantum Eigensolver (VQE) in Qristal<a class="headerlink" href="#variational-quantum-eigensolver-vqe-in-qristal" title="Permalink to this headline"></a></h1>
 <section id="general-information">
 <h2>General information<a class="headerlink" href="#general-information" title="Permalink to this headline"></a></h2>
 <p>VQE is classified as a <strong>quantum-classical (hybrid) algorithm</strong>. It uses a <strong>classical optimizer</strong> to minimize a <strong>quantum kernel</strong> based objective function. The objective function is usually determined by multiple measurements at each iteration.</p>
 <p>VQE finds the <strong>ground state energy</strong> of a physical system characterized by its <strong>Hamiltonian</strong> <span class="math notranslate nohighlight">\(H\)</span> which is Hermitian. See [<a class="reference external" href="https://arxiv.org/abs/1304.3061">Peruzzo et al. 2013</a>, <a class="reference external" href="https://arxiv.org/abs/1512.06860">O’Malley et al. 2015</a>] for details.</p>
-<section id="quantum-kernels-in-qb-sdk">
-<h3>Quantum kernels in QB SDK<a class="headerlink" href="#quantum-kernels-in-qb-sdk" title="Permalink to this headline"></a></h3>
+<section id="quantum-kernels-in-qristal">
+<h3>Quantum kernels in Qristal<a class="headerlink" href="#quantum-kernels-in-qristal" title="Permalink to this headline"></a></h3>
 <p>The quantum kernel has 3 inputs:</p>
 <ul class="simple">
 <li><p><strong>theta</strong>: Input parameters, usually rotation angles in radians.</p></li>
@@ -137,63 +133,63 @@
 </ul>
 <p>The output from measurement is reduced to a scalar quantity: the <strong>energy</strong>. The output is called <strong>stochastic</strong> when this energy is calculated from the shot-count statistics (samples) produced by a quantum device. A quantum computer is inherently <strong>stochastic</strong> but a simulator can operate in <strong>non-stochastic</strong>, i.e. <strong>deterministic</strong> mode.</p>
 </section>
-<section id="hamiltonians-in-qb-sdk">
-<h3>Hamiltonians in QB SDK<a class="headerlink" href="#hamiltonians-in-qb-sdk" title="Permalink to this headline"></a></h3>
-<p>While the user provides a Hamiltonian that has been transformed from their problem/system of interest, special attention is needed on the resulting format of the Hamiltonian so that it is valid as an input to QB SDK.  In particular:</p>
+<section id="hamiltonians-in-qristal">
+<h3>Hamiltonians in Qristal<a class="headerlink" href="#hamiltonians-in-qristal" title="Permalink to this headline"></a></h3>
+<p>While the user provides a Hamiltonian that has been transformed from their problem/system of interest, special attention is needed on the resulting format of the Hamiltonian so that it is valid as an input to Qristal.  In particular:</p>
 <ul class="simple">
 <li><p>the Hamiltonian must be formatted as a <strong>string</strong>. This string is an expression of a weighted sum of <strong>Pauli terms</strong>.</p></li>
 <li><p><strong>Spaces</strong> must be used to separate <strong>all</strong> of the following: the Pauli terms, their respective weights, and the arithmetic +/- symbols.</p></li>
 <li><p>In all Pauli terms, any <strong>Identity (I) operators are implicit - do not show I operator explicitly.</strong></p></li>
 </ul>
 <p>Examples of valid Hamiltonians (but with no physical meaning):</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;-1.2 + 1.1 Z0Z1 + 4.1 Z1 - 11.8 Z0&quot;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;-1.2 + 1.1 Z0Z1 + 4.1 Z1 - 11.8 Z0&quot;</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;12.3 + 0.002 Z0X1X2 - 1.2 X0Z2 - 3.3 Z1 - 5.0 Y2&quot;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;12.3 + 0.002 Z0X1X2 - 1.2 X0Z2 - 3.3 Z1 - 5.0 Y2&quot;</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + (0.3,0.21829) Z0 + 0.34 Z0Z1Z2Z3&quot;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + (0.3,0.21829) Z0 + 0.34 Z0Z1Z2Z3&quot;</span><span class="w"></span>
 
-<span class="nl">Note</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.21829</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.21829</span><span class="n">j</span>
+<span class="nl">Note</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.21829</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.21829</span><span class="n">j</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Example of a physically valid Hamiltonian (for deuteron):</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + .21829 Z0 - 6.125 Z1&quot;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;5.907 - 2.1433 X0X1 - 2.1433 Y0Y1 + .21829 Z0 - 6.125 Z1&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
-<section id="ansatze-in-qb-sdk">
-<h3>Ansätze in QB SDK<a class="headerlink" href="#ansatze-in-qb-sdk" title="Permalink to this headline"></a></h3>
+<section id="ansatze-in-qristal">
+<h3>Ansätze in Qristal<a class="headerlink" href="#ansatze-in-qristal" title="Permalink to this headline"></a></h3>
 <p>As in all parameterized models, choice of model architecture, or <em>ansatz</em>, is an important parameter in the success of the optimization.</p>
 <p><strong>User-defined ansatz:</strong></p>
 <p>This functionality requires using the XASM format.  An example of this is shown below:</p>
 <p>❗ <strong>Important:</strong>
 Do <strong>not</strong> change the first two lines:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">.</span><span class="n">compiler</span><span class="w"> </span><span class="n">xasm</span>
-<span class="w"> </span><span class="p">.</span><span class="n">circuit</span><span class="w"> </span><span class="n">ansatz</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="p">.</span><span class="n">compiler</span><span class="w"> </span><span class="n">xasm</span><span class="w"></span>
+<span class="w"> </span><span class="p">.</span><span class="n">circuit</span><span class="w"> </span><span class="n">ansatz</span><span class="w"></span>
 </pre></div>
 </div>
 <p>You can use the parameter (declared here as <code class="docutils literal notranslate"><span class="pre">theta</span></code>) as a 0-indexed array, ie <code class="docutils literal notranslate"><span class="pre">theta[0],</span> <span class="pre">theta[1],</span> <span class="pre">theta[2]</span></code>, …, etc.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.compiler<span class="w"> </span>xasm
-.circuit<span class="w"> </span>ansatz
-.parameters<span class="w"> </span>theta
-.qbit<span class="w"> </span>q
-<span class="w">  </span>X<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>X<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">0</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">2</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">3</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">4</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">5</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">6</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">7</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">8</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">3</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">9</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">10</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">11</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">2</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">3</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">12</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">13</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">14</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">15</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">16</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">17</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">18</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">19</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">20</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>U<span class="o">(</span>q<span class="o">[</span><span class="m">3</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">21</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">22</span><span class="o">]</span>,<span class="w"> </span>theta<span class="o">[</span><span class="m">23</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">2</span><span class="o">])</span><span class="p">;</span>
-<span class="w">  </span>CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>,<span class="w"> </span>q<span class="o">[</span><span class="m">3</span><span class="o">])</span><span class="p">;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.compiler xasm
+.circuit ansatz
+.parameters theta
+.qbit q
+  X<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">])</span><span class="p">;</span>
+  X<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
+  U<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">0</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">1</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">2</span><span class="o">])</span><span class="p">;</span>
+  U<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">3</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">4</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">5</span><span class="o">])</span><span class="p">;</span>
+  U<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">6</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">7</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">8</span><span class="o">])</span><span class="p">;</span>
+  U<span class="o">(</span>q<span class="o">[</span><span class="m">3</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">9</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">10</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">11</span><span class="o">])</span><span class="p">;</span>
+  CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>, q<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
+  CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>, q<span class="o">[</span><span class="m">2</span><span class="o">])</span><span class="p">;</span>
+  CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>, q<span class="o">[</span><span class="m">3</span><span class="o">])</span><span class="p">;</span>
+  U<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">12</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">13</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">14</span><span class="o">])</span><span class="p">;</span>
+  U<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">15</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">16</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">17</span><span class="o">])</span><span class="p">;</span>
+  U<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">18</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">19</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">20</span><span class="o">])</span><span class="p">;</span>
+  U<span class="o">(</span>q<span class="o">[</span><span class="m">3</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">21</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">22</span><span class="o">]</span>, theta<span class="o">[</span><span class="m">23</span><span class="o">])</span><span class="p">;</span>
+  CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">0</span><span class="o">]</span>, q<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
+  CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">1</span><span class="o">]</span>, q<span class="o">[</span><span class="m">2</span><span class="o">])</span><span class="p">;</span>
+  CNOT<span class="o">(</span>q<span class="o">[</span><span class="m">2</span><span class="o">]</span>, q<span class="o">[</span><span class="m">3</span><span class="o">])</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
@@ -212,7 +208,7 @@ Do <strong>not</strong> change the first two lines:</p>
 </pre></div>
 </div>
 <p>The following VQE attributes are accepted:</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Attribute</p></th>
 <th class="head"><p>Example</p></th>
@@ -260,7 +256,7 @@ Do <strong>not</strong> change the first two lines:</p>
 <section id="accessing-the-results">
 <h3>Accessing the results<a class="headerlink" href="#accessing-the-results" title="Permalink to this headline"></a></h3>
 <p>The results from a completed VQE execution are available be reading the following attributes:</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Attribute</p></th>
 <th class="head"><p>Example</p></th>
@@ -284,7 +280,7 @@ Do <strong>not</strong> change the first two lines:</p>
 <h2>C++ API<a class="headerlink" href="#c-api" title="Permalink to this headline"></a></h2>
 <p><a href="../_cpp_api/classqb_1_1vqee_1_1VQEE.html">See the class documentation.</a></p>
 <hr class="docutils" />
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Deprecation Notice</p></th>
 <th class="head"><p>All sections below this Notice will be deprecated after December 2022</p></th>
@@ -292,7 +288,7 @@ Do <strong>not</strong> change the first two lines:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p></p></td>
-<td><p>The functionality described below is undergoing extensive rework.  You may still use it for background understanding, but it will <strong>not</strong> be compatible with future releases of QB SDK.</p></td>
+<td><p>The functionality described below is undergoing extensive rework.  You may still use it for background understanding, but it will <strong>not</strong> be compatible with future releases of Qristal.</p></td>
 </tr>
 </tbody>
 </table>
@@ -301,15 +297,15 @@ Do <strong>not</strong> change the first two lines:</p>
 <h3>Classical optimizer<a class="headerlink" href="#classical-optimizer" title="Permalink to this headline"></a></h3>
 <p>VQE is open to use with any type of optimizer. In particular, the optimizer can be gradient-based or gradient-free.  Stochastic optimization algorithms can also be used. See below for examples.</p>
 </section>
-<section id="molecular-geometries-in-qb-sdk">
-<h3>Molecular geometries in QB SDK<a class="headerlink" href="#molecular-geometries-in-qb-sdk" title="Permalink to this headline"></a></h3>
-<p>Instead of directly specifying a Hamiltonian, users can instead input a molecular geometry in terms of the elements and coordinates of all atoms in the system.  QB SDK will then generate the corresponding Hamiltonian automatically.</p>
-<p>For this functionality, QB SDK requires PySCF-style XYZ syntax, i.e.,
+<section id="molecular-geometries-in-qristal">
+<h3>Molecular geometries in Qristal<a class="headerlink" href="#molecular-geometries-in-qristal" title="Permalink to this headline"></a></h3>
+<p>Instead of directly specifying a Hamiltonian, users can instead input a molecular geometry in terms of the elements and coordinates of all atoms in the system. Qristal will then generate the corresponding Hamiltonian automatically.</p>
+<p>For this functionality, Qristal requires PySCF-style XYZ syntax, i.e.,
  <code class="docutils literal notranslate"><span class="pre">{element</span> <span class="pre">symbol}</span> <span class="pre">{x_coord}</span> <span class="pre">{y_coord}</span> <span class="pre">{z_coord};...</span></code></p>
 <p>For example, an <span class="math notranslate nohighlight">\(H_2\)</span> molecule with an atomic distance of 0.735 angstroms (Å) can be described by the following geometry string:</p>
 <p><code class="docutils literal notranslate"><span class="pre">H</span> <span class="pre">0.0</span> <span class="pre">0.0</span> <span class="pre">0.0;</span> <span class="pre">H</span> <span class="pre">0.0</span> <span class="pre">0.0</span> <span class="pre">0.735</span></code></p>
 <p>❗ <strong>Important:</strong> the default unit for coordinates is <strong>angstroms</strong>.</p>
-<p>By default, QB SDK uses the <a class="reference external" href="https://en.wikipedia.org/wiki/STO-nG_basis_sets">sto-3g</a> basis set and the Jordan-Wigner fermion-to-qubit mapping.</p>
+<p>By default, Qristal uses the <a class="reference external" href="https://en.wikipedia.org/wiki/STO-nG_basis_sets">sto-3g</a> basis set and the Jordan-Wigner fermion-to-qubit mapping.</p>
 <p><strong>Built in ansätze:</strong></p>
 <ul>
 <li><p>Default ansatz:  the <a class="reference external" href="https://www.nature.com/articles/nature23879">Hardware Efficient Ansatz</a> (HEA)</p>
@@ -327,7 +323,7 @@ Do <strong>not</strong> change the first two lines:</p>
 </li>
 <li><p>❗ <strong>Important:</strong> Convention of mapping spin orbitals onto qubits</p>
 <ul class="simple">
-<li><p>The built-in ASWAP and UCCSD ansätze in QB SDK map all alpha (up) spins <strong>then</strong> all beta (down) spins. Thus, care must be taken to make sure that the input Pauli Hamiltonian follows the same mapping convention.</p></li>
+<li><p>The built-in ASWAP and UCCSD ansätze in Qristal map all alpha (up) spins <strong>then</strong> all beta (down) spins. Thus, care must be taken to make sure that the input Pauli Hamiltonian follows the same mapping convention.</p></li>
 <li><p>If the Hamiltonian input is provided as a molecular geometry string (see the previous section above), then the mapping is guaranteed to be compatible with the above convention.</p></li>
 <li><p>Tips: Among some other open-source platforms, Qiskit is using the same qubit mapping as stated above. Pennylane, on the other hand, alternates alpha and beta (up and down) spins.</p></li>
 </ul>
@@ -345,7 +341,7 @@ Do <strong>not</strong> change the first two lines:</p>
 </pre></div>
 </div>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">qbos_op.vqe()</span></code> creates an instance to access the functionality in QB SDK VQE</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">qbos_op.vqe()</span></code> creates an instance to access the functionality in Qristal VQE</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
 <span class="n">qv</span> <span class="o">=</span> <span class="n">qbos_op</span><span class="o">.</span><span class="n">vqe</span><span class="p">()</span>
 </pre></div>
@@ -358,7 +354,7 @@ Do <strong>not</strong> change the first two lines:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">theta</span></code> sets the <strong>initial value</strong> of the parameters used by the ansatz, default: 1.0</p>
 <p>⚙ The <strong>length</strong> of <code class="docutils literal notranslate"><span class="pre">theta</span></code> (the number of elements) must match the <strong>required number of parameters</strong> in the ansatz.</p>
-<p>For the default ansatz in QB SDK, it is required that:
+<p>For the default ansatz in Qristal, it is required that:
 <code class="docutils literal notranslate"><span class="pre">len(theta)</span> <span class="pre">==</span> <span class="pre">3*qn*ansatz_depth</span></code></p>
 <p>Example:  initial value of theta set by a <strong>scalar</strong>.  Broadcast is performed of this value to all elements required by the ansatz.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
@@ -388,7 +384,7 @@ Do <strong>not</strong> change the first two lines:</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">qn</span></code> sets the number of physical qubits, default: 1</p>
 <p>❗ The number of qubits must be consistent with the Hamiltonian</p>
-<p>⚙ For the default ansatz in QB SDK, it is required to that:
+<p>⚙ For the default ansatz in Qristal, it is required to that:
 <code class="docutils literal notranslate"><span class="pre">len(theta)</span> <span class="pre">==</span> <span class="pre">3*qn*ansatz_depth</span></code></p>
 <p>Example: set up 2 qubits</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
@@ -560,7 +556,7 @@ The <code class="docutils literal notranslate"><span class="pre">&quot;aer&quot;
 </section>
 <section id="python-minimize-from-scipy-optimize">
 <h3>Python <code class="docutils literal notranslate"><span class="pre">minimize()</span></code> from <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code><a class="headerlink" href="#python-minimize-from-scipy-optimize" title="Permalink to this headline"></a></h3>
-<p>These classical methods have been tested with QB SDK:</p>
+<p>These classical methods have been tested with Qristal:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;SLSQP&quot;</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
@@ -636,7 +632,7 @@ The <code class="docutils literal notranslate"><span class="pre">&quot;aer&quot;
 </section>
 <section id="python-minimize-from-skquant-opt">
 <h3>Python <code class="docutils literal notranslate"><span class="pre">minimize()</span></code> from <code class="docutils literal notranslate"><span class="pre">skquant.opt</span></code><a class="headerlink" href="#python-minimize-from-skquant-opt" title="Permalink to this headline"></a></h3>
-<p>These methods have been tested with QB SDK:</p>
+<p>These methods have been tested with Qristal:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;imfil&quot;</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qbos_op</span>
@@ -676,8 +672,8 @@ The <code class="docutils literal notranslate"><span class="pre">&quot;aer&quot;
 </li>
 </ul>
 </section>
-<section id="built-in-qb-sdk-classical-optimizers">
-<h3>Built-in QB SDK classical optimizers<a class="headerlink" href="#built-in-qb-sdk-classical-optimizers" title="Permalink to this headline"></a></h3>
+<section id="built-in-qristal-classical-optimizers">
+<h3>Built-in Qristal classical optimizers<a class="headerlink" href="#built-in-qristal-classical-optimizers" title="Permalink to this headline"></a></h3>
 <p>These internal options can be enabled by setting <code class="docutils literal notranslate"><span class="pre">maxeval</span></code> to a value &gt; 1.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">maxeval</span></code> sets the number of evaluations of the quantum kernel by the internal optimizer, default: 1 (no internal optimization loop)</p></li>
@@ -710,8 +706,8 @@ The <code class="docutils literal notranslate"><span class="pre">&quot;aer&quot;
 </li>
 </ul>
 </section>
-<section id="obtaining-convergence-information-from-the-internal-qb-sdk-optimizers">
-<h3>Obtaining convergence information from the internal QB SDK optimizers<a class="headerlink" href="#obtaining-convergence-information-from-the-internal-qb-sdk-optimizers" title="Permalink to this headline"></a></h3>
+<section id="obtaining-convergence-information-from-the-internal-qristal-optimizers">
+<h3>Obtaining convergence information from the internal Qristal optimizers<a class="headerlink" href="#obtaining-convergence-information-from-the-internal-qristal-optimizers" title="Permalink to this headline"></a></h3>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">out_energy</span></code>: Energy trace</p>
 <p><code class="docutils literal notranslate"><span class="pre">out_energy[0][0][0]</span></code> is the optimum energy</p>
@@ -731,7 +727,7 @@ The <code class="docutils literal notranslate"><span class="pre">&quot;aer&quot;
 <section id="example-1-two-qubit-deuteron-hamiltonian">
 <h3>Example 1: two-qubit deuteron Hamiltonian<a class="headerlink" href="#example-1-two-qubit-deuteron-hamiltonian" title="Permalink to this headline"></a></h3>
 <p>Let us now focus on a physical Hamiltonian matrix, where the ground state energy is known. The following represents the <span class="math notranslate nohighlight">\(N\)</span> = 2 (two-qubit) deuteron Hamiltonian: <code class="docutils literal notranslate"><span class="pre">5.907</span> <span class="pre">-</span> <span class="pre">2.1433</span> <span class="pre">X0X1</span> <span class="pre">-</span> <span class="pre">2.1433</span> <span class="pre">Y0Y1</span> <span class="pre">+</span> <span class="pre">.21829</span> <span class="pre">Z0</span> <span class="pre">-</span> <span class="pre">6.125</span> <span class="pre">Z1</span></code>. The energy is known to be -1.74886 in sector <span class="math notranslate nohighlight">\(q\)</span> = 1 and in the same energy unit as the Hamiltonian elements.</p>
-<p>Now, imagine you intend to run VQE for the above with initial angle <span class="math notranslate nohighlight">\(\theta_1\)</span> = 0.11, choosing the particle sector 1, setting the classical optimizer to the non-linear <a class="reference external" href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead</a> method with 100 maximum function evaluations and 1.0e-5 function tolerance.  The notebook attached below shows how this is done in QB SDK:</p>
+<p>Now, imagine you intend to run VQE for the above with initial angle <span class="math notranslate nohighlight">\(\theta_1\)</span> = 0.11, choosing the particle sector 1, setting the classical optimizer to the non-linear <a class="reference external" href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead</a> method with 100 maximum function evaluations and 1.0e-5 function tolerance.  The notebook attached below shows how this is done in Qristal:</p>
 <p><a class="reference download internal" download="" href="../_downloads/2cfc329150b8fff2c2ba425ca8e82038/SDK_Deuteron2aswap.ipynb"><span class="xref download myst">SDK_Deuteron2aswap.ipynb</span></a></p>
 </section>
 <section id="example-2-a-four-qubit-classical-hamiltonian">

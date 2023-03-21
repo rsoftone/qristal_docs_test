@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Examples &mdash; Quantum SDK  documentation</title>
@@ -18,8 +18,8 @@
         <script src="../_static/doctools.js"></script>
         <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
@@ -30,16 +30,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            Quantum SDK
-              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+            <a href="../index.html" class="icon icon-home"> Quantum SDK
+            <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -53,7 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/quantum_computing.html">Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in QB SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul>
@@ -74,7 +70,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Examples</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/md/examples.md.txt" rel="nofollow"> View page source</a>
@@ -89,19 +85,20 @@
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder contains a series of example C++ and Python main programs.</p>
 <p>After installing the core (<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> in the main project build folder of either the core or SDK), the Python programs can be run by simply invoking</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span><span class="w"> </span><span class="o">&lt;</span><span class="n">name_of_example</span><span class="o">&gt;</span><span class="p">.</span><span class="n">py</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span><span class="w"> </span><span class="o">&lt;</span><span class="n">name_of_example</span><span class="o">&gt;</span><span class="p">.</span><span class="n">py</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The C++ examples are installed as source files with working CMakeLists.txt build scripts, to demonstrate how to use the core library to build your own C++ main program. To build and run an example in the installation directory, do</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span><span class="w"> </span><span class="o">&lt;</span><span class="n">SDK_installation_directory</span><span class="o">&gt;</span>
-<span class="n">mkdir</span><span class="w"> </span><span class="n">build</span>
-<span class="n">cd</span><span class="w"> </span><span class="n">build</span>
-<span class="n">cmake</span><span class="w"> </span><span class="p">..</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">cpp</span><span class="o">/&lt;</span><span class="n">name_of_example</span><span class="o">&gt;</span>
-<span class="n">make</span>
-<span class="p">.</span><span class="o">/&lt;</span><span class="n">name_of_example</span><span class="o">&gt;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Qristal_installation_directory</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">mkdir</span><span class="w"> </span><span class="n">build</span><span class="w"></span>
+<span class="n">cd</span><span class="w"> </span><span class="n">build</span><span class="w"></span>
+<span class="n">cmake</span><span class="w"> </span><span class="p">..</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">cpp</span><span class="o">/&lt;</span><span class="n">name_of_example</span><span class="o">&gt;</span><span class="w"></span>
+<span class="n">make</span><span class="w"></span>
+<span class="p">.</span><span class="o">/&lt;</span><span class="n">name_of_example</span><span class="o">&gt;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The C++ example programs are <em>also</em> built and properly linked automatically when running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> in the build folder of the core and SDK projects, but the resulting binaries are <em>not</em> installed.  They simply appear in the main project build folder, and can be executed directly from there.</p>
+<p>A description of the available gates and the syntax used to implement them in Python is given in the <a class="reference external" href="https://qristal.readthedocs.io/en/latest/rst/quantum_computing.html">Quantum Computing</a> section.</p>
 <section id="notes-on-specific-examples">
 <h2>Notes on specific examples<a class="headerlink" href="#notes-on-specific-examples" title="Permalink to this headline"></a></h2>
 <section id="python">
@@ -223,6 +220,8 @@
 <em>gate depth</em>: 106 (with ancilla), 92 (without ancilla)<br />
 <em>noise</em>: false</p>
 <p>Example checking for equality between the values of two registers. The flag qubit returns 1 (0) if the values are equal (unequal).</p>
+<p><code class="docutils literal notranslate"><span class="pre">exponential_search.py</span></code></p>
+<p>Example demonstrating the use of the exponential search algorithm to find the largest number, or “best score”, in a dataset. If sufficient search iterations are done, the algorithm should return the best score of 3.</p>
 <p><code class="docutils literal notranslate"><span class="pre">generalised_mcx.py</span></code></p>
 <p><em>qubits</em>: 3<br />
 <em>gate depth</em>: 46<br />
@@ -242,7 +241,12 @@
 <p><em>qubits</em>: 2<br />
 <em>gate depth</em>: 6<br />
 <em>noise</em>: true</p>
-<p>This example shows the effects of various noise mitigation strategies available in QB SDK, using a noisy 2-qubit Bell state.</p>
+<p>This example shows the effects of various noise mitigation strategies available in Qristal, using a noisy 2-qubit Bell state.</p>
+<p><code class="docutils literal notranslate"><span class="pre">noise_model.py</span></code></p>
+<p><em>qubits</em>: 2
+<em>gate depth</em>: 6
+<em>noise</em>: true</p>
+<p>A version of <code class="docutils literal notranslate"><span class="pre">quickstart.py</span></code> with noise.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pfd.py</span></code></p>
 <p><em>qubits</em>: 12<br />
 <em>gate depth</em>: 4690<br />
@@ -251,7 +255,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">qaoa_example.py</span></code></p>
 <p><em>qubits</em>: 5<br />
 <em>noise</em>: false</p>
-<p>Demonstrates the use of the SDK’s built-in implementation of the QAOA algorithm. This example may take some time to run.</p>
+<p>Demonstrates the use of Qristal’s built-in implementation of the QAOA algorithm. This example may take some time to run.</p>
 <p><code class="docutils literal notranslate"><span class="pre">qaoa_API_demo.py</span></code></p>
 <p><em>qubits</em>: 9<br />
 <em>noise</em>: false</p>
@@ -274,7 +278,7 @@
 <p><em>qubits</em>: 3<br />
 <em>gate depth</em>: 46<br />
 <em>noise</em>: true</p>
-<p>Example of a simulation in a noisy environment. A generalized mcx gate operates on a target qubit in the state <span class="math notranslate nohighlight">\(\ket{1}\)</span> conditioned on 2 control qubits in the state <span class="math notranslate nohighlight">\(\ket{11}\)</span>. This flips the target qubit to <span class="math notranslate nohighlight">\(\ket{0}\)</span>.</p>
+<p>A generalized mcx gate operates on a target qubit in the state <span class="math notranslate nohighlight">\(\ket{1}\)</span> conditioned on 2 control qubits in the state <span class="math notranslate nohighlight">\(\ket{11}\)</span>. This flips the target qubit to <span class="math notranslate nohighlight">\(\ket{0}\)</span>.  The basic version of the example does not include noise. If you have the Qristal Emulator installed, two lines in the example file can be uncommented to convert it into an example of a simulation in a noisy environment, using noise models provided by the emulator. Details about the noise model are available <a class="reference external" href="https://qristal.readthedocs.io/en/latest/rst/noise_models.html">here</a> .</p>
 <p><code class="docutils literal notranslate"><span class="pre">remote_workstation_example.py</span></code></p>
 <p><em>qubits</em>: 18<br />
 <em>noise</em>: false</p>
@@ -299,12 +303,12 @@
 <p><em>qubits</em>: 4<br />
 <em>gate depth</em>: 83<br />
 <em>noise</em>: false</p>
-<p>Demonstrates the use of the SDK’s built-in VQE routines. This example may take some time to run.</p>
+<p>Demonstrates the use of Qristal’s built-in VQE routines. This example may take some time to run.</p>
 <p><code class="docutils literal notranslate"><span class="pre">vqee_example_2.py</span></code></p>
 <p><em>qubits</em>: 4<br />
 <em>gate depth</em>: 83<br />
 <em>noise</em>: false</p>
-<p>Demonstrates the use and performance of different backends for the SDK’s built-in VQE routines. This example may take some time to run.</p>
+<p>Demonstrates the use and performance of different backends for Qristal’s built-in VQE routines. This example may take some time to run.</p>
 </section>
 <section id="c">
 <h3>C++<a class="headerlink" href="#c" title="Permalink to this headline"></a></h3>
@@ -313,27 +317,45 @@
 <em>gate depth</em>: 3<br />
 <em>noise</em>: false</p>
 <p>A C++ implementation of <code class="docutils literal notranslate"><span class="pre">demo1.py</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">qaoa</span></code></p>
+<p><em>qubits</em>: 3
+<em>qaoa_steps</em>: 2
+<em>noise</em>: false</p>
+<p>Demonstrates the use of Qristal’s built-in implementation of the QAOA simple algorithm. This example may take some time to run.</p>
 <p><code class="docutils literal notranslate"><span class="pre">qbsdkcli</span></code></p>
-<p>A command-line interface to the QB SDK.  A simple invocation after compiling the CLI is:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">qbsdkcli</span><span class="w"> </span><span class="o">-</span><span class="n">q2</span><span class="w"> </span><span class="o">--</span><span class="n">random</span><span class="o">=</span><span class="mi">2</span>
+<p>A command-line interface to Qristal.  A simple invocation after compiling the CLI is:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">qbsdkcli</span><span class="w"> </span><span class="o">-</span><span class="n">q2</span><span class="w"> </span><span class="o">--</span><span class="n">random</span><span class="o">=</span><span class="mi">2</span><span class="w"></span>
 </pre></div>
 </div>
 <p>which will run a random circuit on 2 qubits, with gate depth of 2. Further details can be found <a href="cli.html">here</a> if viewing the html docs (or in <a href="cpp/qbsdkcli/README.md">examples/cpp/qbsdkcli/README.md</a> if viewing this document as markdown).</p>
+<p><code class="docutils literal notranslate"><span class="pre">noise_model</span></code></p>
+<p><em>qubits</em>: 2
+<em>gate depth</em>: 6
+<em>noise</em>: true</p>
+<p>A C++ implementation of <code class="docutils literal notranslate"><span class="pre">noise_model.py</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">vqee</span></code></p>
 <p><em>qubits</em>: 4<br />
 <em>gate depth</em>: 83<br />
 <em>noise</em>: false</p>
-<p>Demonstrates the use of the SDK’s built-in VQE routines. Can be built with MPI support and parallelization over Pauli terms.</p>
-<p><code class="docutils literal notranslate"><span class="pre">qaoa</span></code></p>
-<p><em>qubits</em>: 3<br />
-<em>qaoa_steps</em>: 2<br />
-<em>noise</em>: false</p>
-<p>Demonstrates the use of the SDK’s built-in implementation of the QAOA simple algorithm. This example may take some time to run.</p>
+<p>Demonstrates the use of Qristal’s built-in VQE routines. Can be built with MPI support and parallelization over Pauli terms.</p>
+</section>
+<section id="c-with-cuda-quantum">
+<h3>C++ with CUDA Quantum<a class="headerlink" href="#c-with-cuda-quantum" title="Permalink to this headline"></a></h3>
+<p>A number of additional examples are only installed when Qristal is built with CUDA Quantum support.  None of these examples has noise enabled.</p>
+<p><code class="docutils literal notranslate"><span class="pre">benchmark1_cudaq</span></code></p>
+<p>A 20 qubit GHZ state designed for benchmarking performance of CUDA Quantum and QASM. This is the CUDAQ version.</p>
+<p><code class="docutils literal notranslate"><span class="pre">benchmark1_qasm</span></code></p>
+<p>A 20 qubit GHZ state designed for benchmarking performance of CUDA Quantum and QASM. This is the QASM version.</p>
+<p><code class="docutils literal notranslate"><span class="pre">cudaq_vqe_cobyla</span></code></p>
+<p>Determination of the deuteron’s ground state energy using VQE with the Cobyla optimiser.</p>
+<p><code class="docutils literal notranslate"><span class="pre">cudaq_vqe_hydrogens</span></code></p>
+<p>Determination of the ground state of a chain of four hydrogen atoms, using VQE with the L-BFGS optimiser.</p>
+<p><code class="docutils literal notranslate"><span class="pre">cudaq_vqe_cobyla</span></code></p>
+<p>Determination of the deuteron’s ground state energy using VQE with the L-BFGS optimiser.</p>
 </section>
 <section id="further-notes-for-beta-testers">
 <h3>Further notes for beta testers<a class="headerlink" href="#further-notes-for-beta-testers" title="Permalink to this headline"></a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">qb-lambda</span></code> accelerator used in <code class="docutils literal notranslate"><span class="pre">remote_workstation_example.py</span></code> submits jobs to a reverse proxy that forwards them on to the Lambda machine.  We will try to leave this reverse proxy up for the duration of the beta testing, to give you the opportunity to test some things out using GPUs.  Please let us know if the server seems to be down.</p>
-<p>This folder is to some extent a work in progress.  The examples listed above are the ones that have been properly converted to run under the latest version of the code, and fully tested.  The others listed below do not presently run or still need additional testing. This is a known issue, and thus not worth reporting as a new bug.</p>
+<p>This folder is to some extent a work in progress.  The examples listed above are the ones that have been fully tested and made consistent with the public version of the code.  The others listed below do not presently run or still need additional testing. This is a known issue, and thus not worth reporting as a new bug.</p>
 <p><code class="docutils literal notranslate"><span class="pre">aws_braket</span></code></p>
 <p>These need work on the aws_s3 argument.  You should be able to get the first two to run by just setting <code class="docutils literal notranslate"><span class="pre">s.aws_s3</span></code> to the name of an s3 bucket that you personally have access to (you need to have run <code class="docutils literal notranslate"><span class="pre">aws</span> <span class="pre">configure</span></code>, set up the bucket, etc).</p>
 <ul class="simple">
@@ -351,12 +373,10 @@ Implementation in Python of a generic VQE calculator for quantum chemistry. Requ
 <li><p><code class="docutils literal notranslate"><span class="pre">external_potential.py</span></code>
 An add-in class for <code class="docutils literal notranslate"><span class="pre">vqe_calculator.py</span></code> allowing for the specification of an external potential arising from a point charge.</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">exponential_search.py</span></code></p>
-<p>Example demonstrating the use of the exponential search algorithm to find the largest number, or “best score”, in a dataset. If sufficient search iterations are done, the algorithm should return the best score of 3.</p>
 <p><code class="docutils literal notranslate"><span class="pre">lambda_accelerator</span></code></p>
 <p>Further examples using a remote accelerator.</p>
 <p><code class="docutils literal notranslate"><span class="pre">qap</span></code></p>
-<p>Some QAOA examples that require upcoming recursive QAOA routines.</p>
+<p>Some additional QAOA examples using recursive QAOA routines.</p>
 <p><code class="docutils literal notranslate"><span class="pre">vqe</span></code></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">h2_vqe_aswap.py</span></code><br />
