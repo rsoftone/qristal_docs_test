@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quantum Gates &mdash; Quantum SDK  documentation</title>
@@ -30,12 +30,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Quantum SDK
-            <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Quantum SDK
+              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -50,6 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html#general-information">General information</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul>
@@ -70,7 +75,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Quantum Gates</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/md/quantum_gates.md.txt" rel="nofollow"> View page source</a>
@@ -381,15 +386,15 @@
 </li>
 </ul>
 </li>
-<li><p><span class="math notranslate nohighlight">\(U(\theta,\phi,\lambda)\)</span> - arbitrary rotation, in x-axis by <span class="math notranslate nohighlight">\(\theta\)</span>, y-axis by <span class="math notranslate nohighlight">\(\phi\)</span>, z-axis by <span class="math notranslate nohighlight">\(\lambda\)</span></p>
+<li><p><span class="math notranslate nohighlight">\(U(\theta,\phi,\lambda)\)</span> - arbitrary rotation</p>
 <ul>
 <li><p>Unitary Description and Decomposition Rules</p>
-<p>If used for an <strong>ansatz</strong> that will require <strong>automatic differentiation</strong> (AD), replace <span class="math notranslate nohighlight">\(U\)</span> with the decomposition shown below:</p>
-<p><span class="math notranslate nohighlight">\(U(\theta, \phi, \lambda) = R_z(\phi)*R_x(-0.5\pi)*R_z(\theta)*R_x(0.5\pi)*R_z(\lambda)\)</span></p>
+<p>If used for an <strong>ansatz</strong> that will require <strong>automatic differentiation</strong> (AD), replace <span class="math notranslate nohighlight">\(U\)</span> with the decomposition:</p>
+<p><span class="math notranslate nohighlight">\(U(\theta, \phi, \lambda) = R_y(-\frac{\pi}{2})*R_x(\phi)*R_y(\theta)*R_x(\lambda)*R_y(\frac{\pi}{2})\)</span></p>
 <p><strong>Other useful expressions:</strong></p>
-<p><span class="math notranslate nohighlight">\(R_y(\theta) = U(\theta, 0, 0) = R_x(-0.5\pi)*R_z(\theta)*R_x(0.5\pi)\)</span></p>
-<p><span class="math notranslate nohighlight">\(R_x(\theta) = U(\theta, -0.5\pi, 0.5\pi)\)</span></p>
-<p><span class="math notranslate nohighlight">\(R_z(\lambda) = U(0, 0, \lambda)\)</span></p>
+<p><span class="math notranslate nohighlight">\(R_x(\alpha) = U(\alpha, -\frac{\pi}{2}, \frac{\pi}{2})\)</span></p>
+<p><span class="math notranslate nohighlight">\(R_y(\alpha) = U(\alpha, 0, 0)\)</span></p>
+<p><span class="math notranslate nohighlight">\(R_z(\alpha) = U(0, \alpha, 0) = U(0, 0, \alpha)\)</span></p>
 </li>
 <li><p>OpenQASM</p>
 <p>Gate format: <code class="docutils literal notranslate"><span class="pre">u(&lt;theta&gt;,</span> <span class="pre">&lt;phi&gt;,</span> <span class="pre">&lt;lambda&gt;)</span> <span class="pre">&lt;target_qubit&gt;;</span></code></p>
@@ -415,9 +420,7 @@
 </li>
 <li><p>QB Native Transpilation</p>
 <p>We use the decomposition:</p>
-<p><span class="math notranslate nohighlight">\(U(\theta, \phi, \lambda) := R_z(\phi)*R_x(-0.5\pi)*R_z(\theta)*R_x(0.5\pi)*R_z(\lambda)\)</span></p>
-<p>with:</p>
-<p><span class="math notranslate nohighlight">\(R_z(\theta) := R_x(\pi)*R_y(0.5\pi)*R_x(\theta)*R_x(\pi)*R_y(0.5\pi)\)</span></p>
+<p><span class="math notranslate nohighlight">\(U(\theta, \phi, \lambda) := R_y(-\frac{\pi}{2})*R_x(\phi)*R_y(\theta)*R_x(\lambda)*R_y(\frac{\pi}{2})\)</span></p>
 </li>
 </ul>
 </li>

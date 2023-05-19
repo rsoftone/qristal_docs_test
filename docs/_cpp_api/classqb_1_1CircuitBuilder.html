@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Class CircuitBuilder &mdash; Quantum SDK  documentation</title>
@@ -32,12 +32,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Quantum SDK
-            <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Quantum SDK
+              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -52,6 +56,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html#general-information">General information</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul class="current">
@@ -70,6 +75,8 @@
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1MpsAccelerator.html">Class MpsAccelerator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1NoiseModel.html">Class NoiseModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1QbNoiseModel.html">Class QbNoiseModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1qml_1_1ParamCirc.html">Class ParamCirc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1qml_1_1QMLExecutor.html">Class QMLExecutor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1session.html">Class session</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1thread__pool.html">Class thread_pool</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1vqee_1_1VQEE.html">Class VQEE</a></li>
@@ -98,7 +105,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="library_root.html">C++ API</a></li>
       <li class="breadcrumb-item active">Class CircuitBuilder</li>
       <li class="wy-breadcrumbs-aside">
@@ -115,6 +122,15 @@
 <ul class="simple">
 <li><p>Defined in <a class="reference internal" href="file_core_include_qb_core_circuit_builder.hpp.html#file-core-include-qb-core-circuit-builder-hpp"><span class="std std-ref">File circuit_builder.hpp</span></a></p></li>
 </ul>
+<section id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline"></a></h2>
+<section id="derived-type">
+<h3>Derived Type<a class="headerlink" href="#derived-type" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">qb::qml::ParamCirc</span></code> (<a class="reference internal" href="classqb_1_1qml_1_1ParamCirc.html#exhale-class-classqb-1-1qml-1-1paramcirc"><span class="std std-ref">Class ParamCirc</span></a>)</p></li>
+</ul>
+</section>
+</section>
 <section id="class-documentation">
 <h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline"></a></h2>
 <dl class="cpp class">
@@ -123,6 +139,7 @@
 <dd><p>This class is used to build quantum circuits for execution. </p>
 <p>This class is used to construct quantum circuits from elementary gates, such as X, Y, Z, Hadamard and CNOT.</p>
 <p>We also provide high-level methods to construct quantum circuits for commonly-used quantum algorithms, such as QFT and amplitude amplification </p>
+<p>Subclassed by <a class="reference internal" href="classqb_1_1qml_1_1ParamCirc.html#classqb_1_1qml_1_1ParamCirc"><span class="std std-ref">qb::qml::ParamCirc</span></a></p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
@@ -179,7 +196,7 @@
 <p>This method adds a Hadamard (H) gate to the circuit.</p>
 <p>The H gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ H\ket{0} \rightarrow \ket{+} H\ket{1} \rightarrow \ket{-} \]</div>
+\[\begin{split} H\ket{0} \rightarrow \ket{+} \\ H\ket{1} \rightarrow \ket{-} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -195,7 +212,7 @@
 <p>This method adds a Pauli-X (X) gate to the circuit.</p>
 <p>The X gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ X\ket{0} \rightarrow \ket{1} X\ket{1} \rightarrow \ket{0} \]</div>
+\[\begin{split} X\ket{0} \rightarrow \ket{1} \\ X\ket{1} \rightarrow \ket{0} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -211,7 +228,7 @@
 <p>This method adds a Pauli-Y (Y) gate to the circuit.</p>
 <p>The Y gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ Y\ket{0} \rightarrow -i\ket{1} Y\ket{1} \rightarrow i\ket{0} \]</div>
+\[\begin{split} Y\ket{0} \rightarrow -i\ket{1} \\ Y\ket{1} \rightarrow i\ket{0} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -227,7 +244,7 @@
 <p>This method adds a Pauli-Z (Z) gate to the circuit.</p>
 <p>The Z gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ Z\ket{0} \rightarrow \ket{0} Z\ket{1} \rightarrow -\ket{1} \]</div>
+\[\begin{split} Z\ket{0} \rightarrow \ket{0} \\ Z\ket{1} \rightarrow -\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -243,7 +260,7 @@
 <p>This method adds a T gate to the circuit.</p>
 <p>The T gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ T\ket{0} \rightarrow \ket{0} T\ket{1} \rightarrow e^{i\pi/4}\ket{1} \]</div>
+\[\begin{split} T\ket{0} \rightarrow \ket{0} \\ T\ket{1} \rightarrow e^{i\pi/4}\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -259,7 +276,7 @@
 <p>This method adds an S gate to the circuit.</p>
 <p>The S gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ S\ket{0} \rightarrow \ket{0} S\ket{1} \rightarrow i\ket{1} \]</div>
+\[\begin{split} S\ket{0} \rightarrow \ket{0} \\ S\ket{1} \rightarrow i\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -275,7 +292,7 @@
 <p>This method adds an inverse of the T gate (Tdg) to the circuit.</p>
 <p>The Tdg gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ Tdg\ket{0} \rightarrow \ket{0} Tdg\ket{1} \rightarrow e^{-i\pi/4}\ket{1} \]</div>
+\[\begin{split} Tdg\ket{0} \rightarrow \ket{0} \\ Tdg\ket{1} \rightarrow e^{-i\pi/4}\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -291,7 +308,7 @@
 <p>This method adds an inverse of the S gate (Sdg) to the circuit.</p>
 <p>The Sdg gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ Sdg\ket{0} \rightarrow \ket{1} Sdg\ket{1} \rightarrow i\ket{1} \]</div>
+\[\begin{split} Sdg\ket{0} \rightarrow \ket{0} \\ Sdg\ket{1} \rightarrow -i\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -307,7 +324,7 @@
 <p>This method adds an x-axis rotation (RX) gate to the circuit.</p>
 <p>The RX gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ RX(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} - i\sin(\theta/2)\ket{1} RX(\theta)\ket{1} \rightarrow -i\sin(\theta/2)\ket{0} + \cos(\theta/2)\ket{1} \]</div>
+\[\begin{split} RX(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} - i\sin(\theta/2)\ket{1} \\ RX(\theta)\ket{1} \rightarrow -i\sin(\theta/2)\ket{0} + \cos(\theta/2)\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -326,7 +343,7 @@
 <p>This method adds a y-axis rotation (RY) gate to the circuit.</p>
 <p>The RY gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ RY(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + \sin(\theta/2)\ket{1} RY(\theta)\ket{1} \rightarrow -\sin(\theta/2)\ket{0} + \cos(\theta/2)\ket{1} \]</div>
+\[\begin{split} RY(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + \sin(\theta/2)\ket{1} \\ RY(\theta)\ket{1} \rightarrow -\sin(\theta/2)\ket{0} + \cos(\theta/2)\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -345,7 +362,7 @@
 <p>This method adds a z-axis rotation (RZ) gate to the circuit.</p>
 <p>The RZ gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ RZ(\theta)\ket{0} \rightarrow e^{-i\theta/2}\ket{0} RZ(\theta)\ket{1} \rightarrow e^{i\theta/2}\ket{1} \]</div>
+\[\begin{split} RZ(\theta)\ket{0} \rightarrow e^{-i\theta/2}\ket{0} \\ RZ(\theta)\ket{1} \rightarrow e^{i\theta/2}\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -364,7 +381,7 @@
 <p>This method adds a phase (U1) gate to the circuit.</p>
 <p>The U1 gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ U1(\theta)\ket{0} \rightarrow \ket{0} U1(\theta)\ket{1} \rightarrow e^{i\theta}\ket{1} \]</div>
+\[\begin{split} U1(\theta)\ket{0} \rightarrow \ket{0} \\ U1(\theta)\ket{1} \rightarrow e^{i\theta}\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -383,7 +400,7 @@
 <p>This method adds an arbitrary single qubit gate to the circuit.</p>
 <p>The U3 gate is defined by its action on the basis states</p>
 <p><div class="math notranslate nohighlight">
-\[ U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin(\theta/2)\ket{1} U3(\theta,\phi,\lambda)\ket{1} \rightarrow -e^{i\lambda}\sin(\theta/2)\ket{0} + e^{i(\phi+\lambda)}\cos(\theta/2)\ket{1} \]</div>
+\[\begin{split} U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin(\theta/2)\ket{1} \\ U3(\theta,\phi,\lambda)\ket{1} \rightarrow -e^{i\lambda}\sin(\theta/2)\ket{0} + e^{i(\phi+\lambda)}\cos(\theta/2)\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -677,7 +694,7 @@
 <p><div class="math notranslate nohighlight">
 \[ O\ket{\psi} = O(a\ket{good} + b\ket{bad}) = -a\ket{good} + b\ket{bad} \]</div>
 </p>
-<p>The Grovvers operator Q is then constructed within the method from O and the state_prep circuit A as</p>
+<p>The Grover operator Q is then constructed within the method from O and the state_prep circuit A as</p>
 <p><div class="math notranslate nohighlight">
 \[ Q = A^\dagger S_0 A O \]</div>
 </p>
@@ -1200,6 +1217,19 @@
 </dd>
 </dl>
 </dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2qb14CircuitBuilder14gate_provider_E">
+<span id="_CPPv3N2qb14CircuitBuilder14gate_provider_E"></span><span id="_CPPv2N2qb14CircuitBuilder14gate_provider_E"></span><span id="qb::CircuitBuilder::gate_provider___std::shared_ptr:xacc::IRProvider:"></span><span class="target" id="classqb_1_1CircuitBuilder_1aa9c31b49a35adac0cd49ef36d321e653"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">IRProvider</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gate_provider_</span></span></span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder14gate_provider_E" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2qb14CircuitBuilder8circuit_E">
+<span id="_CPPv3N2qb14CircuitBuilder8circuit_E"></span><span id="_CPPv2N2qb14CircuitBuilder8circuit_E"></span><span id="qb::CircuitBuilder::circuit___std::shared_ptr:xacc::CompositeInstruction:"></span><span class="target" id="classqb_1_1CircuitBuilder_1a9496946abb569f5f906d5ee87a6c774f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CompositeInstruction</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">circuit_</span></span></span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder8circuit_E" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </dd></dl>

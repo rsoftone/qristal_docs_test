@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Function get_emulator_noise_model &mdash; Quantum SDK  documentation</title>
@@ -30,12 +30,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Quantum SDK
-            <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Quantum SDK
+              <img src="../_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -50,6 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html#general-information">General information</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul class="current">
@@ -63,9 +68,19 @@
 <li class="toctree-l3 current"><a class="reference internal" href="library_root.html#functions">Functions</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Function get_emulator_noise_model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_circuit__builder_8hpp_1a7a90a73049f9676b6c3308498506b8de.html">Function qb::uniqueBitsQD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1a95f04cc570fcab5cf4f1f2245f1509e7.html">Function qb::vqee::hardwareEfficientCircuit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1a08ad20c72570d148656273c1a257fdc3.html">Function qb::vqee::ansatzToString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1adff3b3981e9cbca47fd15b0c1e8f43d0.html">Function qb::vqee::ASWAP_Ansatz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1aed80dd6f9a61668d77c063809aaa2c22.html">Function qb::vqee::getEnumFromName</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1a6dea9fe524c91c7760109f31ab0b16e6.html">Function qb::vqee::getEnumName</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1a7dd55957c4e1ef794005337f4593ec00.html">Function qb::vqee::HEA_Ansatz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1aae8c884195ff76956afd9e51a51c6d00.html">Function qb::vqee::HEA_String</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1a9a437083d766e5c39c94122350681453.html">Function qb::vqee::hydrogenChainGeometry</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1af6e4d554405a672a83c459cf21f9561a.html">Function qb::vqee::makeJob</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_vqee_8hpp_1a81b4b76a197b6eac3799adb0e74c4bc4.html">Template Function qb::vqee::operator&lt;&lt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1a1cb5b92bb9f966f0e8a9c7efc11317cd.html">Function qb::vqee::pauliStringFromGeometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1abb94ed5b62f182939b94008f126534f3.html">Function qb::vqee::setAnsatz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1aa7b9e09bde9c753bebc04a7039511ee1.html">Function qb::vqee::stringToAnsatz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_case__generator_8hpp_1a8da7c8fc0dd5137d50b551fa883350a9.html">Function qb::vqee::UCCSD_Ansatz</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="library_root.html#typedefs">Typedefs</a></li>
@@ -89,7 +104,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="library_root.html">C++ API</a></li>
       <li class="breadcrumb-item active">Function get_emulator_noise_model</li>
       <li class="wy-breadcrumbs-aside">

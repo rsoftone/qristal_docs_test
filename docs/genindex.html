@@ -27,12 +27,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> Quantum SDK
-            <img src="_static/qb_logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Quantum SDK
+              <img src="_static/qb_logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -47,6 +51,7 @@
 <li class="toctree-l1"><a class="reference internal" href="rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/vqe.html#general-information">General information</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul>
@@ -67,7 +72,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Index</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -443,6 +448,8 @@
 </li>
       <li><a href="_cpp_api/classqb_1_1CircuitBuilder.html#_CPPv4N2qb14CircuitBuilder2CHE6size_t6size_t">qb::CircuitBuilder::CH (C++ function)</a>
 </li>
+      <li><a href="_cpp_api/classqb_1_1CircuitBuilder.html#_CPPv4N2qb14CircuitBuilder8circuit_E">qb::CircuitBuilder::circuit_ (C++ member)</a>
+</li>
       <li><a href="_cpp_api/classqb_1_1CircuitBuilder.html#_CPPv4N2qb14CircuitBuilder14CircuitBuilderERNSt10shared_ptrIN4xacc20CompositeInstructionEEE">qb::CircuitBuilder::CircuitBuilder (C++ function)</a>, <a href="_cpp_api/classqb_1_1CircuitBuilder.html#_CPPv4N2qb14CircuitBuilder14CircuitBuilderEv">[1]</a>
 </li>
       <li><a href="_cpp_api/classqb_1_1CircuitBuilder.html#_CPPv4N2qb14CircuitBuilder4CNOTE6size_t6size_t">qb::CircuitBuilder::CNOT (C++ function)</a>
@@ -476,6 +483,8 @@
       <li><a href="_cpp_api/classqb_1_1CircuitBuilder.html#_CPPv4N2qb14CircuitBuilder15EqualityCheckerENSt6vectorIiEENSt6vectorIiEEibNSt6vectorIiEENSt6vectorIiEENSt6vectorIiEE">qb::CircuitBuilder::EqualityChecker (C++ function)</a>
 </li>
       <li><a href="_cpp_api/classqb_1_1CircuitBuilder.html#_CPPv4N2qb14CircuitBuilder17ExponentialSearchENSt6stringE18StatePrepFuncCType15OracleFuncCTypeiNSt8functionIFiiEEEiNSt6vectorIiEENSt6vectorIiEENSt6stringE">qb::CircuitBuilder::ExponentialSearch (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1CircuitBuilder.html#_CPPv4N2qb14CircuitBuilder14gate_provider_E">qb::CircuitBuilder::gate_provider_ (C++ member)</a>
 </li>
       <li><a href="_cpp_api/classqb_1_1CircuitBuilder.html#_CPPv4N2qb14CircuitBuilder14GeneralisedMCXEiNSt6vectorIiEENSt6vectorIiEE">qb::CircuitBuilder::GeneralisedMCX (C++ function)</a>
 </li>
@@ -643,6 +652,8 @@
 </li>
       <li><a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel10GenerationE">qb::QbNoiseModel::Generation (C++ enum)</a>
 </li>
+      <li><a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel10Generation4dqc2E">qb::QbNoiseModel::Generation::dqc2 (C++ enumerator)</a>
+</li>
       <li><a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel10Generation3nm1E">qb::QbNoiseModel::Generation::nm1 (C++ enumerator)</a>
 </li>
       <li><a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel10Generation3nm2E">qb::QbNoiseModel::Generation::nm2 (C++ enumerator)</a>
@@ -655,7 +666,79 @@
 </li>
       <li><a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel12m_noise_propE">qb::QbNoiseModel::m_noise_prop (C++ member)</a>
 </li>
-      <li><a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel12QbNoiseModelE10Generation">qb::QbNoiseModel::QbNoiseModel (C++ function)</a>, <a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel12QbNoiseModelE10Generationdd">[1]</a>, <a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel12QbNoiseModelE10Generationdddd">[2]</a>
+      <li><a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel12QbNoiseModelE10Generation">qb::QbNoiseModel::QbNoiseModel (C++ function)</a>, <a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel12QbNoiseModelE10Generationdd">[1]</a>, <a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel12QbNoiseModelE10Generationdddd">[2]</a>, <a href="_cpp_api/classqb_1_1QbNoiseModel.html#_CPPv4N2qb12QbNoiseModel12QbNoiseModelE10Generationdddddd">[3]</a>
+</li>
+      <li><a href="_cpp_api/enum_qml_8hpp_1adf5a25f4ac3ec2b56ebebe076aab8167.html#_CPPv4N2qb3qml15DefaultAnsatzesE">qb::qml::DefaultAnsatzes (C++ enum)</a>
+</li>
+      <li><a href="_cpp_api/enum_qml_8hpp_1adf5a25f4ac3ec2b56ebebe076aab8167.html#_CPPv4N2qb3qml15DefaultAnsatzes8qrlRDBMSE">qb::qml::DefaultAnsatzes::qrlRDBMS (C++ enumerator)</a>
+</li>
+      <li><a href="_cpp_api/enum_qml_8hpp_1a651af41c64ef0aebe87ed1be728adf73.html#_CPPv4N2qb3qml13GradientTypesE">qb::qml::GradientTypes (C++ enum)</a>
+</li>
+      <li><a href="_cpp_api/enum_qml_8hpp_1a651af41c64ef0aebe87ed1be728adf73.html#_CPPv4N2qb3qml13GradientTypes15parameter_shiftE">qb::qml::GradientTypes::parameter_shift (C++ enumerator)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCircE">qb::qml::ParamCirc (C++ class)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc6CPhaseE6size_t6size_tPc">qb::qml::ParamCirc::CPhase (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc23getNumAnsatzRepetitionsEv">qb::qml::ParamCirc::getNumAnsatzRepetitions (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc12getNumInputsEv">qb::qml::ParamCirc::getNumInputs (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc12getNumParamsEv">qb::qml::ParamCirc::getNumParams (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc12getNumQubitsEv">qb::qml::ParamCirc::getNumQubits (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc9ParamCircE6size_t">qb::qml::ParamCirc::ParamCirc (C++ function)</a>, <a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc9ParamCircENSt6size_tEN3qml15DefaultAnsatzesENSt6size_tEN2qb12VectorStringE">[1]</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc8reuploadEv">qb::qml::ParamCirc::reupload (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc2RXE6size_tPc">qb::qml::ParamCirc::RX (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc2RYE6size_tPc">qb::qml::ParamCirc::RY (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc2RZE6size_tPc">qb::qml::ParamCirc::RZ (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1ParamCirc.html#_CPPv4N2qb3qml9ParamCirc2U1E6size_tPc">qb::qml::ParamCirc::U1 (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutorE">qb::qml::QMLExecutor (C++ class)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor3accE">qb::qml::QMLExecutor::acc (C++ member)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor24constructFullParamVectorEv">qb::qml::QMLExecutor::constructFullParamVector (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor9getBufferEv">qb::qml::QMLExecutor::getBuffer (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor10getCircuitEv">qb::qml::QMLExecutor::getCircuit (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor13getGradBufferEv">qb::qml::QMLExecutor::getGradBuffer (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor14getInputParamsEv">qb::qml::QMLExecutor::getInputParams (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor11getNumShotsEv">qb::qml::QMLExecutor::getNumShots (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor7getSeedEv">qb::qml::QMLExecutor::getSeed (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor16getStatGradientsEv">qb::qml::QMLExecutor::getStatGradients (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor8getStatsEv">qb::qml::QMLExecutor::getStats (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor10getWeightsEv">qb::qml::QMLExecutor::getWeights (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor11QMLExecutorE9ParamCircNSt6vectorIdEENSt6vectorIdEE">qb::qml::QMLExecutor::QMLExecutor (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor3runEv">qb::qml::QMLExecutor::run (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor12runGradientsEv">qb::qml::QMLExecutor::runGradients (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor10setCircuitE9ParamCirc">qb::qml::QMLExecutor::setCircuit (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor14setInputParamsENSt6vectorIdEE">qb::qml::QMLExecutor::setInputParams (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor11setNumShotsENSt6size_tE">qb::qml::QMLExecutor::setNumShots (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor7setSeedEi">qb::qml::QMLExecutor::setSeed (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/classqb_1_1qml_1_1QMLExecutor.html#_CPPv4N2qb3qml11QMLExecutor10setWeightsENSt6vectorIdEE">qb::qml::QMLExecutor::setWeights (C++ function)</a>
 </li>
       <li><a href="_cpp_api/classqb_1_1session.html#_CPPv4N2qb7sessionE">qb::session (C++ class)</a>
 </li>
@@ -723,6 +806,8 @@
 </li>
       <li><a href="_cpp_api/classqb_1_1session.html#_CPPv4NK2qb7session12get_out_rawsEv">qb::session::get_out_raws (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_cpp_api/classqb_1_1session.html#_CPPv4NK2qb7session30get_out_single_qubit_gate_qtysEv">qb::session::get_out_single_qubit_gate_qtys (C++ function)</a>
 </li>
       <li><a href="_cpp_api/classqb_1_1session.html#_CPPv4NK2qb7session40get_out_total_init_maxgate_readout_timesEv">qb::session::get_out_total_init_maxgate_readout_times (C++ function)</a>
@@ -749,8 +834,6 @@
 </li>
       <li><a href="_cpp_api/classqb_1_1session.html#_CPPv4NK2qb7session7get_rnsEv">qb::session::get_rns (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_cpp_api/classqb_1_1session.html#_CPPv4NK2qb7session9get_seedsEv">qb::session::get_seeds (C++ function)</a>
 </li>
       <li><a href="_cpp_api/classqb_1_1session.html#_CPPv4NK2qb7session7get_snsEv">qb::session::get_sns (C++ function)</a>
@@ -999,7 +1082,27 @@
 </li>
       <li><a href="_cpp_api/function_circuit__builder_8hpp_1a7a90a73049f9676b6c3308498506b8de.html#_CPPv4N2qb12uniqueBitsQDERNSt10shared_ptrIN4xacc20CompositeInstructionEEE">qb::uniqueBitsQD (C++ function)</a>
 </li>
-      <li><a href="_cpp_api/function_case__generator_8hpp_1a95f04cc570fcab5cf4f1f2245f1509e7.html#_CPPv4N2qb4vqee24hardwareEfficientCircuitERKiRKi">qb::vqee::hardwareEfficientCircuit (C++ function)</a>
+      <li><a href="_cpp_api/enum_case__generator_8hpp_1a623b5d9a0f13a864f13151f24a491f36.html#_CPPv4N2qb4vqee8AnsatzIDE">qb::vqee::AnsatzID (C++ enum)</a>
+</li>
+      <li><a href="_cpp_api/enum_case__generator_8hpp_1a623b5d9a0f13a864f13151f24a491f36.html#_CPPv4N2qb4vqee8AnsatzID5ASWAPE">qb::vqee::AnsatzID::ASWAP (C++ enumerator)</a>
+</li>
+      <li><a href="_cpp_api/enum_case__generator_8hpp_1a623b5d9a0f13a864f13151f24a491f36.html#_CPPv4N2qb4vqee8AnsatzID3HEAE">qb::vqee::AnsatzID::HEA (C++ enumerator)</a>
+</li>
+      <li><a href="_cpp_api/enum_case__generator_8hpp_1a623b5d9a0f13a864f13151f24a491f36.html#_CPPv4N2qb4vqee8AnsatzID5UCCSDE">qb::vqee::AnsatzID::UCCSD (C++ enumerator)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1a08ad20c72570d148656273c1a257fdc3.html#_CPPv4N2qb4vqee14ansatzToStringEKNSt10shared_ptrIN4xacc20CompositeInstructionEEE">qb::vqee::ansatzToString (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1adff3b3981e9cbca47fd15b0c1e8f43d0.html#_CPPv4N2qb4vqee12ASWAP_AnsatzEKiKiKb">qb::vqee::ASWAP_Ansatz (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1aed80dd6f9a61668d77c063809aaa2c22.html#_CPPv4N2qb4vqee15getEnumFromNameENSt6stringE">qb::vqee::getEnumFromName (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1a6dea9fe524c91c7760109f31ab0b16e6.html#_CPPv4N2qb4vqee11getEnumNameE8AnsatzID">qb::vqee::getEnumName (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1a7dd55957c4e1ef794005337f4593ec00.html#_CPPv4N2qb4vqee10HEA_AnsatzEKNSt6size_tEKNSt6size_tE">qb::vqee::HEA_Ansatz (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1aae8c884195ff76956afd9e51a51c6d00.html#_CPPv4N2qb4vqee10HEA_StringEKNSt6size_tEKNSt6size_tE">qb::vqee::HEA_String (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1a9a437083d766e5c39c94122350681453.html#_CPPv4N2qb4vqee21hydrogenChainGeometryEKNSt6size_tE">qb::vqee::hydrogenChainGeometry (C++ function)</a>
 </li>
       <li><a href="_cpp_api/enum_case__generator_8hpp_1aaee3be947eeea73bf6b736d8b7eb9821.html#_CPPv4N2qb4vqee5JobIDE">qb::vqee::JobID (C++ enum)</a>
 </li>
@@ -1048,6 +1151,14 @@
       <li><a href="_cpp_api/structqb_1_1vqee_1_1Params.html#_CPPv4N2qb4vqee6Params5thetaE">qb::vqee::Params::theta (C++ member)</a>
 </li>
       <li><a href="_cpp_api/structqb_1_1vqee_1_1Params.html#_CPPv4N2qb4vqee6Params9toleranceE">qb::vqee::Params::tolerance (C++ member)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1a1cb5b92bb9f966f0e8a9c7efc11317cd.html#_CPPv4N2qb4vqee23pauliStringFromGeometryERKNSt6stringERKNSt6stringE">qb::vqee::pauliStringFromGeometry (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1abb94ed5b62f182939b94008f126534f3.html#_CPPv4N2qb4vqee9setAnsatzER6ParamsK8AnsatzIDKiKiKb">qb::vqee::setAnsatz (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1aa7b9e09bde9c753bebc04a7039511ee1.html#_CPPv4N2qb4vqee14stringToAnsatzEKNSt6stringE">qb::vqee::stringToAnsatz (C++ function)</a>
+</li>
+      <li><a href="_cpp_api/function_case__generator_8hpp_1a8da7c8fc0dd5137d50b551fa883350a9.html#_CPPv4N2qb4vqee12UCCSD_AnsatzEKiKi">qb::vqee::UCCSD_Ansatz (C++ function)</a>
 </li>
       <li><a href="_cpp_api/classqb_1_1vqee_1_1VQEE.html#_CPPv4N2qb4vqee4VQEEE">qb::vqee::VQEE (C++ class)</a>
 </li>

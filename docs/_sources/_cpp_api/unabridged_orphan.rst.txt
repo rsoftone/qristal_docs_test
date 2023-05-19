@@ -41,6 +41,11 @@ Directories
 .. toctree::
    :maxdepth: 5
 
+   dir_core_include_qb_core_optimization_qml.rst
+
+.. toctree::
+   :maxdepth: 5
+
    dir_core_include_qb_core_optimization_vqee.rst
 
 .. toctree::
@@ -111,6 +116,11 @@ Files
    :maxdepth: 5
 
    file_core_include_qb_core_noise_model_noise_properties.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_core_include_qb_core_optimization_qml_qml.hpp.rst
 
 .. toctree::
    :maxdepth: 5

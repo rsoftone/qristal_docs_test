@@ -17,6 +17,8 @@ Namespaces
 ----------
 
 
+- :ref:`namespace_qb__qml`
+
 - :ref:`namespace_qb__vqee`
 
 
