@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quantum Gates &mdash; Quantum SDK  documentation</title>
@@ -16,10 +16,11 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/qb_ga.js"></script>
         <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
@@ -53,8 +54,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/quantum_computing.html">Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html#general-information">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/qml.html">Quantum Machine Learning (QML)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul>
@@ -400,18 +401,18 @@
 <p>Gate format: <code class="docutils literal notranslate"><span class="pre">u(&lt;theta&gt;,</span> <span class="pre">&lt;phi&gt;,</span> <span class="pre">&lt;lambda&gt;)</span> <span class="pre">&lt;target_qubit&gt;;</span></code></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Format: u(theta, phi, lambda) target_qubit</span>
 
-<span class="n">__qpu__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">QBCIRCUIT</span><span class="p">(</span><span class="n">qreg</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="n">OPENQASM</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span><span class="w"></span>
-<span class="n">include</span><span class="w"> </span><span class="s">&quot;qelib1.inc&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="n">creg</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="n">__qpu__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">QBCIRCUIT</span><span class="p">(</span><span class="n">qreg</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">OPENQASM</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="n">include</span><span class="w"> </span><span class="s">&quot;qelib1.inc&quot;</span><span class="p">;</span>
+<span class="n">creg</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
 
 <span class="c1">// theta = 0.2</span>
 <span class="c1">// phi = -0.25</span>
 <span class="c1">// lambda = 1.1</span>
-<span class="n">u</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.25</span><span class="p">,</span><span class="w"> </span><span class="mf">1.1</span><span class="p">)</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
+<span class="n">u</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.25</span><span class="p">,</span><span class="w"> </span><span class="mf">1.1</span><span class="p">)</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 
-<span class="n">measure</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">measure</span><span class="w"> </span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>

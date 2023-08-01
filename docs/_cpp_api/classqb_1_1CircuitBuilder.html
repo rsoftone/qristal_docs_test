@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Class CircuitBuilder &mdash; Quantum SDK  documentation</title>
@@ -16,15 +16,16 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/js/qb_ga.js"></script>
         <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
         <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Class CirqQsim" href="classqb_1_1CirqQsim.html" />
-    <link rel="prev" title="Struct Params" href="structqb_1_1vqee_1_1Params.html" /> 
+    <link rel="next" title="Class cudaq_ir_converter" href="classqb_1_1cudaq__ir__converter.html" />
+    <link rel="prev" title="Struct vqe_iteration_data" href="structqb_1_1vqee_1_1vqe__iteration__data.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -55,8 +56,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../rst/quantum_computing.html">Quantum Computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html">Noise models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rst/noise_models.html#user-defined-noise-models">User defined noise models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE) in Qristal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html#general-information">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/vqe.html">Variational Quantum Eigensolver (VQE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rst/qml.html">Quantum Machine Learning (QML)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Source Code Documentation</span></p>
 <ul class="current">
@@ -66,20 +67,30 @@
 <li class="toctree-l2 current"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structqb_1_1noise__aware__placement__config.html">Struct noise_aware_placement_config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structqb_1_1NoiseProperties.html">Struct NoiseProperties</a></li>
-<li class="toctree-l4"><a class="reference internal" href="structqb_1_1NoiseProperties_1_1ReadoutError.html">Struct NoiseProperties::ReadoutError</a></li>
-<li class="toctree-l4"><a class="reference internal" href="structqb_1_1session_1_1run__i__j__config.html">Struct session::run_i_j_config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structqb_1_1pair__hash.html">Struct pair_hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structqb_1_1ReadoutError.html">Struct ReadoutError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structqb_1_1run__i__j__config.html">Struct run_i_j_config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structqb_1_1vqee_1_1Params.html">Struct Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structqb_1_1vqee_1_1vqe__iteration__data.html">Struct vqe_iteration_data</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Class CircuitBuilder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classqb_1_1CirqQsim.html">Class CirqQsim</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classqb_1_1MpsAccelerator.html">Class MpsAccelerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1cudaq__ir__converter.html">Class cudaq_ir_converter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1cudaq__sim__pool.html">Class cudaq_sim_pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1noise__aware__placement__pass.html">Class noise_aware_placement_pass</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1NoiseModel.html">Class NoiseModel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classqb_1_1QbNoiseModel.html">Class QbNoiseModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1optimization__pass.html">Class optimization_pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1Pass.html">Template Class Pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1Profiler.html">Class Profiler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1qml_1_1ParamCirc.html">Class ParamCirc</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1qml_1_1QMLExecutor.html">Class QMLExecutor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1session.html">Class session</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1swap__placement__pass.html">Class swap_placement_pass</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1thread__pool.html">Class thread_pool</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1vqee_1_1NelderMeadNLO.html">Class NelderMeadNLO</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classqb_1_1vqee_1_1VQEE.html">Class VQEE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classqb_1_1vqee_1_1VqeOpt.html">Class VqeOpt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classxacc_1_1quantum_1_1QuantumBrillianceRemoteVisitor.html">Class QuantumBrillianceRemoteVisitor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a></li>
@@ -150,13 +161,16 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2qb14CircuitBuilder14CircuitBuilderERNSt10shared_ptrIN4xacc20CompositeInstructionEEE">
-<span id="_CPPv3N2qb14CircuitBuilder14CircuitBuilderERNSt10shared_ptrIN4xacc20CompositeInstructionEEE"></span><span id="_CPPv2N2qb14CircuitBuilder14CircuitBuilderERNSt10shared_ptrIN4xacc20CompositeInstructionEEE"></span><span id="qb::CircuitBuilder::CircuitBuilder__std::shared_ptr:xacc::CompositeInstruction:R"></span><span class="target" id="classqb_1_1CircuitBuilder_1a6d5dbfc45794bbc463ad0eff0d08bb67"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CircuitBuilder</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CompositeInstruction</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">composite</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder14CircuitBuilderERNSt10shared_ptrIN4xacc20CompositeInstructionEEE" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N2qb14CircuitBuilder14CircuitBuilderERNSt10shared_ptrIN4xacc20CompositeInstructionEEEb">
+<span id="_CPPv3N2qb14CircuitBuilder14CircuitBuilderERNSt10shared_ptrIN4xacc20CompositeInstructionEEEb"></span><span id="_CPPv2N2qb14CircuitBuilder14CircuitBuilderERNSt10shared_ptrIN4xacc20CompositeInstructionEEEb"></span><span id="qb::CircuitBuilder::CircuitBuilder__std::shared_ptr:xacc::CompositeInstruction:R.b"></span><span class="target" id="classqb_1_1CircuitBuilder_1a93a9c9e97e0fcb79793bdee2a77b00e9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CircuitBuilder</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CompositeInstruction</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">composite</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">copy_nodes</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder14CircuitBuilderERNSt10shared_ptrIN4xacc20CompositeInstructionEEEb" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Constructor. </p>
 <p>A constructor for the <a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a> class. Creates a circuit from a specified list of instructions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>composite</strong> – A pointer to a xacc::CompositeInstruction object [shared ptr] </p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>composite</strong> – A pointer to a xacc::CompositeInstruction object [shared ptr] </p></li>
+<li><p><strong>copy_nodes</strong> – If true, child nodes (instructions) of the CompositeInstruction will be copied over. Otherwise, the input composite will become the root node of this <a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>. Default to true. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -166,7 +180,7 @@
 <span id="_CPPv3N2qb14CircuitBuilder3getEv"></span><span id="_CPPv2N2qb14CircuitBuilder3getEv"></span><span id="qb::CircuitBuilder::get"></span><span class="target" id="classqb_1_1CircuitBuilder_1a7e7cc94afa40c3782dddf59bc4ba855c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">shared_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">xacc</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CompositeInstruction</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder3getEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>return the list of instructions comprising the circuit </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A pointer to the xacc::CompositeInstruction (list of instructions) that defines the circuit. </p>
 </dd>
 </dl>
@@ -183,7 +197,7 @@
 <span id="_CPPv3N2qb14CircuitBuilder6appendER14CircuitBuilder"></span><span id="_CPPv2N2qb14CircuitBuilder6appendER14CircuitBuilder"></span><span id="qb::CircuitBuilder::append__CircuitBuilderR"></span><span class="target" id="classqb_1_1CircuitBuilder_1a7e93a8469e808705586b215be90d3bd6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">append</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2qb14CircuitBuilderE" title="qb::CircuitBuilder"><span class="n"><span class="pre">CircuitBuilder</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">other</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder6appendER14CircuitBuilder" title="Permalink to this definition"></a><br /></dt>
 <dd><p>append another <a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a> object to this one </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>other</strong> – the circuit to be appended [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p>
 </dd>
 </dl>
@@ -199,7 +213,7 @@
 \[\begin{split} H\ket{0} \rightarrow \ket{+} \\ H\ket{1} \rightarrow \ket{-} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -215,7 +229,7 @@
 \[\begin{split} X\ket{0} \rightarrow \ket{1} \\ X\ket{1} \rightarrow \ket{0} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -231,7 +245,7 @@
 \[\begin{split} Y\ket{0} \rightarrow -i\ket{1} \\ Y\ket{1} \rightarrow i\ket{0} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -247,7 +261,7 @@
 \[\begin{split} Z\ket{0} \rightarrow \ket{0} \\ Z\ket{1} \rightarrow -\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -263,7 +277,7 @@
 \[\begin{split} T\ket{0} \rightarrow \ket{0} \\ T\ket{1} \rightarrow e^{i\pi/4}\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -279,7 +293,7 @@
 \[\begin{split} S\ket{0} \rightarrow \ket{0} \\ S\ket{1} \rightarrow i\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -295,7 +309,7 @@
 \[\begin{split} Tdg\ket{0} \rightarrow \ket{0} \\ Tdg\ket{1} \rightarrow e^{-i\pi/4}\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -311,7 +325,7 @@
 \[\begin{split} Sdg\ket{0} \rightarrow \ket{0} \\ Sdg\ket{1} \rightarrow -i\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p>
 </dd>
 </dl>
@@ -327,7 +341,7 @@
 \[\begin{split} RX(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} - i\sin(\theta/2)\ket{1} \\ RX(\theta)\ket{1} \rightarrow -i\sin(\theta/2)\ket{0} + \cos(\theta/2)\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p></li>
 <li><p><strong>theta</strong> – the angle of rotation about the x-axis [double] </p></li>
@@ -346,7 +360,7 @@
 \[\begin{split} RY(\theta)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + \sin(\theta/2)\ket{1} \\ RY(\theta)\ket{1} \rightarrow -\sin(\theta/2)\ket{0} + \cos(\theta/2)\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p></li>
 <li><p><strong>theta</strong> – the angle of rotation about the y-axis [double] </p></li>
@@ -365,7 +379,7 @@
 \[\begin{split} RZ(\theta)\ket{0} \rightarrow e^{-i\theta/2}\ket{0} \\ RZ(\theta)\ket{1} \rightarrow e^{i\theta/2}\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p></li>
 <li><p><strong>theta</strong> – the angle of rotation about the z-axis [double] </p></li>
@@ -384,7 +398,7 @@
 \[\begin{split} U1(\theta)\ket{0} \rightarrow \ket{0} \\ U1(\theta)\ket{1} \rightarrow e^{i\theta}\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p></li>
 <li><p><strong>theta</strong> – the value of the phase [double] </p></li>
@@ -403,7 +417,7 @@
 \[\begin{split} U3(\theta,\phi,\lambda)\ket{0} \rightarrow \cos(\theta/2)\ket{0} + e^{i\phi}\sin(\theta/2)\ket{1} \\ U3(\theta,\phi,\lambda)\ket{1} \rightarrow -e^{i\lambda}\sin(\theta/2)\ket{0} + e^{i(\phi+\lambda)}\cos(\theta/2)\ket{1} \end{split}\]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>idx</strong> – the index of the qubit being acted on [size_t] </p></li>
 <li><p><strong>theta</strong> – the angle of rotation about the z-axis [double] </p></li>
@@ -422,7 +436,7 @@
 \[ CNOT\ket{ab} \rightarrow \ket{a}X^a \ket{b} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctrl_idx</strong> – the index of the control qubit [size_t] </p></li>
 <li><p><strong>target_idx</strong> – the index of the target qubit [size_t] </p></li>
@@ -441,7 +455,7 @@
 \[ MCX\ket{c_1...c_Nt} \rightarrow \ket{c_1...c_N} X^{c_1...c_N} \ket{t} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctrl_inds</strong> – the indices of the control qubits [vector of int] </p></li>
 <li><p><strong>target_idx</strong> – the index of the target qubit [size_t] </p></li>
@@ -460,7 +474,7 @@
 \[ CU\ket{c_1...c_Nt_1...t_M} \rightarrow \ket{c_1...c_N} U^{c_1...c_N} \ket{t_1...t_M} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>circ</strong> – the circuit for the unitary operation U [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>ctrl_inds</strong> – the indices of the control qubits [vector of int] </p></li>
@@ -479,7 +493,7 @@
 \[ CZ\ket{ab} \rightarrow \ket{a}Z^a \ket{b} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctrl_idx</strong> – the index of the control qubit [size_t] </p></li>
 <li><p><strong>target_idx</strong> – the index of the target qubit [size_t] </p></li>
@@ -498,7 +512,7 @@
 \[ CH\ket{ab} \rightarrow \ket{a}H^a \ket{b} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctrl_idx</strong> – the index of the control qubit [size_t] </p></li>
 <li><p><strong>target_idx</strong> – the index of the target qubit [size_t] </p></li>
@@ -517,7 +531,7 @@
 \[ CPhase(\theta)\ket{ab} \rightarrow \ket{a}U1(\theta)^a \ket{b} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ctrl_idx</strong> – the index of the control qubit [size_t] </p></li>
 <li><p><strong>target_idx</strong> – the index of the target qubit [size_t] </p></li>
@@ -537,7 +551,7 @@
 \[ SWAP\ket{\psi}\ket{\phi} \rightarrow \ket{\phi}\ket{\psi} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>q1</strong> – the index of the first qubit [size_t] </p></li>
 <li><p><strong>q2</strong> – the index of the second qubit [size_t] </p></li>
@@ -552,7 +566,7 @@
 <dd><p>Measurement. </p>
 <p>This method is used to indicate a qubit in the circuit should be measured.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>idx</strong> – the index of the qubit to be measured [size_t] </p>
 </dd>
 </dl>
@@ -564,7 +578,7 @@
 <dd><p>Measure all qubits. </p>
 <p>This method adds a measurement for all qubits involved in the circuit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>NUM_QUBITS</strong> – the number of qubits in the circuit [int] [optional] </p>
 </dd>
 </dl>
@@ -579,7 +593,7 @@
 \[ QFT\ket{x} \rightarrow \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} \omega_N^{xk} \ket{k} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>qubit_idxs</strong> – the indices of the target qubits [vector of int] </p>
 </dd>
 </dl>
@@ -591,7 +605,7 @@
 <dd><p>Inverse Quantum Fourier Transform. </p>
 <p>This method adds the inverse of the Quantum Fourier Transform (IQFT) to the circuit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>qubit_idxs</strong> – the indices of the target qubits [vector of int] </p>
 </dd>
 </dl>
@@ -608,7 +622,7 @@
 </p>
 <p>for some value of <span class="math notranslate nohighlight">\( \theta \)</span>. QPE is used to provide a k-bit approximation to <span class="math notranslate nohighlight">\( \theta \)</span> storing the result in an evaluation register whilst leaving <span class="math notranslate nohighlight">\( \ket{\psi} \)</span> unchanged.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>oracle</strong> – The unitary operator U involved in the QPE routine [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>num_evaluation_qubits</strong> – The number of bits k used to approximate the phase [int] </p></li>
@@ -631,7 +645,7 @@
 <p>the QAE sub-routine provides a k-bit approximation to the amplitude of the good subspace, a.</p>
 <p>QAE works by using the Grovers operator Q, which amplifies the amplitude of the good subspace, as the unitary input to a Quantum Phase Estimation routine.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>state_prep</strong> – The circuit A used to prepare the input state [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>grover_op</strong> – The circuit for the Grovers operator Q for the good subspace [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
@@ -652,7 +666,7 @@
 <dd><p>Multi Controlled Unitary With Ancilla. </p>
 <p>This method decomposes a multi-controlled unitary into Toffoli gates and the unitary itself, with the use of ancilla qubits. With N control qubits there should be N-1 ancilla. The resulting instructions are added to the circuit (AMCU gate).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>U</strong> – The unitary operation [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>qubits_control</strong> – The indices of the control qubits [vector of int] </p></li>
@@ -668,7 +682,7 @@
 <dd><p>Run Canonical Amplitude Estimation. </p>
 <p>This method sets up and executes an instance of the canonical amplitude estimation circuit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>state_prep</strong> – The circuit A used to prepare the input state [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>grover_op</strong> – The circuit for the Grovers operator Q for the good subspace [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
@@ -680,7 +694,7 @@
 <li><p><strong>acc_name</strong> – The name of the accelerator used to execute the circuit [string]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The output buffer of the execution </p>
 </dd>
 </dl>
@@ -700,7 +714,7 @@
 </p>
 <p>where <span class="math notranslate nohighlight">\( S_0 \)</span> is an easily implementable rotation about the all 0 state <span class="math notranslate nohighlight">\( \ket{000....0} \)</span>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>state_prep</strong> – The circuit A used to prepare the input state [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>oracle</strong> – The oracle circuit O that marks the good subspace [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
@@ -712,7 +726,7 @@
 <li><p><strong>acc_name</strong> – The name of the accelerator used to execute the circuit [string]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The output buffer of the execution </p>
 </dd>
 </dl>
@@ -729,7 +743,7 @@
 </p>
 <p>MLQAE is an alternative to canonical QAE to find an estimate for the amplitude of the good subspace, a. It works by performing several runs of amplitude amplification with various iterations and recording the number of <span class="math notranslate nohighlight">\( \ket{good} \)</span> shots measured. Given this data, it finds the value of a that maximises the likelihood function.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>state_prep</strong> – The circuit A used to prepare the input state [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>oracle</strong> – The oracle circuit O that marks the good subspace [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
@@ -741,7 +755,7 @@
 <li><p><strong>acc_name</strong> – The name of the accelerator used to execute the circuit [string]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The output buffer of the execution </p>
 </dd>
 </dl>
@@ -766,7 +780,7 @@
 </p>
 <p>where <span class="math notranslate nohighlight">\( S_0 \)</span> is an easily implemented reflection about the all zero state.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>oracle</strong> – The oracle circuit O that marks the good subspace [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
 <li><p><strong>state_prep</strong> – The circuit A used to prepare the input state [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p></li>
@@ -818,7 +832,7 @@
 \[ RippleAdd\ket{c_{in}}\ket{a}\ket{b} \rightarrow \ket{a} \ket{a+b+c_in} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> – The qubit indices of the first register in the addition [vector of int] </p></li>
 <li><p><strong>b</strong> – The qubit indices of the second register in the addition [vector of int] </p></li>
@@ -835,7 +849,7 @@
 <p>This method adds a quantum bit string comparator oracle to the circuit.</p>
 <p>The quantum bit string comparator is used to add a negative phase to any trial state whose bit string value is greater than the state being compared to. In this way it can be used as an oracle in a Grovers operator that amplifies higher scoring strings. This may be useful in many search problems.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>BestScore</strong> – The score we are comparing strings to [int] </p></li>
 <li><p><strong>num_scoring_qubits</strong> – The number of qubits used to encode the scores [int] </p></li>
@@ -858,7 +872,7 @@
 <p>This method adds a quantum bit string comparator to the circuit.</p>
 <p>The quantum bit string comparator is used to compare the values of two bit string. If the trial score is greater than the best score, the flag qubit is flipped from 0 to 1.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>BestScore</strong> – The score we are comparing strings to [int] </p></li>
 <li><p><strong>num_scoring_qubits</strong> – The number of qubits used to encode the scores [int] </p></li>
@@ -886,7 +900,7 @@
 <p>where the superposition is over all possible bitstrings. Rather than encoding states in order <span class="math notranslate nohighlight">\( \ket{000}, \ket{001}, \ket{010} \)</span>…etc. we cut down on the amount of X gates required by instead following the Gray code ordering of states.</p>
 <p>This module can optionally also flag strings of a certain value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>scoring_function</strong> – A function that inputs the integer value of a binary string and outputs its score [func(int) -&gt; int] </p></li>
 <li><p><strong>num_state_qubits</strong> – The number of qubits encoding the strings [int] </p></li>
@@ -909,7 +923,7 @@
 <p>This method adds an equality checker to the circuit.</p>
 <p>Given two input bitstrings <span class="math notranslate nohighlight">\( \ket{a} \)</span> and <span class="math notranslate nohighlight">\( \ket{b} \)</span> the equality checker is used to flip a flag qubit <span class="math notranslate nohighlight">\( \ket{0} \)</span> \to <span class="math notranslate nohighlight">\( \ket{1} \)</span> whenever a=b.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_a</strong> – the indices of the qubits encoding a [vector of int] </p></li>
 <li><p><strong>qubits_b</strong> – the indices of the qubits encoding b [vector of int] </p></li>
@@ -930,7 +944,7 @@
 <p>This method adds a controlled SWAP to the circuit.</p>
 <p>Performs a SWAP operation on <span class="math notranslate nohighlight">\( \ket{a} \)</span> and <span class="math notranslate nohighlight">\( \ket{b} \)</span> if an only if the controls are satisfied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_a</strong> – the indices of the qubits encoding a [vector of int] </p></li>
 <li><p><strong>qubits_b</strong> – the indices of the qubits encoding b [vector of int] </p></li>
@@ -948,7 +962,7 @@
 <p>This method adds a controlled ripple carry adder to the circuit.</p>
 <p>Performs a RippleAdd operation on adder_bits and sum_bits if an only if the controls are satisfied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_adder</strong> – the indices of the qubits encoding adder_bits [vector of int] </p></li>
 <li><p><strong>qubits_sum</strong> – the indices of the qubits encoding sum_bits [vector of int] </p></li>
@@ -968,7 +982,7 @@
 <p>This method adds a generalised MCX gate to the circuit.</p>
 <p>By generalised MCX we mean that we allow the control qubits to be conditional on being off or conditional on being on.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> – The index of the target qubit [int] </p></li>
 <li><p><strong>controls_on</strong> – The indices of any qubits that should be “on” controls (i.e. circuit executed if qubit = <span class="math notranslate nohighlight">\( \ket{1} \)</span>) [vector of int] </p></li>
@@ -1000,7 +1014,7 @@
 \[ (|a_1|^2 + |a_2|^2 + |a_n|^2) / N. \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>q0</strong> – the index of the single required ancilla [int] </p></li>
 <li><p><strong>q1</strong> – the index of the single required ancilla [int] </p></li>
@@ -1031,7 +1045,7 @@
 </p>
 <p>This may be useful for un-computing ancilla or for constructing Grovers operators.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>circ</strong> – The circuit whose inverse we want to add to the current circuit [<a class="reference internal" href="#classqb_1_1CircuitBuilder"><span class="std std-ref">CircuitBuilder</span></a>] </p>
 </dd>
 </dl>
@@ -1048,7 +1062,7 @@
 </p>
 <p>assuming a&gt;b.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_larger</strong> – the indices of the qubits encoding the larger value [vector of int] </p></li>
 <li><p><strong>qubits_smaller</strong> – the indices of the qubits encoding the smaller value [vector of int] </p></li>
@@ -1066,7 +1080,7 @@
 <p>This method adds a controlled subtraction to the circuit.</p>
 <p>Performs a subtraction operation on a and b if an only if the controls are satisfied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_larger</strong> – the indices of the qubits encoding the larger value [vector of int] </p></li>
 <li><p><strong>qubits_smaller</strong> – the indices of the qubits encoding the smaller value [vector of int] </p></li>
@@ -1090,7 +1104,7 @@
 </p>
 <p>assuming denom &gt; num</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_numerator</strong> – the indices of the qubits encoding the numerator [vector of int] </p></li>
 <li><p><strong>qubits_denominator</strong> – the indices of the qubits encoding the denominator [vector of int] </p></li>
@@ -1109,7 +1123,7 @@
 <p>This method adds a controlled proper fraction division to the circuit.</p>
 <p>Performs a PFD operation on a and b if an only if the controls are satisfied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_numerator</strong> – the indices of the qubits encoding the numerator [vector of int] </p></li>
 <li><p><strong>qubits_denominator</strong> – the indices of the qubits encoding the denominator [vector of int] </p></li>
@@ -1130,7 +1144,7 @@
 <p>This method adds a &gt; comparator to the circuit.</p>
 <p>Given two binary strings <span class="math notranslate nohighlight">\( \ket{a} \)</span> and <span class="math notranslate nohighlight">\( \ket{b} \)</span>, this comparator flips a flag qubit whenever a&gt;b. This method uses far less ancilla than the more general comparator method provided.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_a</strong> – The indices of the qubits encoding a [vector of int] </p></li>
 <li><p><strong>qubits_b</strong> – The indices of the qubits encoding b [vector of int] </p></li>
@@ -1152,7 +1166,7 @@
 \[ \ket{a}\ket{b}\ket{0} \rightarrow \ket{a}\ket{b}\ket{ab} \]</div>
 </p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_a</strong> – the indices of the qubits encoding a [vector of int] </p></li>
 <li><p><strong>qubits_b</strong> – the indices of the qubits encoding b [vector of int] </p></li>
@@ -1171,7 +1185,7 @@
 <p>This method adds a controlled Multiplication to the circuit.</p>
 <p>Performs a Multiplication operation on a and b if an only if the controls are satisfied.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>qubits_a</strong> – the indices of the qubits encoding a [vector of int] </p></li>
 <li><p><strong>qubits_b</strong> – the indices of the qubits encoding b [vector of int] </p></li>
@@ -1199,7 +1213,7 @@
 </p>
 <p>Exponential search here has been designed for use in the quantum decoder algorithm, so many inputs may not be required for general use.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>method</strong> – indicates which method to use. Options are “canonical”, “MLQAE”, “CQAE” [string] </p></li>
 <li><p><strong>state_prep_circ</strong> – a function which produces the state prep circuit [StatePrepFuncCType] </p></li>
@@ -1212,7 +1226,7 @@
 <li><p><strong>acc_name</strong> – the name of the accelerator used to execute the algorithm [string]</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>a better score if found, otherwise returns the current best score </p>
 </dd>
 </dl>
@@ -1232,6 +1246,14 @@
 <dd></dd></dl>
 
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-static-attributes">Private Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2qb14CircuitBuilder13help_execute_E">
+<span id="_CPPv3N2qb14CircuitBuilder13help_execute_E"></span><span id="_CPPv2N2qb14CircuitBuilder13help_execute_E"></span><span id="qb::CircuitBuilder::help_execute___cCP"></span><span class="target" id="classqb_1_1CircuitBuilder_1ac4956dddce335a6ec36d88b927d8f28b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">help_execute_</span></span></span><a class="headerlink" href="#_CPPv4N2qb14CircuitBuilder13help_execute_E" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
 </dd></dl>
 
 </section>
@@ -1241,8 +1263,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="structqb_1_1vqee_1_1Params.html" class="btn btn-neutral float-left" title="Struct Params" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="classqb_1_1CirqQsim.html" class="btn btn-neutral float-right" title="Class CirqQsim" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="structqb_1_1vqee_1_1vqe__iteration__data.html" class="btn btn-neutral float-left" title="Struct vqe_iteration_data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classqb_1_1cudaq__ir__converter.html" class="btn btn-neutral float-right" title="Class cudaq_ir_converter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
